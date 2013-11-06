@@ -38,6 +38,14 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainModel\IAudioFile.cs" />
+    <Compile Include="DomainModel\ICustomer.cs" />
+    <Compile Include="DomainModel\IExhibit.cs" />
+    <Compile Include="DomainModel\IHandset.cs" />
+    <Compile Include="DomainModel\IHandsetRental.cs" />
+    <Compile Include="DomainModel\IKnowledgeLevel.cs" />
+    <Compile Include="DomainModel\ILanguage.cs" />
+    <Compile Include="DomainModel\IUniqueObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
