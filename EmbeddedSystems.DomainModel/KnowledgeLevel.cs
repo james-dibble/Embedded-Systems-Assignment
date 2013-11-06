@@ -1,19 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IUniqueObject.cs" company="ESD">
+// <copyright file="KnowledgeLevel.cs" company="ESD">
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.DomainModel
 {
     /// <summary>
-    /// Implementing classes refer to an object with a key that can uniquely identify itself.
+    /// An object to represent the competency level of an <see cref="ICustomer"/>.
     /// </summary>
-    /// <typeparam name="TKey">The type of unique identifier.</typeparam>
-    public interface IUniqueObject<out TKey>
+    public class KnowledgeLevel : UniqueObject<int>, IKnowledgeLevel
     {
         /// <summary>
-        /// Gets the unique identifier of this <see cref="IUniqueObject{TKey}"/>.
+        /// Gets or sets the description of this <see cref="IKnowledgeLevel"/>.
         /// </summary>
-        TKey Id { get; }
+        public string Description { get; set; }
     }
 }

@@ -1,19 +1,21 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IUniqueObject.cs" company="ESD">
+// <copyright file="UniqueObject.cs" company="ESD">
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.DomainModel
 {
+    using System.ComponentModel.DataAnnotations;
+
     /// <summary>
-    /// Implementing classes refer to an object with a key that can uniquely identify itself.
+    /// A base class for an object with a key that can uniquely identify itself.
     /// </summary>
     /// <typeparam name="TKey">The type of unique identifier.</typeparam>
-    public interface IUniqueObject<out TKey>
+    public abstract class UniqueObject<TKey> : IUniqueObject<TKey>
     {
         /// <summary>
-        /// Gets the unique identifier of this <see cref="IUniqueObject{TKey}"/>.
+        /// Gets or sets the unique identifier of this <see cref="IUniqueObject{TKey}"/>.
         /// </summary>
-        TKey Id { get; }
+        public TKey Id { get; set; }
     }
 }

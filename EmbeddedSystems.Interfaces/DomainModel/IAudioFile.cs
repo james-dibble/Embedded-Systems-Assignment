@@ -30,6 +30,6 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets the location of this <see cref="IAudioFile"/>.
         /// </summary>
-        Uri FilePath { get; }
+        string FilePath { get; }
     }
 }

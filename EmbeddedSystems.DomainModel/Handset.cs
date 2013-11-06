@@ -1,19 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IUniqueObject.cs" company="ESD">
+// <copyright file="Handset.cs" company="ESD">
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.DomainModel
 {
     /// <summary>
-    /// Implementing classes refer to an object with a key that can uniquely identify itself.
+    /// An object that stores information about a <see cref="IHandset"/>.
     /// </summary>
-    /// <typeparam name="TKey">The type of unique identifier.</typeparam>
-    public interface IUniqueObject<out TKey>
+    public class Handset : UniqueObject<int>, IHandset
     {
         /// <summary>
-        /// Gets the unique identifier of this <see cref="IUniqueObject{TKey}"/>.
+        /// Gets or sets the number of this <see cref="IHandset"/>.
         /// </summary>
-        TKey Id { get; }
+        public string HandsetNumber { get; set; }
     }
 }
