@@ -59,15 +59,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmbeddedSystems.DomainModel\EmbeddedSystems.DomainModel.csproj">
+    <ProjectReference Include="..\..\EmbeddedSystems.DomainModel\EmbeddedSystems.DomainModel.csproj">
       <Project>{025222ce-ea0e-48d3-bbcf-8a53a5fa80a9}</Project>
       <Name>EmbeddedSystems.DomainModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmbeddedSystems.Interfaces\EmbeddedSystems.Interfaces.csproj">
+    <ProjectReference Include="..\..\EmbeddedSystems.Interfaces\EmbeddedSystems.Interfaces.csproj">
       <Project>{4b949ad2-d089-4643-a9b2-a714ce520d4a}</Project>
       <Name>EmbeddedSystems.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmbeddedSystems.Persistence\EmbeddedSystems.Persistence.csproj">
+    <ProjectReference Include="..\..\EmbeddedSystems.Persistence\EmbeddedSystems.Persistence.csproj">
       <Project>{8428a3b0-19d7-4a2e-a029-07b7fedc4cca}</Project>
       <Name>EmbeddedSystems.Persistence</Name>
     </ProjectReference>
