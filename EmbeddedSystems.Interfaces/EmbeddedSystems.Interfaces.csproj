@@ -34,25 +34,27 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <ExcludeFromStyleCop Include="$(IntermediateOutputPath)\**\*.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainModel\IAudioFile.cs" />
-    <Compile Include="DomainModel\ICustomer.cs" />
-    <Compile Include="DomainModel\IExhibit.cs" />
-    <Compile Include="DomainModel\IHandset.cs" />
-    <Compile Include="DomainModel\IHandsetRental.cs" />
-    <Compile Include="DomainModel\IKnowledgeLevel.cs" />
-    <Compile Include="DomainModel\ILanguage.cs" />
-    <Compile Include="DomainModel\IUniqueObject.cs" />
+    <Compile Include="Persistence\IPersistenceContext.cs" />
+    <Compile Include="Persistence\IRepository.cs" />
+    <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmbeddedSystems.DomainModel\EmbeddedSystems.DomainModel.csproj">
+      <Project>{025222CE-EA0E-48D3-BBCF-8A53A5FA80A9}</Project>
+      <Name>EmbeddedSystems.DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

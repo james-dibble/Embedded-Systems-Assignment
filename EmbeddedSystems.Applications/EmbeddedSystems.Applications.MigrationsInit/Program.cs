@@ -1,6 +1,7 @@
 ﻿namespace EmbeddedSystems.Applications.MigrationsInit
 {
     using System;
+    using System.Linq;
 
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
@@ -17,7 +18,7 @@
 
                 db.Handsets.Add(new Handset { HandsetNumber = "Something" });
                 db.SaveChanges();
-                db.Handsets.RemoveRange(db.Handsets);
+                db.Handsets.Remove(db.Handsets.First());
             }
 
             Console.WriteLine("All done!");

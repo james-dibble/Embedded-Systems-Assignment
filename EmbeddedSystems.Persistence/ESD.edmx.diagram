@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eaf0bc375db44bdf81ac48224629923d" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="ESDModel.AudioFile" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.Customer" Width="1.5" PointX="5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.Exhibit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.HandsetRental" Width="1.5" PointX="7.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.Handset" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.KnowledgeLevel" Width="1.5" PointX="2.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.Language" Width="1.5" PointX="4.5" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="ESDModel.FK_dbo_AudioFiles_dbo_Exhibits_ExhibitId" ManuallyRouted="false" />
+        <AssociationConnector Association="ESDModel.FK_dbo_AudioFiles_dbo_KnowledgeLevels_KnowledgeLevelId" ManuallyRouted="false" />
+        <AssociationConnector Association="ESDModel.FK_dbo_AudioFiles_dbo_Languages_LanguageId" ManuallyRouted="false" />
+        <AssociationConnector Association="ESDModel.FK_dbo_Customers_dbo_KnowledgeLevels_KnowledgeLevel_Id" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="ESDModel.FK_dbo_Customers_dbo_Languages_Language_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="ESDModel.FK_dbo_HandsetRentals_dbo_Customers_Customer_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="ESDModel.FK_dbo_HandsetRentals_dbo_Handsets_Handset_Id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

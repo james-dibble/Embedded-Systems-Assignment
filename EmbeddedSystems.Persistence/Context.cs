@@ -12,7 +12,7 @@ namespace EmbeddedSystems.Persistence
     /// <summary>
     /// The persistence context for the solution.
     /// </summary>
-    public class Context : DbContext
+    public class Context : DbContext, IPersistenceContext
     {
         /// <summary>
         /// Initialises a new instance of the <see cref="Context"/> class.
@@ -22,39 +22,39 @@ namespace EmbeddedSystems.Persistence
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="IAudioFile"/> set.
+        /// Gets or sets the <see cref="AudioFile"/> set.
         /// </summary>
-        public DbSet<AudioFile> AudioFiles { get; set; }
+        public IDbSet<AudioFile> AudioFiles { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="ICustomer"/> set.
+        /// Gets or sets the <see cref="Customer"/> set.
         /// </summary>
-        public DbSet<Customer> Customers { get; set; }
+        public IDbSet<Customer> Customers { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="IExhibit"/> set.
+        /// Gets or sets the <see cref="Exhibit"/> set.
         /// </summary>
-        public DbSet<Exhibit> Exhibits { get; set; }
+        public IDbSet<Exhibit> Exhibits { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="IHandset"/> set.
+        /// Gets or sets the <see cref="Handset"/> set.
         /// </summary>
-        public DbSet<Handset> Handsets { get; set; }
+        public IDbSet<Handset> Handsets { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="IHandsetRental"/> set.
+        /// Gets or sets the <see cref="HandsetRental"/> set.
         /// </summary>
-        public DbSet<HandsetRental> HandsetRentals { get; set; }
+        public IDbSet<HandsetRental> HandsetRentals { get; set; }
         
         /// <summary>
-        /// Gets or sets the <see cref="IKnowledgeLevel"/> set.
+        /// Gets or sets the <see cref="KnowledgeLevel"/> set.
         /// </summary>
-        public DbSet<KnowledgeLevel> KnowledgeLevels { get; set; }
+        public IDbSet<KnowledgeLevel> KnowledgeLevels { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="ILanguage"/> set.
+        /// Gets or sets the <see cref="Language"/> set.
         /// </summary>
-        public DbSet<Language> Languages { get; set; }
+        public IDbSet<Language> Languages { get; set; }
 
         /// <summary>
         /// This method is called when the model for a derived context has been initialized, but
