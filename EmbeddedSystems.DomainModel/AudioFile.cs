@@ -8,7 +8,7 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that represents an <see cref="IExhibit"/>'s audio file.
     /// </summary>
-    public class AudioFile : IAudioFile
+    public class AudioFile
     {
         /// <summary>
         /// Gets or sets the the ID of the <see cref="IExhibit"/>. DO NOT USE.
@@ -18,7 +18,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="IExhibit"/> that this <see cref="IAudioFile"/> is for.
         /// </summary>
-        public IExhibit Exhibit { get; set; }
+        public Exhibit Exhibit { get; set; }
 
         /// <summary>
         /// Gets or sets the the ID of the <see cref="ILanguage"/>. DO NOT USE.
@@ -28,7 +28,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="ILanguage"/> that this <see cref="IAudioFile"/> is spoken in.
         /// </summary>
-        public ILanguage Language { get; set; }
+        public Language Language { get; set; }
 
         /// <summary>
         /// Gets or sets the the ID of the <see cref="IKnowledgeLevel"/>. DO NOT USE.
@@ -38,7 +38,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="IKnowledgeLevel"/> of this <see cref="IAudioFile"/>.
         /// </summary>
-        public IKnowledgeLevel KnowledgeLevel { get; set; }
+        public KnowledgeLevel KnowledgeLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the location of this <see cref="IAudioFile"/>.

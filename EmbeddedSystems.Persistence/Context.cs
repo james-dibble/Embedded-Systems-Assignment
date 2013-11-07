@@ -81,6 +81,18 @@ namespace EmbeddedSystems.Persistence
                     entity.KnowledgeLevelId, 
                     entity.LanguageId
                 });
+
+            modelBuilder.Entity<AudioFile>()
+                .HasRequired(a => a.Exhibit)
+                .WithMany(e => e.AudioFiles);
+            modelBuilder.Entity<AudioFile>().HasRequired(a => a.Language);
+            modelBuilder.Entity<AudioFile>().HasRequired(a => a.KnowledgeLevel);
+
+            modelBuilder.Entity<Customer>().HasRequired(c => c.Language);
+            modelBuilder.Entity<Customer>().HasRequired(c => c.KnowledgeLevel);
+
+            modelBuilder.Entity<HandsetRental>().HasRequired(hr => hr.Customer);
+            modelBuilder.Entity<HandsetRental>().HasRequired(hr => hr.Handset);
         }
     }
 }

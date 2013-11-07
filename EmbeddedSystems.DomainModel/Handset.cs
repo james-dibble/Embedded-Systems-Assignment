@@ -8,7 +8,7 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that stores information about a <see cref="IHandset"/>.
     /// </summary>
-    public class Handset : UniqueObject<int>, IHandset
+    public class Handset : UniqueObject<int>
     {
         /// <summary>
         /// Gets or sets the number of this <see cref="IHandset"/>.

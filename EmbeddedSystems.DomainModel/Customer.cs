@@ -8,7 +8,7 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that represents an <see cref="ICustomer"/>.
     /// </summary>
-    public class Customer : UniqueObject<int>, ICustomer
+    public class Customer : UniqueObject<int>
     {
         /// <summary>
         /// Gets or sets the name of this <see cref="ICustomer"/>.
@@ -28,11 +28,11 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="ILanguage"/> that this <see cref="ICustomer"/> speaks.
         /// </summary>
-        public ILanguage Language { get; set; }
+        public virtual Language Language { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="IKnowledgeLevel"/> of this <see cref="ICustomer"/>.
         /// </summary>
-        public IKnowledgeLevel KnowledgeLevel { get; set; }
+        public virtual KnowledgeLevel KnowledgeLevel { get; set; }
     }
 }

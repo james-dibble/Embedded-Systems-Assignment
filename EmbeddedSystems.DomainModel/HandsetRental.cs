@@ -10,17 +10,17 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that represents an <see cref="ICustomer"/> taking out an <see cref="IHandset"/>.
     /// </summary>
-    public class HandsetRental : UniqueObject<int>, IHandsetRental
+    public class HandsetRental : UniqueObject<int>
     {
         /// <summary>
         /// Gets or sets the <see cref="ICustomer"/> that has rented an <see cref="IHandset"/>.
         /// </summary>
-        public virtual ICustomer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="IHandset"/> that the <see cref="ICustomer"/> has rented.
         /// </summary>
-        public virtual IHandset Handset { get; set; }
+        public virtual Handset Handset { get; set; }
 
         /// <summary>
         /// Gets or sets the <see cref="System.DateTime"/> that this <see cref="IHandsetRental"/> was conducted.

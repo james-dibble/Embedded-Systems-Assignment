@@ -8,7 +8,7 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that represents a spoken tongue.
     /// </summary>
-    public class Language : UniqueObject<int>, ILanguage
+    public class Language : UniqueObject<int>
     {
         /// <summary>
         /// Gets or sets the name of this <see cref="ILanguage"/>.
