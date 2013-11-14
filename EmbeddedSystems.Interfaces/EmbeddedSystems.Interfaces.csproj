@@ -45,6 +45,9 @@
     <Compile Include="Persistence\IRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLayer\IAudioFileService.cs" />
+    <Compile Include="ServiceLayer\IExhibitService.cs" />
+    <Compile Include="ServiceLayer\ILanguageService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -56,6 +59,7 @@
       <Name>EmbeddedSystems.DomainModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
