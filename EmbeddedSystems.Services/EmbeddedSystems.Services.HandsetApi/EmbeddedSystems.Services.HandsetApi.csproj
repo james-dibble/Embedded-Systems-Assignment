@@ -176,6 +176,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Integration.pubxml" />
+    <None Include="Properties\PublishProfiles\Live.pubxml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
