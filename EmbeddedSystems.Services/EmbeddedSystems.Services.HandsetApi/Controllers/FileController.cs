@@ -19,7 +19,7 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
             this._audioFileService = audioFileService;
         }
 
-        public AudioFile Get(int exhibitId)
+        public AudioFile Get(int id)
         {
             return null;
         }
