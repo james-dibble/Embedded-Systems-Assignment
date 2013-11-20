@@ -23,9 +23,9 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
             this._customerService = customerService;
         }
 
-        public AudioFile Get(int id)
+        public AudioFile Get(int exhibitId)
         {
-            var exhibit = this._exhibitService.GetExhibitByHandsetKey(id);
+            var exhibit = this._exhibitService.GetExhibitByHandsetKey(exhibitId);
 
             // TODO - JD: Use some sort of authentication mechanism to get the customer using this
             //            the handset making this request.

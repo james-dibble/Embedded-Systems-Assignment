@@ -8,15 +8,29 @@ namespace EmbeddedSystems.ServiceLayer
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
 
+    /// <summary>
+    /// A class for interacting with <see cref="AudioFile"/>s.
+    /// </summary>
     public class AudioFileService : IAudioFileService
     {
         private readonly IUnitOfWork _persistence;
 
+        /// <summary>
+        /// Initialises a new instance of the <see cref="AudioFileService"/> class.
+        /// </summary>
+        /// <param name="persistence">The current persistence context.</param>
         public AudioFileService(IUnitOfWork persistence)
         {
             this._persistence = persistence;
         }
 
+        /// <summary>
+        /// Retrieve an <see cref="AudioFile"/>.
+        /// </summary>
+        /// <param name="exhibit">The <see cref="Exhibit"/> to get the audio file for.</param>
+        /// <param name="knowledgeLevel">The <see cref="KnowledgeLevel"/> of the <see cref="Customer"/> so they get the right <see cref="AudioFile"/>.</param>
+        /// <param name="language">The <see cref="Language"/> of the <see cref="Customer"/> so they get the right <see cref="AudioFile"/>.</param>
+        /// <returns>An <see cref="AudioFile"/> that corresponds to the given information.</returns>
         public AudioFile GetFile(Exhibit exhibit, KnowledgeLevel knowledgeLevel, Language language)
         {
             var file =
