@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IExhibitService.cs" company="ESD">
+// <copyright file="ICustomerService.cs" company="ESD">
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -7,10 +7,8 @@ namespace EmbeddedSystems.ServiceLayer
 {
     using EmbeddedSystems.DomainModel;
 
-    public interface IExhibitService
+    public interface ICustomerService
     {
-        Exhibit GetExhibit(int exhibitId);
-
-        Exhibit GetExhibitByHandsetKey(int handsetKey);
+        Customer GetCustomer(int customerId);
     }
 }

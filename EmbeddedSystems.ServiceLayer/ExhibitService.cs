@@ -23,5 +23,12 @@ namespace EmbeddedSystems.ServiceLayer
 
             return exhibit;
         }
+
+        public Exhibit GetExhibitByHandsetKey(int handsetKey)
+        {
+            var exhibit = this._persistence.GetRepository<Exhibit>().Single(e => e.HandsetKey == handsetKey);
+
+            return exhibit;
+        }
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceLayer\IAudioFileService.cs" />
+    <Compile Include="ServiceLayer\ICustomerService.cs" />
     <Compile Include="ServiceLayer\IExhibitService.cs" />
     <Compile Include="ServiceLayer\ILanguageService.cs" />
   </ItemGroup>

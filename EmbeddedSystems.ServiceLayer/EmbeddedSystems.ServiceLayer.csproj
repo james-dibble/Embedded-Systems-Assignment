@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioFileService.cs" />
+    <Compile Include="CustomerService.cs" />
     <Compile Include="ExhibitService.cs" />
     <Compile Include="LanguageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
