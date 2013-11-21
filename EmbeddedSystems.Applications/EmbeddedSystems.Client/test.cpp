@@ -6,16 +6,16 @@ using namespace std;
 
 int main()
 {
-	string userInput;
 	int trackNumber = 0;
 	
 	do
 	{
 		cout << "Pls enter track number: ";
-		//getline (cin, userInput);
-		cin >> trackNumber;
+		cin >> noskipws >> trackNumber;
+
 		if (cin.fail())
 		{
+			cout << "What a load of rubbish\n";
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			trackNumber = 0;
