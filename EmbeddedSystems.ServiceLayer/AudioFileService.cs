@@ -5,6 +5,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Configuration;
+    using System.IO;
+
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
 
@@ -40,6 +43,8 @@ namespace EmbeddedSystems.ServiceLayer
                             af.Exhibit.Id == exhibit.Id 
                             && af.KnowledgeLevel.Id == knowledgeLevel.Id
                             && af.Language.Id == language.Id);
+
+            file.FilePath = Path.Combine(ConfigurationManager.AppSettings["RemoteAudioFilePath"], file.FilePath);
 
             return file;
         }

@@ -44,12 +44,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioFileService.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="ExhibitService.cs" />
+    <Compile Include="HandsetService.cs" />
     <Compile Include="LanguageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -17,6 +17,7 @@ namespace EmbeddedSystems.Services.HandsetApi
             UnityConfig.RegisterComponents();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            ApiFilterConfig.RegisterWebApiFilters(GlobalConfiguration.Configuration.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }

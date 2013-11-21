@@ -1,8 +1,10 @@
 namespace EmbeddedSystems.Services.HandsetApi
 {
     using System.Data.Entity;
+    using System.Web.Mvc;
 
     using EmbeddedSystems.Persistence;
+    using EmbeddedSystems.Security;
     using EmbeddedSystems.ServiceLayer;
 
     using Microsoft.Practices.Unity;
@@ -20,8 +22,12 @@ namespace EmbeddedSystems.Services.HandsetApi
             container.RegisterType<IAudioFileService, AudioFileService>();
             container.RegisterType<IExhibitService, ExhibitService>();
             container.RegisterType<ICustomerService, CustomerService>();
+            container.RegisterType<IHandsetService, HandsetService>();
+            container.RegisterType<IAuthorizationService, AuthorizationService>();
 
-            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+            var resolver = new UnityDependencyResolver(container);
+
+            GlobalConfiguration.Configuration.DependencyResolver = resolver; 
         }
     }
 }

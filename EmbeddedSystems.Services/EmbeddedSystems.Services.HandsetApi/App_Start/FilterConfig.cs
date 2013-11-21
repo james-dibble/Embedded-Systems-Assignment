@@ -5,7 +5,10 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.Services.HandsetApi
 {
+    using System.Web.Http;
     using System.Web.Mvc;
+
+    using EmbeddedSystems.Security;
 
     public class FilterConfig
     {
