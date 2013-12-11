@@ -74,7 +74,7 @@ namespace EmbeddedSystems.ServiceLayer
 
         private int GeneratePin()
         {
-            return this._randomNumberGenerator.Next(0, 9999);
+            return this._randomNumberGenerator.Next(1000, 9999);
         }
     }
 }
