@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmbeddedSystems.ServiceLayer</name>
+    </assembly>
+    <members>
+        <member name="T:EmbeddedSystems.ServiceLayer.AudioFileService">
+            <summary>
+            A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.AudioFileService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.AudioFileService"/> class.
+            </summary>
+            <param name="persistence">The current persistence context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.AudioFileService.GetFile(EmbeddedSystems.DomainModel.Exhibit,EmbeddedSystems.DomainModel.KnowledgeLevel,EmbeddedSystems.DomainModel.Language)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.
+            </summary>
+            <param name="exhibit">The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> to get the audio file for.</param>
+            <param name="knowledgeLevel">The <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
+            <param name="language">The <see cref="T:EmbeddedSystems.DomainModel.Language"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
+            <returns>An <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> that corresponds to the given information.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.CustomerService">
+            <summary>
+            A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Customer"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.CustomerService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.CustomerService"/> class.
+            </summary>
+            <param name="persistence">The current persistence context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.CustomerService.GetCustomer(System.Int32)">
+            <summary>
+            Retrieve a <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
+            </summary>
+            <param name="customerId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Customer"/> that matches the given <paramref name="customerId"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.ExhibitService">
+            <summary>
+            A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ExhibitService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.ExhibitService"/> class.
+            </summary>
+            <param name="persistence">The current persistence context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ExhibitService.GetExhibit(System.Int32)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
+            </summary>
+            <param name="exhibitId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> that matches the given <paramref name="exhibitId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ExhibitService.GetExhibitByHandsetKey(System.Int32)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
+            </summary>
+            <param name="handsetKey">The key number on the handset for this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.HandsetService">
+            <summary>
+            A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Handset"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.HandsetService"/> class.
+            </summary>
+            <param name="persistence">The current persistence context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.GetRentalsOfHandset(System.Int32)">
+            <summary>
+            Get the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for a given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+            <param name="handsetNumber">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
+            <returns>A collection of the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for the given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.LanguageService">
+            <summary>
+            A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.LanguageService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.LanguageService"/> class.
+            </summary>
+            <param name="persistence">The current persistence context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.LanguageService.GetLanguage(System.Int32)">
+            <summary>
+            Retrieve a <see cref="T:EmbeddedSystems.DomainModel.Language"/>.
+            </summary>
+            <param name="languageId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Language"/> that matches the given <paramref name="languageId"/>.</returns>
+        </member>
+    </members>
+</doc>

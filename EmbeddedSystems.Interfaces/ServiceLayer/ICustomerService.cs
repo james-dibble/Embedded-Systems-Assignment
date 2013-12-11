@@ -18,5 +18,7 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="customerId">The unique identifier of the <see cref="Customer"/>.</param>
         /// <returns>The <see cref="Customer"/> that matches the given <paramref name="customerId"/>.</returns>
         Customer GetCustomer(int customerId);
+
+        Customer CreateCustomer(string name, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel);
     }
 }

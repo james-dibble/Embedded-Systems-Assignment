@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmbeddedSystems.Security</name>
+    </assembly>
+    <members>
+        <member name="T:EmbeddedSystems.Security.AuthenticatedHandset">
+            <summary>
+            An <see cref="T:System.Security.Principal.IIdentity"/> that is used to represent a <see cref="T:EmbeddedSystems.DomainModel.Handset"/> that 
+            has made an authenticated request.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Security.AuthenticatedHandset.#ctor(EmbeddedSystems.DomainModel.HandsetRental)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Security.AuthenticatedHandset"/> class.
+            </summary>
+            <param name="rental">The <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> that was used to authenticate the request.</param>
+        </member>
+        <member name="P:EmbeddedSystems.Security.AuthenticatedHandset.Rental">
+            <summary>
+            Gets the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> object.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Security.AuthenticatedHandset.Name">
+            <summary>
+            Gets the name of the current user.
+            </summary>
+            <returns>
+            The name of the user on whose behalf the code is running.
+            </returns>
+        </member>
+        <member name="P:EmbeddedSystems.Security.AuthenticatedHandset.AuthenticationType">
+            <summary>
+            Gets the type of authentication used.
+            </summary>
+            <returns>
+            The type of authentication used to identify the user.
+            </returns>
+        </member>
+        <member name="P:EmbeddedSystems.Security.AuthenticatedHandset.IsAuthenticated">
+            <summary>
+            Gets a value indicating whether the user has been authenticated.
+            </summary>
+            <returns>
+            true if the user was authenticated; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:EmbeddedSystems.Security.AuthorizationService">
+            <summary>
+            A class to authenticate <see cref="T:EmbeddedSystems.DomainModel.Handset"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Security.AuthorizationService.#ctor(EmbeddedSystems.ServiceLayer.IHandsetService)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Security.AuthorizationService"/> class.
+            </summary>
+            <param name="handsetService">The <see cref="T:EmbeddedSystems.ServiceLayer.IHandsetService"/> to use.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Security.AuthorizationService.AuthenticateHandsetRental(System.Int32,System.Int32)">
+            <summary>
+            Confirm that a handset can be used using the given <paramref name="pin"/>.
+            </summary>
+            <param name="handsetNumber">The <see cref="T:EmbeddedSystems.DomainModel.Handset"/> unique identifier.</param>
+            <param name="pin">The identification number to authorize the use of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
+            <returns>
+            The <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> represented by the given information or null if the information
+            does not correspond to a valid <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>.
+            </returns>
+        </member>
+        <member name="T:EmbeddedSystems.Security.RequiresAuthenticationAttribute">
+            <summary>
+            A marker attribute to mark actions that require authentication.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Security.RequiresAuthenticationFilter">
+            <summary>
+            An attribute to define methods that require basic authentication to be used by the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Security.RequiresAuthenticationFilter.#ctor(EmbeddedSystems.Security.IAuthorizationService)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Security.RequiresAuthenticationFilter"/> class.
+            </summary>
+            <param name="authorizationService">An a service to process handset authentication.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Security.RequiresAuthenticationFilter.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Occurs before the action method is invoked.
+            </summary>
+            <param name="actionContext">The action context.</param>
+        </member>
+    </members>
+</doc>

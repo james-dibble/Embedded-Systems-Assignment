@@ -63,6 +63,7 @@
     <Compile Include="ServiceLayer\ICustomerService.cs" />
     <Compile Include="ServiceLayer\IExhibitService.cs" />
     <Compile Include="ServiceLayer\IHandsetService.cs" />
+    <Compile Include="ServiceLayer\IKnowledgeLevelService.cs" />
     <Compile Include="ServiceLayer\ILanguageService.cs" />
   </ItemGroup>
   <ItemGroup>

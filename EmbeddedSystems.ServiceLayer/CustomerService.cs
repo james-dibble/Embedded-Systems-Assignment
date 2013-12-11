@@ -36,5 +36,24 @@ namespace EmbeddedSystems.ServiceLayer
 
             return customer;
         }
+
+
+        public Customer CreateCustomer(string name, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel)
+        {
+            var newCustomer = new Customer
+            {
+                Name = name,
+                MobileNumber = mobile,
+                Address = address,
+                Language = language,
+                KnowledgeLevel = knowledgeLevel
+            };
+
+            this._persistence.GetRepository<Customer>().Add(newCustomer);
+
+            this._persistence.Commit();
+
+            return newCustomer;
+        }
     }
 }

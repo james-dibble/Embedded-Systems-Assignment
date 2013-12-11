@@ -8,6 +8,7 @@ namespace EmbeddedSystems.ServiceLayer
     using System.Collections.Generic;
 
     using EmbeddedSystems.DomainModel;
+using System;
 
     /// <summary>
     /// Implementing classes define methods for interacting with <see cref="Handset"/>s.
@@ -20,5 +21,9 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="handsetNumber">The unique identifier of the <see cref="Handset"/>.</param>
         /// <returns>A collection of the <see cref="HandsetRental"/>s for the given <see cref="Handset"/>.</returns>
         IEnumerable<HandsetRental> GetRentalsOfHandset(int handsetNumber);
+
+        HandsetRental RentHandset(Customer customer);
+
+        IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom); 
     }
 }

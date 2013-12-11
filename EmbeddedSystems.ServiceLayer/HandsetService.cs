@@ -5,12 +5,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using EmbeddedSystems.DomainModel;
+    using EmbeddedSystems.Persistence;
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
-
-    using EmbeddedSystems.DomainModel;
-    using EmbeddedSystems.Persistence;
 
     /// <summary>
     /// A class for interacting with <see cref="Handset"/>s.
@@ -18,6 +18,7 @@ namespace EmbeddedSystems.ServiceLayer
     public class HandsetService : IHandsetService
     {
         private readonly IUnitOfWork _persistence;
+        private readonly Random _randomNumberGenerator;
 
         /// <summary>
         /// Initialises a new instance of the <see cref="HandsetService"/> class.
@@ -26,6 +27,7 @@ namespace EmbeddedSystems.ServiceLayer
         public HandsetService(IUnitOfWork persistence)
         {
             this._persistence = persistence;
+            this._randomNumberGenerator = new Random();
         }
 
         /// <summary>
@@ -41,6 +43,38 @@ namespace EmbeddedSystems.ServiceLayer
                 this._persistence.GetRepository<HandsetRental>().GetMany(hr => hr.Handset.HandsetNumber == number);
 
             return rentals;
+        }
+        
+        public HandsetRental RentHandset(Customer customer)
+        {
+            var handset = this.GetAvailableHandsets(DateTime.Now).First();
+
+            var rental = new HandsetRental
+            {
+                Customer = customer,
+                Handset = handset,
+                WhenRentedOut = DateTime.Now,
+                RentalExpires = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 23, 59, 59),
+                Pin = this.GeneratePin()
+            };
+
+            this._persistence.GetRepository<HandsetRental>().Add(rental);
+
+            this._persistence.Commit();
+
+            return rental;
+        }
+
+
+        public IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom)
+        {
+            // For now just get all handsets.
+            return this._persistence.GetRepository<Handset>().GetAll();
+        }
+
+        private int GeneratePin()
+        {
+            return this._randomNumberGenerator.Next(0, 9999);
         }
     }
 }

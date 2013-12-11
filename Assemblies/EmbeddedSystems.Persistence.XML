@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmbeddedSystems.Persistence</name>
+    </assembly>
+    <members>
+        <member name="T:EmbeddedSystems.Persistence.Context">
+            <summary>
+            The persistence context for the solution.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Context.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Persistence.Context"/> class.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Context.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            This method is called when the model for a derived context has been initialized, but
+                        before the model has been locked down and used to initialize the context.  The default
+                        implementation of this method does nothing, but it can be overridden in a derived class
+                        such that the model can be further configured before it is locked down.
+            </summary>
+            <remarks>
+            Typically, this method is called only once when the first instance of a derived context
+                        is created.  The model for that context is then cached and is for all further instances of
+                        the context in the app domain.  This caching can be disabled by setting the ModelCaching
+                        property on the given ModelBuilder, but note that this can seriously degrade performance.
+                        More control over caching is provided through use of the DBModelBuilder and DBContextFactory
+                        classes directly.
+            </remarks>
+            <param name="modelBuilder">The builder that defines the model for the context being created. </param>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.AudioFiles">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.Customers">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.Exhibits">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.Handsets">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Handset"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.HandsetRentals">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.KnowledgeLevels">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.Context.Languages">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Language"/> set.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.Migrations.InitialCreate">
+            <summary>
+            <see cref="T:System.Data.Entity.Migrations.DbMigration"/> for creating the database.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Migrations.InitialCreate.Up">
+            <summary>
+            Operations to be performed during the upgrade process.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Migrations.InitialCreate.Down">
+            <summary>
+            Operations to be performed during the downgrade process.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.Migrations.Configuration">
+            <summary>
+            The configuration for Entity Framework Migrations.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Migrations.Configuration.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Persistence.Migrations.Configuration"/> class.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Migrations.Configuration.Seed(EmbeddedSystems.Persistence.Context)">
+            <summary>
+            Runs after upgrading to the latest migration to allow seed data to be updated.
+            </summary>
+            <param name="context">Context to be used for updating seed data. </param>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.Repository`1">
+            <summary>
+            A class to wrap and normalize access to database contexts.
+            </summary>
+            <typeparam name="TEntity">The type of entity this repository manages.</typeparam>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Persistence.Repository`1"/> class.
+            </summary>
+            <param name="context">The context to work from.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.Add(`0)">
+            <summary>
+            Place a <typeparamref name="TEntity"/> into the <see cref="T:EmbeddedSystems.Persistence.IRepository`1"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to add.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.Update(`0)">
+            <summary>
+            Change a <typeparamref name="TEntity"/>. Only call this if you are updating an entity 
+            that has not previously come from a <see cref="T:System.Data.Entity.DbContext"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to change.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.Delete(`0)">
+            <summary>
+            Remove a <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to remove.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Delete a group of <typeparamref name="TEntity"/>s using a given criterion.
+            </summary>
+            <param name="where">The criteria by which to delete <typeparamref name="TEntity"/>s.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get a <typeparamref name="TEntity"/> using a given criterion where it would be expected
+            that only one should be found.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>.</param>
+            <returns>The <typeparamref name="TEntity"/> or null if none could be found.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get the first <typeparamref name="TEntity"/> from a collection derived from a given
+            criterion.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>.</param>
+            <returns>The first <typeparamref name="TEntity"/> or null if none could be found.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.GetAll">
+            <summary>
+            Retrieve all the known <typeparamref name="TEntity"/>s.
+            </summary>
+            <returns>All the known <typeparamref name="TEntity"/>s.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.Repository`1.GetMany(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Retrieve a collection of <typeparamref name="TEntity"/>s defined by a criterion.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>s.</param>
+            <returns>A collection of <typeparamref name="TEntity"/>s.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.UnitOfWork">
+            <summary>
+            A class to store a database context to be injected into services so they all shared
+            the same data resource.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.UnitOfWork.#ctor(System.Data.Entity.DbContext)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.Persistence.UnitOfWork"/> class.
+            </summary>
+            <param name="context">The current database context.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.UnitOfWork.Commit">
+            <summary>
+            Save call changes that have been made to the context.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.UnitOfWork.GetRepository``1">
+            <summary>
+            Retrieve an instance of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to access the persistence layer.
+            </summary>
+            <typeparam name="T">The type of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to create.</typeparam>
+            <returns>An instance of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to access the persistence layer.</returns>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.UnitOfWork.CurrentContext">
+            <summary>
+            Gets the active <see cref="T:System.Data.Entity.DbContext"/> for this <see cref="T:EmbeddedSystems.Persistence.IUnitOfWork"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

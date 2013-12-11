@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EmbeddedSystems.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:EmbeddedSystems.Persistence.IPersistenceContext">
+            <summary>
+            Implementing classes define methods of accessing the persistence layer.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.AudioFiles">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.Customers">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.Exhibits">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.Handsets">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Handset"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.HandsetRentals">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.KnowledgeLevels">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/> set.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IPersistenceContext.Languages">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Language"/> set.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.IRepository">
+            <summary>
+            Non-generic base interface so that repos can be held in invariant collections.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.IRepository`1">
+            <summary>
+            Implementing classes define methods for managing a persistence source of a given type.
+            </summary>
+            <typeparam name="TEntity">
+            The type of entity that this <see cref="T:EmbeddedSystems.Persistence.IRepository`1"/> should manage.
+            </typeparam>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.Add(`0)">
+            <summary>
+            Place a <typeparamref name="TEntity"/> into the <see cref="T:EmbeddedSystems.Persistence.IRepository`1"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to add.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.Update(`0)">
+            <summary>
+            Change a <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to change.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.Delete(`0)">
+            <summary>
+            Remove a <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="entity">The <typeparamref name="TEntity"/> to remove.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Delete a group of <typeparamref name="TEntity"/>s using a given criterion.
+            </summary>
+            <param name="where">The criteria by which to delete <typeparamref name="TEntity"/>s.</param>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get a <typeparamref name="TEntity"/> using a given criterion where it would be expected
+            that only one should be found.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>.</param>
+            <returns>The <typeparamref name="TEntity"/> or null if none could be found.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Get the first <typeparamref name="TEntity"/> from a collection derived from a given
+            criterion.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>.</param>
+            <returns>The first <typeparamref name="TEntity"/> or null if none could be found.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.GetAll">
+            <summary>
+            Retrieve all the known <typeparamref name="TEntity"/>s.
+            </summary>
+            <returns>All the known <typeparamref name="TEntity"/>s.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IRepository`1.GetMany(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Retrieve a collection of <typeparamref name="TEntity"/>s defined by a criterion.
+            </summary>
+            <param name="where">The criteria by which to find the <typeparamref name="TEntity"/>s.</param>
+            <returns>A collection of <typeparamref name="TEntity"/>s.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.Persistence.IUnitOfWork">
+            <summary>
+            Implementing classes define a class to store a database context to be injected into services so they all shared
+            the same data resource.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IUnitOfWork.Commit">
+            <summary>
+            Save call changes that have been made to the context.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Persistence.IUnitOfWork.GetRepository``1">
+            <summary>
+            Retrieve an instance of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to access the persistence layer.
+            </summary>
+            <typeparam name="T">The type of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to create.</typeparam>
+            <returns>An instance of <see cref="T:EmbeddedSystems.Persistence.IRepository"/> to access the persistence layer.</returns>
+        </member>
+        <member name="P:EmbeddedSystems.Persistence.IUnitOfWork.CurrentContext">
+            <summary>
+            Gets the active <see cref="T:System.Data.Entity.DbContext"/> for this <see cref="T:EmbeddedSystems.Persistence.IUnitOfWork"/>.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Security.IAuthenticatedHandset">
+            <summary>
+            Implementing classes define an <see cref="T:System.Security.Principal.IIdentity"/> that represents a <see cref="T:EmbeddedSystems.DomainModel.Handset"/>
+            being used.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.Security.IAuthenticatedHandset.Rental">
+            <summary>
+            Gets the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> object.
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.Security.IAuthorizationService">
+            <summary>
+            Implementing classes define methods to authenticate a <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.Security.IAuthorizationService.AuthenticateHandsetRental(System.Int32,System.Int32)">
+            <summary>
+            Confirm that a handset can be used using the given <paramref name="pin"/>.
+            </summary>
+            <param name="handsetNumber">The <see cref="T:EmbeddedSystems.DomainModel.Handset"/> unique identifier.</param>
+            <param name="pin">The identification number to authorize the use of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
+            <returns>
+            The <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> represented by the given information or null if the information
+            does not correspond to a valid <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>.
+            </returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.IAudioFileService">
+            <summary>
+            Implementing classes define methods to interact with <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IAudioFileService.GetFile(EmbeddedSystems.DomainModel.Exhibit,EmbeddedSystems.DomainModel.KnowledgeLevel,EmbeddedSystems.DomainModel.Language)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.
+            </summary>
+            <param name="exhibit">The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> to get the audio file for.</param>
+            <param name="knowledgeLevel">The <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
+            <param name="language">The <see cref="T:EmbeddedSystems.DomainModel.Language"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
+            <returns>An <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> that corresponds to the given information.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.ICustomerService">
+            <summary>
+            Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Customer"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ICustomerService.GetCustomer(System.Int32)">
+            <summary>
+            Retrieve a <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
+            </summary>
+            <param name="customerId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Customer"/> that matches the given <paramref name="customerId"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.IExhibitService">
+            <summary>
+            Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IExhibitService.GetExhibit(System.Int32)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
+            </summary>
+            <param name="exhibitId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> that matches the given <paramref name="exhibitId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IExhibitService.GetExhibitByHandsetKey(System.Int32)">
+            <summary>
+            Retrieve an <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
+            </summary>
+            <param name="handsetKey">The key number on the handset for this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.IHandsetService">
+            <summary>
+            Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Handset"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetRentalsOfHandset(System.Int32)">
+            <summary>
+            Get the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for a given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+            <param name="handsetNumber">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
+            <returns>A collection of the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for the given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.ILanguageService">
+            <summary>
+            Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ILanguageService.GetLanguage(System.Int32)">
+            <summary>
+            Retrieve a <see cref="T:EmbeddedSystems.DomainModel.Language"/>.
+            </summary>
+            <param name="languageId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</param>
+            <returns>The <see cref="T:EmbeddedSystems.DomainModel.Language"/> that matches the given <paramref name="languageId"/>.</returns>
+        </member>
+    </members>
+</doc>

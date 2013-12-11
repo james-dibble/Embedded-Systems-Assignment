@@ -52,6 +52,7 @@
     <Compile Include="CustomerService.cs" />
     <Compile Include="ExhibitService.cs" />
     <Compile Include="HandsetService.cs" />
+    <Compile Include="KnowledgeLevelService.cs" />
     <Compile Include="LanguageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
