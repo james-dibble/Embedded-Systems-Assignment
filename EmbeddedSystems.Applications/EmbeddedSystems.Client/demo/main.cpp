@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QString audio_one = "mms://esd.jdibble.biz:8080/ESD/levels.mp3";
-    QString audio_two = "http://www.wavsource.com/snds_2013-11-17_1534218342679325/animals/bird.wav";
+    QString audio_two = "mms://esd.jdibble.biz:8080/ESD/Dancing.mp3";
     QString audio_three = "http://www.wavsource.com/snds_2013-11-17_1534218342679325/animals/cow3.wav";
 
     int selected = 0;
