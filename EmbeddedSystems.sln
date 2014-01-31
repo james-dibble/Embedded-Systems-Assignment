@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Services.Ki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Kiosk", "EmbeddedSystems.Applications\EmbeddedSystems.Kiosk\EmbeddedSystems.Kiosk.csproj", "{4317A342-FADE-4184-88CC-AEAD2664BE8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Admin", "EmbeddedSystems.Admin\EmbeddedSystems.Admin.csproj", "{9CFEB7D2-838F-4E33-806A-2433F1AFA018}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,12 @@ Global
 		{4317A342-FADE-4184-88CC-AEAD2664BE8B}.Integration|Any CPU.Build.0 = Release|Any CPU
 		{4317A342-FADE-4184-88CC-AEAD2664BE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4317A342-FADE-4184-88CC-AEAD2664BE8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Integration|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Integration|Any CPU.Build.0 = Release|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,5 +117,9 @@ Global
 		{14DAD2BB-C492-49CB-827A-D4BE157EC33B} = {6A4BAA13-6FE6-42FF-9269-E5E084AAB96F}
 		{E1C29E5B-34B2-4710-AFDD-3F9544B41A7F} = {458AD3B7-C50F-4415-9108-20054A0CBA47}
 		{4317A342-FADE-4184-88CC-AEAD2664BE8B} = {458AD3B7-C50F-4415-9108-20054A0CBA47}
+		{9CFEB7D2-838F-4E33-806A-2433F1AFA018} = {458AD3B7-C50F-4415-9108-20054A0CBA47}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201311070005225_InitialCreate.cs" />
-    <Compile Include="Migrations\201311070005225_InitialCreate.Designer.cs">
-      <DependentUpon>201311070005225_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201401301333173_AddColumns.cs" />
+    <Compile Include="Migrations\201401301333173_AddColumns.Designer.cs">
+      <DependentUpon>201401301333173_AddColumns.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311070005225_InitialCreate.resx">
-      <DependentUpon>201311070005225_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201401301333173_AddColumns.resx">
+      <DependentUpon>201401301333173_AddColumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

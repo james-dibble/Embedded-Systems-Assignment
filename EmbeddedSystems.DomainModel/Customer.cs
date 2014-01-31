@@ -16,6 +16,11 @@ namespace EmbeddedSystems.DomainModel
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the email of this <see cref="ICustomer"/>.
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
         /// Gets or sets the mobile telephone number of this <see cref="ICustomer"/>.
         /// </summary>
         public string MobileNumber { get; set; }

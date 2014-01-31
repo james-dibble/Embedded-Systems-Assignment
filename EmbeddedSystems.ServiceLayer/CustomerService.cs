@@ -37,7 +37,6 @@ namespace EmbeddedSystems.ServiceLayer
             return customer;
         }
 
-
         public Customer CreateCustomer(string name, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel)
         {
             var newCustomer = new Customer

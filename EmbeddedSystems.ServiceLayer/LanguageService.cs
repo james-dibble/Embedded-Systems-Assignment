@@ -7,6 +7,7 @@ namespace EmbeddedSystems.ServiceLayer
 {
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="Language"/>s.
@@ -34,6 +35,17 @@ namespace EmbeddedSystems.ServiceLayer
             var language = this._persistence.GetRepository<Language>().Single(l => l.Id == languageId);
 
             return language;
+        }
+
+        /// <summary>
+        /// Retrieve all <see cref="Language"/>s
+        /// </summary>
+        /// <returns>All of the <see cref="Language"/>s in the DB.</returns>
+        public IEnumerable<Language> GetAll()
+        {
+            var languages = this._persistence.GetRepository<Language>().GetAll();
+            
+            return languages;
         }
     }
 }

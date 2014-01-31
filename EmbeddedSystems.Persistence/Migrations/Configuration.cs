@@ -17,7 +17,7 @@ namespace EmbeddedSystems.Persistence.Migrations
         /// </summary>
         public Configuration()
         {
-            this.AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = true;
             this.ContextKey = "EmbeddedSystems.Persistence.Context";
         }
 
