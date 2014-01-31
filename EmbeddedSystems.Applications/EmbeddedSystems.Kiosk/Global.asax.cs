@@ -24,6 +24,7 @@ namespace EmbeddedSystems.Kiosk
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewEngines.Engines.Insert(0, new LocalisedViewEngine());
         }
+
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
             //It's important to check whether session object is ready
@@ -36,7 +37,7 @@ namespace EmbeddedSystems.Kiosk
                 if (ci == null)
                 {
                     //Sets default culture to english invariant
-                    string langName = "en-US";
+                    string langName = "en-GB";
 
                     //Try to get values from Accept lang HTTP header
                     if (HttpContext.Current.Request.UserLanguages != null && HttpContext.Current.Request.UserLanguages.Length != 0)
