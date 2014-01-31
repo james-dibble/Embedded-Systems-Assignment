@@ -7,13 +7,8 @@ using System.Web.Mvc;
 
 namespace EmbeddedSystems.Kiosk.Controllers
 {
-    public class TestController : Controller
+    public class AccountController : Controller
     {
-        public ActionResult Index(string args)
-        {
-            return View();
-        }
-
         public ActionResult ChangeCulture(string lang, string returnUrl)
         {
             Session["Culture"] = new CultureInfo(lang);
