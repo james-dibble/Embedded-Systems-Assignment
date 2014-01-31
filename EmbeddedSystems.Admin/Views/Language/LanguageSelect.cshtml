@@ -1,3 +1,0 @@
-﻿@model IEnumerable<EmbeddedSystems.DomainModel.Language>
-
-@this.Html.DropDownList("languageId", this.Model.Select(l => new SelectListItem() { Text = l.Name, Value = l.Id.ToString() }))

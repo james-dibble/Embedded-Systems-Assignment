@@ -1,3 +1,0 @@
-﻿@model IEnumerable<EmbeddedSystems.DomainModel.KnowledgeLevel>
-
-@this.Html.DropDownList("knowledgeLevelId", this.Model.Select(kl => new SelectListItem() { Text = kl.Description, Value = kl.Id.ToString() }))
