@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Admin Console</title>
-    <link type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/yeti/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="//netdna.bootstrapcdn.com/bootswatch/3.1.0/yeti/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,15 +14,17 @@
     @*<div class="col-lg-2 col-md-2 col-sm-2" style="padding-left:0; position:fixed; height:100%;">
         @Html.Partial("_SideMenuBar")
     </div>*@
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
     <div class="col-lg-10 col-md-10 col-sm-10" style="margin-top:20px;">
         @RenderBody()
     </div>
-
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
     <footer>
         @Html.Partial("_Footer")
     </footer>
 
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+        @RenderSection("Scripts", false)
 </body>
 </html>

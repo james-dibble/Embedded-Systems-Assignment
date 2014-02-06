@@ -6,6 +6,7 @@
 
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Collections.Generic;
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
     
@@ -41,27 +42,51 @@ namespace EmbeddedSystems.ServiceLayer
         /// Create a new customer.
         /// </summary>
         /// <param name="name">The name of the new customer.</param>
+        /// <param name="email">The email address of the new customer.</param>
         /// <param name="mobile">The mobile number of the new customer.</param>
         /// <param name="address">The address of the new customer.</param>
         /// <param name="language">The language of the new customer.</param>
         /// <param name="knowledgeLevel">The knowledge level of the new customer.</param>
         /// <returns>The newly created customer.</returns>
-        public Customer CreateCustomer(string name, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel)
+        public Customer CreateCustomer(string name, string email, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel)
         {
             var newCustomer = new Customer
             {
                 Name = name,
+                Email = email,
                 MobileNumber = mobile,
                 Address = address,
                 Language = language,
                 KnowledgeLevel = knowledgeLevel
             };
 
-            this._persistence.GetRepository<Customer>().Add(newCustomer);
-
-            this._persistence.Commit();
+            this.CreateCustomer(newCustomer);
 
             return newCustomer;
+        }
+
+        /// <summary>
+        /// Create a new customer with a given customer object.
+        /// </summary>
+        /// <param name="customer">The customer to be added.</param>
+        /// <returns>The newly created customer.</returns>
+        public Customer CreateCustomer(Customer customer)
+        {
+            this._persistence.GetRepository<Customer>().Add(customer);
+            this._persistence.Commit();
+
+            return customer;
+        }
+
+        /// <summary>
+        /// Get all of the customers.
+        /// </summary>
+        /// <returns>All of the customers.</returns>
+        public IEnumerable<Customer> GetAllCustomers()
+        {
+            var allCustomers = this._persistence.GetRepository<Customer>().GetAll();
+
+            return allCustomers;
         }
     }
 }

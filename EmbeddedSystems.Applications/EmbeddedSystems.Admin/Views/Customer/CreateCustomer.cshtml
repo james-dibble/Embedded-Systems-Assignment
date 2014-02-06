@@ -1,0 +1,26 @@
+﻿@model EmbeddedSystems.DomainModel.Customer
+
+<div class="form-group">
+    @Html.LabelFor(c=>c.Name, "Name")
+    @Html.TextBoxFor(c=>c.Name, new { @class="form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(c=>c.Email,"Email")
+    @Html.TextBoxFor(c=>c.Email, new { @class="form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(c=>c.MobileNumber, "Mobile Number")
+    @Html.TextBoxFor(c=>c.MobileNumber, new { @class="form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(c=>c.Address, "Address")
+    @Html.TextBoxFor(c=>c.Address, new { @class="form-control"})
+</div>
+<div class="form-group">
+    @Html.Label("languageId", "Language")
+    @Html.Action("LanguageSelect","Language")
+</div>
+<div class="form-group">
+    @Html.Label("knowledgeLevelId", "Knowledge Level")
+    @Html.Action("KnowledgeLevelSelect","KnowledgeLevel")
+</div>

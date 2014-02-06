@@ -33,6 +33,13 @@ namespace EmbeddedSystems.ServiceLayer
         /// </summary>
         /// <param name="dateAvailableFrom">The DateTime you want to check.</param>
         /// <returns>A collection of available handsets.</returns>
-        IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom); 
+        IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom);
+
+        /// <summary>
+        /// Get all of the handsets for a given customer.
+        /// </summary>
+        /// <param name="customerId">The id of the customer.</param>
+        /// <returns>A collection containing all of the rentals belonging to a customer.</returns>
+        IEnumerable<HandsetRental> GetAllRentalsForCustomer(int customerId);
     }
 }

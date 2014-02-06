@@ -105,7 +105,9 @@ namespace EmbeddedSystems.Persistence
         /// <returns>All the known <typeparamref name="TEntity"/>s.</returns>
         public IEnumerable<TEntity> GetAll()
         {
-            return this._entities;
+            var entities = this._entities;
+            
+            return entities;
         }
 
         /// <summary>

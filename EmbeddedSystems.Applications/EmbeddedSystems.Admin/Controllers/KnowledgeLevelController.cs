@@ -12,6 +12,11 @@
             this._knowledgeLevelService = knowledgeLevelService;
         }
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult KnowledgeLevelSelect()
         {
             var knowledgeLevels = this._knowledgeLevelService.GetAll();

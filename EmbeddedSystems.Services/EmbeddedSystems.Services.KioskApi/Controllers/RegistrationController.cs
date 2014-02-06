@@ -30,7 +30,7 @@
             var language = this._languageService.GetLanguage(customerDetails.LanguageId);
             var knowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(customerDetails.KnowledgeLevelId);
 
-            var customer = this._customerService.CreateCustomer(customerDetails.Name, customerDetails.Mobile, customerDetails.Address, language, knowledgeLevel);
+            var customer = this._customerService.CreateCustomer(customerDetails.Name, customerDetails.Email, customerDetails.Mobile, customerDetails.Address, language, knowledgeLevel);
 
             var rental = this._handsetService.RentHandset(customer);
 

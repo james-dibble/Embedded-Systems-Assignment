@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace EmbeddedSystems.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class ExhibitController : Controller
     {
         public ActionResult Index()
         {

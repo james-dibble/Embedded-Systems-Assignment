@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.HandsetRental>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>Handset Number</td>
+            <td>Date Rented</td>
+            <td>Pin Used</td>
+            <td>Expiry Date</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rental in this.Model)
+        {
+            <tr>
+                <td>@rental.Handset.HandsetNumber</td>
+                <td>@rental.WhenRentedOut</td>
+                <td>@rental.Pin</td>
+                <td>@rental.RentalExpires</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot></tfoot>
+</table>

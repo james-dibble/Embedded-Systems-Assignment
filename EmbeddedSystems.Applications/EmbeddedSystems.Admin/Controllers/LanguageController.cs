@@ -12,6 +12,11 @@
             this._languageService = LanguageService;
         }
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult LanguageSelect()
         {
             var languages = this._languageService.GetAll();

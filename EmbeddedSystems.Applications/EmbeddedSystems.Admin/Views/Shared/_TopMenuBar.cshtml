@@ -11,20 +11,19 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
-            <li><a href="#">New Rental</a></li>
-
+            <li><a href="@this.Url.Action("NewRental","Rental")"><span class="glyphicon glyphicon-plus"></span>&nbsp;New Rental</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage&nbsp;<b class="caret"></b></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;Customers</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-gbp"></span>&nbsp;Rentals</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-th"></span>&nbsp;Handsets</a></li>
+                    <li><a href="@this.Url.Action("Index","Customer")"><span class="glyphicon glyphicon-user"></span>&nbsp;Customers</a></li>
+                    <li><a href="@this.Url.Action("Index","Rental")"><span class="glyphicon glyphicon-gbp"></span>&nbsp;Rentals</a></li>
+                    <li><a href="@this.Url.Action("Index","Handset")"><span class="glyphicon glyphicon-calendar"></span>&nbsp;Handsets</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;Exhibits</a></li>
+                    <li><a href="@this.Url.Action("Index","Exhibit")"><span class="glyphicon glyphicon-home"></span>&nbsp;Exhibits</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-music"></span>&nbsp;Audio Files</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-globe"></span>&nbsp;Languages</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-book"></span>&nbsp;Knowledge Levels</a></li>
+                    <li><a href="@this.Url.Action("Index","Audio")"><span class="glyphicon glyphicon-music"></span>&nbsp;Audio Files</a></li>
+                    <li><a href="@this.Url.Action("Index","Language")"><span class="glyphicon glyphicon-globe"></span>&nbsp;Languages</a></li>
+                    <li><a href="@this.Url.Action("Index","KnowledgeLevel")"><span class="glyphicon glyphicon-book"></span>&nbsp;Knowledge Levels</a></li>
                 </ul>
             </li>
         </ul>

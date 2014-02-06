@@ -71,6 +71,18 @@ namespace EmbeddedSystems.ServiceLayer
         }
 
         /// <summary>
+        /// Get all rentals for a given customer.
+        /// </summary>
+        /// <param name="customerId">The id of the customer.</param>
+        /// <returns>A collection of handset rentals belonging to a customer.</returns>
+        public IEnumerable<HandsetRental> GetAllRentalsForCustomer(int customerId)
+        {
+            var allCustomerRentals = this._persistence.GetRepository<HandsetRental>().GetMany(hs => hs.Customer.Id == customerId);
+
+            return allCustomerRentals;
+        }
+
+        /// <summary>
         /// Get the available handsets.
         /// </summary>
         /// <param name="dateAvailableFrom">The date from which will be checked.</param>

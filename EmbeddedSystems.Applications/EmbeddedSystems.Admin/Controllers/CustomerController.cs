@@ -11,27 +11,30 @@ namespace EmbeddedSystems.Admin.Controllers
     public class CustomerController : Controller
     {
         private readonly ILanguageService _languageService;
+        private readonly ICustomerService _customerService;
+        private readonly IKnowledgeLevelService _knowledgeLevelService;
 
-        public CustomerController(ILanguageService languageService)
+        public CustomerController(ICustomerService customerService, ILanguageService languageService, IKnowledgeLevelService knowledgeLevelService)
         {
+            this._customerService = customerService;
             this._languageService = languageService;
+            this._knowledgeLevelService = knowledgeLevelService;
         }
 
         public ActionResult Index()
         {
-            return View();
+            var Model = this._customerService.GetAllCustomers();
+            return View(Model);
         }
 
-        public ActionResult EditCustomer()
+        public ActionResult AddCustomer(Customer customer, int languageId, int knowledgeLevelId)
         {
+            this._customerService.CreateCustomer(customer);
+
+            customer.Language = this._languageService.GetLanguage(languageId);
+            customer.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(knowledgeLevelId);
+
             return View();
         }
-
-        [HttpPost]
-        public ActionResult EditCustomer(Customer customer, int knowledgeLevelId, int languageId)
-        {
-            return View();
-        }
-
     }
 }
