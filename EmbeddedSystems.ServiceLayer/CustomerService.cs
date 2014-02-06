@@ -37,6 +37,15 @@ namespace EmbeddedSystems.ServiceLayer
             return customer;
         }
 
+        /// <summary>
+        /// Create a new customer.
+        /// </summary>
+        /// <param name="name">The name of the new customer.</param>
+        /// <param name="mobile">The mobile number of the new customer.</param>
+        /// <param name="address">The address of the new customer.</param>
+        /// <param name="language">The language of the new customer.</param>
+        /// <param name="knowledgeLevel">The knowledge level of the new customer.</param>
+        /// <returns>The newly created customer.</returns>
         public Customer CreateCustomer(string name, string mobile, string address, Language language, KnowledgeLevel knowledgeLevel)
         {
             var newCustomer = new Customer
