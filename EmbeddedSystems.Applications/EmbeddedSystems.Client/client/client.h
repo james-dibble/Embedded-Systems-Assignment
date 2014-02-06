@@ -2,7 +2,7 @@
 #define CLIENT_H
 
 #include "clientIncludes.h"
-#include "networkclass.h"
+#include "network.h"
 
 class Client
 {
@@ -14,7 +14,12 @@ public:
     bool authenticateDevice();
 
 private:
-    NetworkClass network;
+    Network network;
+
+    int authenticateNumber = 123;
+    int pin = 1234;
 };
 
 #endif // CLIENT_H
+
+// colon base 64

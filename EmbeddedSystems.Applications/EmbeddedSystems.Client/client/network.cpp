@@ -1,6 +1,6 @@
-#include "networkclass.h"
+#include "network.h"
 
-NetworkClass::NetworkClass(QObject *parent) :
+Network::Network(QObject *parent) :
     QObject(parent)
 //{
 //}
@@ -21,11 +21,11 @@ NetworkClass::NetworkClass(QObject *parent) :
      QObject::connect(networkMan, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyReceived(QNetworkReply*)));
 }
 
-NetworkClass::~NetworkClass()
+Network::~Network()
 {
 }
 
-QByteArray NetworkClass::getRequest(QUrl url)
+QByteArray Network::getRequest(QUrl url)
 {
     QByteArray response;
 
@@ -35,6 +35,7 @@ QByteArray NetworkClass::getRequest(QUrl url)
 //    request.setHeader( QNetworkRequest::ContentTypeHeader, "some/type" );
 
     request.setRawHeader("User-Agent", "PINTS");
+//    request.setHeader();
 
     networkMan->get(request);
 
@@ -43,14 +44,14 @@ QByteArray NetworkClass::getRequest(QUrl url)
     return response;
 }
 
-QUrl NetworkClass::getTrackLocation()
+QUrl Network::getTrackLocation()
 {
     QUrl url;
 
     return url;
 }
 
-QByteArray NetworkClass::replyReceived(QNetworkReply* reply)
+QByteArray Network::replyReceived(QNetworkReply* reply)
 {
     QByteArray replyData;
     qDebug() << "reply received";
@@ -62,8 +63,6 @@ QByteArray NetworkClass::replyReceived(QNetworkReply* reply)
         } else {
             qDebug() << "the error" << reply->error();
         }
-
-
 
     return replyData;
 }

@@ -15,5 +15,15 @@
 
 enum class Exhibit{EXHIBIT_1, EXHIBIT_2, EXHIBIT_3};
 
+const QString baseUrl = "http://esd.jdibble.biz/";
+
 
 #endif // CLIENTINCLUDES_H
+
+
+// const QString qstr = "http://esd.jdibble.biz/";
+/*
+ *http://handset.api.esd.jdibble.biz/
+ *
+ *api/handset/authenticate
+ */

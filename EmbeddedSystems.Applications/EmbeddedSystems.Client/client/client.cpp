@@ -1,5 +1,7 @@
 #include "client.h"
 
+extern const QString baseUrl;
+
 Client::Client()
 {
 }
@@ -19,6 +21,8 @@ void Client::startClient()
     }
 
     qDebug() << "Authenticated";
+
+    network.getRequest(baseUrl);
 }
 
 /*

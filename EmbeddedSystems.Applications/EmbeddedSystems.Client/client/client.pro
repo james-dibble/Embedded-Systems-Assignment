@@ -16,12 +16,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    networkclass.cpp \
-    client.cpp
+    client.cpp \
+    network.cpp
 
 HEADERS += \
-    networkclass.h \
     client.h \
-    clientIncludes.h
+    clientIncludes.h \
+    network.h
 
 QMAKE_CXXFLAGS += -std=c++11
