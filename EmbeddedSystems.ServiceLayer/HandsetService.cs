@@ -5,12 +5,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
-    using EmbeddedSystems.DomainModel;
-    using EmbeddedSystems.Persistence;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using EmbeddedSystems.DomainModel;
+    using EmbeddedSystems.Persistence;
 
     /// <summary>
     /// A class for interacting with <see cref="Handset"/>s.
@@ -45,6 +45,11 @@ namespace EmbeddedSystems.ServiceLayer
             return rentals;
         }
         
+        /// <summary>
+        /// Rent a handset.
+        /// </summary>
+        /// <param name="customer">The customer requesting the handset rental.</param>
+        /// <returns>A new handset rental.</returns>
         public HandsetRental RentHandset(Customer customer)
         {
             var handset = this.GetAvailableHandsets(DateTime.Now).First();
@@ -65,13 +70,21 @@ namespace EmbeddedSystems.ServiceLayer
             return rental;
         }
 
-
+        /// <summary>
+        /// Get the available handsets.
+        /// </summary>
+        /// <param name="dateAvailableFrom">The date from which will be checked.</param>
+        /// <returns>A collection of available handsets.</returns>
         public IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom)
         {
             // For now just get all handsets.
             return this._persistence.GetRepository<Handset>().GetAll();
         }
 
+        /// <summary>
+        /// Generate a 4 digit pin number.
+        /// </summary>
+        /// <returns>The generated pin number.</returns>
         private int GeneratePin()
         {
             return this._randomNumberGenerator.Next(1000, 9999);
