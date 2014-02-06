@@ -14,7 +14,7 @@ namespace EmbeddedSystems.Services.HandsetApi
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            UnityConfig.RegisterComponents();
+            UnityConfig.Initialise();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             ApiFilterConfig.RegisterWebApiFilters(GlobalConfiguration.Configuration.Filters);

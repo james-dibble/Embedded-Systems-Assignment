@@ -6,12 +6,13 @@
 namespace EmbeddedSystems.Services.HandsetApi
 {
     using System.Web.Http;
+    using System.Web.Http.Filters;
 
     using EmbeddedSystems.Security;
 
     public class ApiFilterConfig
     {
-        public static void RegisterWebApiFilters(System.Web.Http.Filters.HttpFilterCollection filters)
+        public static void RegisterWebApiFilters(HttpFilterCollection filters)
         {
             var authorizationService =
                 (IAuthorizationService)GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(IAuthorizationService));
