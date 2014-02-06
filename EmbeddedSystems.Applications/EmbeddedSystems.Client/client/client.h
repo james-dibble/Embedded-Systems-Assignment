@@ -16,8 +16,7 @@ public:
 private:
     Network network;
 
-    int authenticateNumber = 123;
-    int pin = 1234;
+
 };
 
 #endif // CLIENT_H

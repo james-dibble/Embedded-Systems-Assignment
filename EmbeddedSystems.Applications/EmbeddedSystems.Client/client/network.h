@@ -14,7 +14,8 @@ public:
 
 private:
     QNetworkAccessManager* networkMan;
-
+    int deviceName = 123;
+    int pin = 1234;
 
 signals:
 
