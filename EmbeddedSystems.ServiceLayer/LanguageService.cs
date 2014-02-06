@@ -5,9 +5,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Collections.Generic;
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
-    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="Language"/>s.
@@ -38,7 +38,7 @@ namespace EmbeddedSystems.ServiceLayer
         }
 
         /// <summary>
-        /// Retrieve all <see cref="Language"/>s
+        /// Retrieve all <see cref="Language"/>s.
         /// </summary>
         /// <returns>All of the <see cref="Language"/>s in the DB.</returns>
         public IEnumerable<Language> GetAll()

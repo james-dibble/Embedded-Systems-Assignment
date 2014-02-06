@@ -1,0 +1,33 @@
+﻿@using (Html.BeginForm("GetForm", "Home"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Kiosk Sign Up</legend>
+        <ol>
+            <li>
+                @Html.Label("FirstName", "First Name")
+                @Html.TextBox("FirstName")
+            </li>
+            <li>
+                @Html.Label("LastName", "Last Name")
+                @Html.TextBox("LastName")
+
+
+            </li>
+            <li>
+                @Html.Label("Address", "Address")
+                @Html.TextBox("Address")
+
+            </li>
+            <li>
+                @Html.Label("MobileNumber", "Mobile Number")
+                @Html.TextBox("Mobile")
+
+
+            </li>
+        </ol>
+        <input type="submit" value="Submit" />
+    </fieldset>
+}

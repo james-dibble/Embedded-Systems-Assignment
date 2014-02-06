@@ -28,7 +28,7 @@
         public HandsetRental Post([FromBody] RegisterCustomerModel customerDetails)
         {
             var language = this._languageService.GetLanguage(customerDetails.LanguageId);
-            var knowledgeLevel = this._knowledgeLevelService.GetKnowldegeLevel(customerDetails.KnowledgeLevelId);
+            var knowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(customerDetails.KnowledgeLevelId);
 
             var customer = this._customerService.CreateCustomer(customerDetails.Name, customerDetails.Mobile, customerDetails.Address, language, knowledgeLevel);
 

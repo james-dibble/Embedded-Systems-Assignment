@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Interfaces", "EmbeddedSystems.Interfaces\EmbeddedSystems.Interfaces.csproj", "{4B949AD2-D089-4643-A9B2-A714CE520D4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{850CBDF7-0318-45D3-8F27-F361F9E24559}"
@@ -34,14 +32,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Services.Ki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Kiosk", "EmbeddedSystems.Applications\EmbeddedSystems.Kiosk\EmbeddedSystems.Kiosk.csproj", "{4317A342-FADE-4184-88CC-AEAD2664BE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Admin", "EmbeddedSystems.Admin\EmbeddedSystems.Admin.csproj", "{9CFEB7D2-838F-4E33-806A-2433F1AFA018}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FBE900BE-83A4-4741-AE94-8D44F7BE9192}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmbeddedSystems.Admin", "EmbeddedSystems.Applications\EmbeddedSystems.Admin\EmbeddedSystems.Admin.csproj", "{9CFEB7D2-838F-4E33-806A-2433F1AFA018}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
