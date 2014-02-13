@@ -36,5 +36,19 @@ namespace EmbeddedSystems.Admin.Controllers
 
             return View();
         }
+
+        public ActionResult GetCustomerById(int customerId)
+        {
+            var Model = this._customerService.GetCustomer(customerId);
+
+            return this.PartialView("~/Views/Rental/CustomerRental.cshtml", Model);
+        }
+
+        public ActionResult CustomerSelect()
+        {
+            var customers = this._customerService.GetAllCustomers();
+
+            return this.PartialView(customers);
+        }
     }
 }

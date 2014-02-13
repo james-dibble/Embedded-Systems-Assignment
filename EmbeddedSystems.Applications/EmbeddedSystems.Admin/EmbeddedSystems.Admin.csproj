@@ -237,6 +237,30 @@
   <ItemGroup>
     <Content Include="Views\Rental\CustomerRental.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\CustomerDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rental\AddRentalForCustomer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\CustomerSelect.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Customer\ExistingCustomer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Handset\HandsetSelect.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Handset\CreateHandset.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Handset\ReturnHandset.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Audio\ExhibitAudio.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -3,6 +3,8 @@
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+using System.Collections;
+using System.Collections.Generic;
 namespace EmbeddedSystems.DomainModel
 {
     /// <summary>
@@ -14,5 +16,7 @@ namespace EmbeddedSystems.DomainModel
         /// Gets or sets the number of this <see cref="IHandset"/>.
         /// </summary>
         public string HandsetNumber { get; set; }
+
+        public virtual ICollection<HandsetRental> Rentals { get; set; }
     }
 }

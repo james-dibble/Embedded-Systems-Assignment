@@ -10,6 +10,7 @@ namespace EmbeddedSystems.ServiceLayer
 
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="AudioFile"/>s.
@@ -47,6 +48,13 @@ namespace EmbeddedSystems.ServiceLayer
             file.FilePath = Path.Combine(ConfigurationManager.AppSettings["RemoteAudioFilePath"], file.FilePath);
 
             return file;
+        }
+
+        public IEnumerable<AudioFile> GetFilesForExhibit(int exhibitId)
+        {
+            var files = this._persistence.GetRepository<AudioFile>().GetMany(af => af.Exhibit.Id == exhibitId);
+
+            return files;
         }
     }
 }

@@ -1,0 +1,3 @@
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.Handset>
+
+@this.Html.DropDownList("handsetId", this.Model.Select(h => new SelectListItem() { Text = h.HandsetNumber, Value = h.Id.ToString() }), new { @class="form-control" })

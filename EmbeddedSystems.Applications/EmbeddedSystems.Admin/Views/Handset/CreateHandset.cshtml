@@ -1,0 +1,16 @@
+﻿@model EmbeddedSystems.DomainModel.Handset
+
+@using (Html.BeginForm("AddHandset", "Handset"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset>
+        <legend style="display: none;"></legend>
+        <div class="form-group">
+            @Html.Label("handset", "Handset Number")
+            @Html.TextBoxFor(h => h.HandsetNumber, new { @class = "form-control" })
+        </div>
+        <button type="submit" value="Submit" class="btn btn-default btn-sm">Submit</button>
+    </fieldset>
+}

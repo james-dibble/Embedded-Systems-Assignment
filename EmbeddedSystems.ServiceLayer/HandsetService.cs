@@ -90,7 +90,14 @@ namespace EmbeddedSystems.ServiceLayer
         public IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom)
         {
             // For now just get all handsets.
-            return this._persistence.GetRepository<Handset>().GetAll();
+            //return this._persistence.GetRepository<Handset>().GetAll();
+
+            var handsets = this._persistence.GetRepository<Handset>().GetAll();
+
+            var availableHandsets = handsets.Where(h => h.Rentals.All(hr => hr.RentalExpires < DateTime.Now));
+
+            return availableHandsets;
+
         }
 
         /// <summary>
@@ -100,6 +107,46 @@ namespace EmbeddedSystems.ServiceLayer
         private int GeneratePin()
         {
             return this._randomNumberGenerator.Next(1000, 9999);
+        }
+
+        public IEnumerable<HandsetRental> GetAllRentals()
+        {
+            return this._persistence.GetRepository<HandsetRental>().GetAll();
+        }
+
+        public IEnumerable<Handset> GetAllHandsets()
+        {
+            return this._persistence.GetRepository<Handset>().GetAll();
+        }
+
+        public Handset GetHandset(int handsetId)
+        {
+            return this._persistence.GetRepository<Handset>().Single(x => x.Id == handsetId);
+        }
+
+        public HandsetRental GetCurrentRentalForHandset(int handsetId)
+        {
+           return this._persistence.GetRepository<HandsetRental>().GetMany(hr=>hr.HandsetId == handsetId)
+               .FirstOrDefault(hr => hr.WhenRentedOut < DateTime.Now && hr.RentalExpires > DateTime.Now);
+        }
+
+        public void ExpireRental(HandsetRental rental)
+        {
+            rental.RentalExpires = DateTime.Now;
+            this._persistence.Commit();
+        }
+
+        public Handset CreateHandset(string handsetNumber)
+        {
+            var handset = new Handset
+            {
+                HandsetNumber = handsetNumber
+            };
+
+            this._persistence.GetRepository<Handset>().Add(handset);
+            this._persistence.Commit();
+
+            return handset;
         }
     }
 }

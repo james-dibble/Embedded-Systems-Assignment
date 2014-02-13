@@ -6,6 +6,7 @@
 namespace EmbeddedSystems.ServiceLayer
 {
     using EmbeddedSystems.DomainModel;
+using System.Collections.Generic;
 
     /// <summary>
     /// Implementing classes define methods for interacting with <see cref="Exhibit"/>s.
@@ -25,5 +26,7 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="handsetKey">The key number on the handset for this <see cref="Exhibit"/>.</param>
         /// <returns>The <see cref="Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
         Exhibit GetExhibitByHandsetKey(int handsetKey);
+
+        IEnumerable<Exhibit> GetAllExhibits();
     }
 }

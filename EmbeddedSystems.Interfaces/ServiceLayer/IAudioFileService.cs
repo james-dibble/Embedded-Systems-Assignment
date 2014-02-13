@@ -6,6 +6,7 @@
 namespace EmbeddedSystems.ServiceLayer
 {
     using EmbeddedSystems.DomainModel;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Implementing classes define methods to interact with <see cref="AudioFile"/>s.
@@ -20,5 +21,7 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="language">The <see cref="Language"/> of the <see cref="Customer"/> so they get the right <see cref="AudioFile"/>.</param>
         /// <returns>An <see cref="AudioFile"/> that corresponds to the given information.</returns>
         AudioFile GetFile(Exhibit exhibit, KnowledgeLevel knowledgeLevel, Language language);
+
+        IEnumerable<AudioFile> GetFilesForExhibit(int exhibitId);
     }
 }

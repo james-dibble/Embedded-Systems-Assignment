@@ -36,5 +36,7 @@ namespace EmbeddedSystems.DomainModel
         /// Gets or sets the identification code the <see cref="ICustomer"/> must use to access the <see cref="IHandset"/>.
         /// </summary>
         public int Pin { get; set; }
+
+        public int HandsetId { get; set; }
     }
 }

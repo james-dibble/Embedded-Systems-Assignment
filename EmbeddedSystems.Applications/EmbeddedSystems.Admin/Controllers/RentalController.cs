@@ -25,7 +25,9 @@ namespace EmbeddedSystems.Admin.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var model = this._handsetService.GetAllRentals();
+
+            return View(model);
         }
 
         public ActionResult NewRental()
@@ -41,7 +43,16 @@ namespace EmbeddedSystems.Admin.Controllers
 
             this._customerService.CreateCustomer(customer);
             this._handsetService.RentHandset(customer);
-            return this.Content("COMPLETE");
+            return this.Content("COMPLETE :)");
+        }
+
+        [HttpPost]
+        public ActionResult NewRentalExistingCustomer(int customerId)
+        {
+            var customer = this._customerService.GetCustomer(customerId);
+            this._handsetService.RentHandset(customer);
+
+            return this.Content("COMPLETE :)");
         }
 
         public ActionResult GetRentalByCustomer(int customerId)

@@ -41,5 +41,30 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="customerId">The id of the customer.</param>
         /// <returns>A collection containing all of the rentals belonging to a customer.</returns>
         IEnumerable<HandsetRental> GetAllRentalsForCustomer(int customerId);
+
+        /// <summary>
+        /// Get all of the rentals that have occurred.
+        /// </summary>
+        /// <returns>All of the rentals.</returns>
+        IEnumerable<HandsetRental> GetAllRentals();
+
+        /// <summary>
+        /// Get all of the handsets.
+        /// </summary>
+        /// <returns>Return a collection of all the handsets.</returns>
+        IEnumerable<Handset> GetAllHandsets();
+
+        /// <summary>
+        /// Get a handset by a given id.
+        /// </summary>
+        /// <param name="handsetId">The id of the requested handset.</param>
+        /// <returns>The handset.</returns>
+        Handset GetHandset(int handsetId);
+
+        HandsetRental GetCurrentRentalForHandset(int handsetId);
+
+        void ExpireRental(HandsetRental rental);
+
+        Handset CreateHandset(string handsetNumber);
     }
 }

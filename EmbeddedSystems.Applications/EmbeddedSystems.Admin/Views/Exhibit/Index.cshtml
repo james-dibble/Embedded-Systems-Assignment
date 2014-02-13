@@ -1,1 +1,58 @@
-﻿<h1>Exhibit</h1>
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.Exhibit>
+
+<h1>Exhibit</h1>
+<div class="col-lg-6">
+    <h2>Add Exhibit</h2>
+
+</div>
+<div class="col-lg-6">
+    <h2>All Exhibits</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead></thead>
+            <tbody>
+                @foreach (var exhibit in this.Model)
+                {
+                    <tr>
+                        <td>@exhibit.Name</td>
+                        <td>
+                            <button id="@exhibit.Id" class="btn btn-default btn-xs pull-right" data-customer-id="@exhibit.Id" data-toggle="modal" data-target="#myModal">View Audio Files</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Audio Files</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/Images/loading-lg.gif" alt="Loading..." style="display: block; margin: auto auto;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $('#myModal').on('show.bs.modal', function (e) {
+            var exhibitId = $(e.relatedTarget).data("exhibit-id");
+
+            $.get('@Url.Action("GetAudioFilesByExhibit", "Exhibit")/' + customerId, function (data) {
+            $('#myModal .modal-body').html(data);
+        });
+    });
+    </script>
+}

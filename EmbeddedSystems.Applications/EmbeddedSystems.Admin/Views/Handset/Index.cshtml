@@ -1,1 +1,34 @@
-﻿<h1>Handset</h1>
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.Handset>
+
+<h1>Handsets</h1>
+<div class="col-lg-4">
+    <h2>Add Handset</h2>
+    @Html.Partial("~/Views/Handset/CreateHandset.cshtml", new EmbeddedSystems.DomainModel.Handset())
+</div>
+<div class="col-lg-4">
+    <h2>Return Handset</h2>
+    @Html.Partial("~/Views/Handset/ReturnHandset.cshtml")
+
+</div>
+<div class="col-lg-4">
+    <h2>All Handsets</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>Handset Number</td>
+                    <td>Is Available</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var handset in this.Model)
+                {
+                    <tr>
+                        <td>@handset.HandsetNumber</td>
+                        <td>@handset.Rentals.All(hr => hr.RentalExpires < DateTime.Now)</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>

@@ -1,0 +1,14 @@
+﻿@using (Html.BeginForm("ExpireRental", "Handset"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset>
+        <legend style="display: none;"></legend>
+        <div class="form-group">
+            @Html.Label("handsetId", "Handset")
+            @Html.Action("HandsetSelect", "Handset")
+        </div>
+        <button type="submit" value="Submit" class="btn btn-default btn-sm">Submit</button>
+    </fieldset>
+}

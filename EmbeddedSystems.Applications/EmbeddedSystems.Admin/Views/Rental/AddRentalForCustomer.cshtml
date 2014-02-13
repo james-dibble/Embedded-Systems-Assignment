@@ -1,0 +1,13 @@
+﻿@model EmbeddedSystems.DomainModel.Customer
+
+@using (Html.BeginForm("NewRentalExistingCustomer", "Rental"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset>
+        <legend></legend>
+        @Html.Partial("~/Views/Customer/ExistingCustomer.cshtml")
+        <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+    </fieldset>
+}

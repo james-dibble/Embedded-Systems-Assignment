@@ -20,6 +20,12 @@ namespace EmbeddedSystems.Admin
             );
 
             routes.MapRoute(
+                name: "GetCustomerId",
+                url: "{controller}/{action}/{customerId}",
+                defaults: new { controller = "Customer", action = "GetCustomerById" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

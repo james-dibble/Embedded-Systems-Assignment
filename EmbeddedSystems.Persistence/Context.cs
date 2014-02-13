@@ -92,7 +92,7 @@ namespace EmbeddedSystems.Persistence
             modelBuilder.Entity<Customer>().HasRequired(c => c.KnowledgeLevel);
 
             modelBuilder.Entity<HandsetRental>().HasRequired(hr => hr.Customer);
-            modelBuilder.Entity<HandsetRental>().HasRequired(hr => hr.Handset);
+            modelBuilder.Entity<HandsetRental>().HasRequired(hr => hr.Handset);            
         }
     }
 }
