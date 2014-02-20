@@ -1,0 +1,9 @@
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.KnowledgeLevel>
+
+@foreach (var knowledgeLevel in Model)
+{
+    <div class="form-group">
+        @Html.Label("level" + knowledgeLevel.Id, "Audio for level: " + knowledgeLevel.Description)
+        <input type="file" name="'level' + @knowledgeLevel.Id" class="form-control" />
+    </div>
+}

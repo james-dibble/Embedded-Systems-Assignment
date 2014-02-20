@@ -26,5 +26,9 @@ namespace EmbeddedSystems.ServiceLayer
         /// <param name="knowledgeLevelId">The id of the required knowledge level.</param>
         /// <returns>The knowledge level requested.</returns>
         KnowledgeLevel GetKnowledgeLevel(int knowledgeLevelId);
+
+        KnowledgeLevel AddKnowledgeLevel(string knowledgeLevelDesc);
+
+        KnowledgeLevel AddKnowledgeLevel(KnowledgeLevel knowledgeLevel);
     }
 }

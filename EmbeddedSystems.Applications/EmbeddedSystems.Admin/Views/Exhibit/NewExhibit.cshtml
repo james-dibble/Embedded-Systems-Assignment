@@ -1,0 +1,10 @@
+﻿@model EmbeddedSystems.DomainModel.Exhibit
+
+<div class="form-group">
+    @Html.LabelFor(e=>e.Name, "Name")
+    @Html.TextBoxFor(e=>e.Name, new { @class="form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(e => e.HandsetKey, "Exhibit Number")
+    @Html.TextBoxFor(e => e.HandsetKey, new { type="number", @class = "form-control" })
+</div>

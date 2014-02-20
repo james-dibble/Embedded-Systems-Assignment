@@ -1,0 +1,16 @@
+﻿@model EmbeddedSystems.DomainModel.Language
+
+@using (Html.BeginForm("AddLanguage", "Language"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset>
+        <legend></legend>
+        <div class="form-group">
+            @Html.LabelFor(l => l.Name, "Language")
+            @Html.TextBoxFor(l => l.Name, new { @class = "form-control" })
+        </div>
+        <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+    </fieldset>
+}

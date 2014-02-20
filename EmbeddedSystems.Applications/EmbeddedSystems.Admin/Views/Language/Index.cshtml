@@ -1,1 +1,30 @@
-﻿<h1>Language</h1>
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.Language>
+
+<h1>Languages</h1>
+<div class="col-lg-6">
+    <h2>Add Language</h2>
+
+    @Html.Partial("~/Views/Language/AddLanguage.cshtml", new EmbeddedSystems.DomainModel.Language())
+
+</div>
+<div class="col-lg-6">
+    <h2>All Languages</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>Language</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var language in this.Model)
+                {
+                    <tr>
+                        <td>@language.Name</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</div>

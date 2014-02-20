@@ -25,5 +25,9 @@ namespace EmbeddedSystems.ServiceLayer
         /// </summary>
         /// <returns>All of the <see cref="Language"/>s in the DB.</returns>
         IEnumerable<Language> GetAll();
+
+        Language AddLanguage(string languageName);
+
+        Language AddLanguage(Language language);
     }
 }

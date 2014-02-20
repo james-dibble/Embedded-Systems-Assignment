@@ -43,7 +43,7 @@ namespace EmbeddedSystems.Admin.Controllers
 
             this._customerService.CreateCustomer(customer);
             this._handsetService.RentHandset(customer);
-            return this.Content("COMPLETE :)");
+            return this.RedirectToAction("Index", "Rental");
         }
 
         [HttpPost]
@@ -52,7 +52,7 @@ namespace EmbeddedSystems.Admin.Controllers
             var customer = this._customerService.GetCustomer(customerId);
             this._handsetService.RentHandset(customer);
 
-            return this.Content("COMPLETE :)");
+            return this.RedirectToAction("Index", "Rental");
         }
 
         public ActionResult GetRentalByCustomer(int customerId)

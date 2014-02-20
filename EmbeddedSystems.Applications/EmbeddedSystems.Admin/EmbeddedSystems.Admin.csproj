@@ -261,6 +261,18 @@
   <ItemGroup>
     <Content Include="Views\Audio\ExhibitAudio.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exhibit\NewExhibit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Exhibit\AudioFiles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Language\AddLanguage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\KnowledgeLevel\AddKnowledgeLevel.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

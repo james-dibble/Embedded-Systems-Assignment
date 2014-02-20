@@ -1,0 +1,16 @@
+﻿@model EmbeddedSystems.DomainModel.KnowledgeLevel
+
+@using (Html.BeginForm("AddKnowledgeLevel", "KnowledgeLevel"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    
+    <fieldset>
+        <legend></legend>
+        <div class="form-group">
+            @Html.LabelFor(k => k.Description, "Knowledge Level")
+            @Html.TextBoxFor(k => k.Description, new { @class = "form-control" })
+        </div>
+        <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+    </fieldset>
+}

@@ -19,6 +19,8 @@ namespace EmbeddedSystems.Persistence
         /// </summary>
         public Context() : base("ESDConnection")
         {
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
         }
 
         /// <summary>

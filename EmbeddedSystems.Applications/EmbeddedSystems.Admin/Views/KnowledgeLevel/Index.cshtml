@@ -1,1 +1,28 @@
-﻿<h1>Knowledge Level</h1>
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.KnowledgeLevel>
+
+<h1>Knowledge Levels</h1>
+<div class="col-lg-6">
+    <h2>Add Knowledge Level</h2>
+    @Html.Partial("~/Views/KnowledgeLevel/AddKnowledgeLevel.cshtml", new EmbeddedSystems.DomainModel.KnowledgeLevel())
+</div>
+<div class="col-lg-6">
+    <h2>All Knowledge Levels</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <td>Language</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var knowledgeLevel in this.Model)
+                {
+                    <tr>
+                        <td>@knowledgeLevel.Description</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</div>

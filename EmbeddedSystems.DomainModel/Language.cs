@@ -3,6 +3,7 @@
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+using System.Collections.Generic;
 namespace EmbeddedSystems.DomainModel
 {
     /// <summary>

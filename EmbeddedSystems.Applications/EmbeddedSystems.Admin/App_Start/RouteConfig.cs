@@ -15,13 +15,19 @@ namespace EmbeddedSystems.Admin
 
             routes.MapRoute(
                 name: "RentalCustomerId",
-                url: "{controller}/{action}/{customerId}",
+                url: "Rental/GetRentalByCustomer/{customerId}",
                 defaults: new { controller = "Rental", action = "GetRentalByCustomer" }
             );
 
             routes.MapRoute(
+                name: "AudioFileId",
+                url: "Exhibit/GetAudioFilesByEXHIBIT/{exhibitId}",
+                defaults: new { controller = "Exhibit", action = "GetAudioFilesByExhibit" }
+            );
+
+            routes.MapRoute(
                 name: "GetCustomerId",
-                url: "{controller}/{action}/{customerId}",
+                url: "Customer/GetCustomerById/{customerId}",
                 defaults: new { controller = "Customer", action = "GetCustomerById" }
             );
 

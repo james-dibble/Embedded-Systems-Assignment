@@ -7,6 +7,7 @@ namespace EmbeddedSystems.ServiceLayer
 {
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
+    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="Exhibit"/>s.
@@ -48,9 +49,17 @@ namespace EmbeddedSystems.ServiceLayer
             return exhibit;
         }
 
-        public System.Collections.Generic.IEnumerable<Exhibit> GetAllExhibits()
+        public IEnumerable<Exhibit> GetAllExhibits()
         {
             return this._persistence.GetRepository<Exhibit>().GetAll();
+        }
+
+        public Exhibit CreateExhibit(Exhibit exhibit)
+        {
+            this._persistence.GetRepository<Exhibit>().Add(exhibit);
+            this._persistence.Commit();
+
+            return exhibit;
         }
     }
 }

@@ -9,7 +9,15 @@
     <h2>All Rentals</h2>
     <div class="table-responsive">
         <table class="table table-striped table-hover">
-            <thead></thead>
+            <thead>
+                <tr>
+                    <td>Handset Number</td>
+                    <td>Date Rented</td>
+                    <td>Pin</td>
+                    <td>Rental Expiry</td>
+                    <td>Customer</td>
+                </tr>
+            </thead>
             <tbody>
                 @foreach (var rental in this.Model.OrderByDescending(r => r.RentalExpires).ThenBy(r => r.Customer.Name))
                 {

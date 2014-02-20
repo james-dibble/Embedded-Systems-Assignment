@@ -47,5 +47,24 @@ namespace EmbeddedSystems.ServiceLayer
             
             return languages;
         }
+
+        public Language AddLanguage(string languageName)
+        {
+            var language = new Language()
+            {
+                Name = languageName,
+                FlagUrl = null
+            };
+
+            return this.AddLanguage(language);
+        }
+
+        public Language AddLanguage(Language language)
+        {
+            this._persistence.GetRepository<Language>().Add(language);
+            this._persistence.Commit();
+
+            return language;
+        }
     }
 }

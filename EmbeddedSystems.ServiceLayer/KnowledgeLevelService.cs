@@ -48,5 +48,24 @@ namespace EmbeddedSystems.ServiceLayer
 
             return knowledgeLevels;
         }
+
+
+        public KnowledgeLevel AddKnowledgeLevel(string knowledgeLevelDesc)
+        {
+            var knowledgeLevel = new KnowledgeLevel()
+            {
+                Description = knowledgeLevelDesc
+            };
+
+            return this.AddKnowledgeLevel(knowledgeLevel);
+        }
+
+        public KnowledgeLevel AddKnowledgeLevel(KnowledgeLevel knowledgeLevel)
+        {
+            this._persistence.GetRepository<KnowledgeLevel>().Add(knowledgeLevel);
+            this._persistence.Commit();
+
+            return knowledgeLevel;
+        }
     }
 }

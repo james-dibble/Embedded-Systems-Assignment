@@ -28,5 +28,7 @@ using System.Collections.Generic;
         Exhibit GetExhibitByHandsetKey(int handsetKey);
 
         IEnumerable<Exhibit> GetAllExhibits();
+
+        Exhibit CreateExhibit(Exhibit exhibit);
     }
 }

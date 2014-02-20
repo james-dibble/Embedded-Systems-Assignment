@@ -3,7 +3,17 @@
 <h1>Exhibit</h1>
 <div class="col-lg-6">
     <h2>Add Exhibit</h2>
-
+    @using (Html.BeginForm("AddExhibit", "Exhibit"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend></legend>
+            @Html.Partial("~/Views/Exhibit/NewExhibit.cshtml", new EmbeddedSystems.DomainModel.Exhibit())
+            <button type="submit" value="Submit" class="btn btn-default btn-sm">Submit</button>
+        </fieldset>
+    }
 </div>
 <div class="col-lg-6">
     <h2>All Exhibits</h2>
@@ -16,7 +26,7 @@
                     <tr>
                         <td>@exhibit.Name</td>
                         <td>
-                            <button id="@exhibit.Id" class="btn btn-default btn-xs pull-right" data-customer-id="@exhibit.Id" data-toggle="modal" data-target="#myModal">View Audio Files</button>
+                            <button id="@exhibit.Id" class="btn btn-default btn-xs pull-right" data-exhibit-id="@exhibit.Id" data-toggle="modal" data-target="#myModal">View Audio Files</button>
                         </td>
                     </tr>
                 }
@@ -50,9 +60,9 @@
         $('#myModal').on('show.bs.modal', function (e) {
             var exhibitId = $(e.relatedTarget).data("exhibit-id");
 
-            $.get('@Url.Action("GetAudioFilesByExhibit", "Exhibit")/' + customerId, function (data) {
-            $('#myModal .modal-body').html(data);
+            $.get('@Url.Action("GetAudioFilesByExhibit", "Exhibit")/' + exhibitId, function (data) {
+                $('#myModal .modal-body').html(data);
+            });
         });
-    });
     </script>
 }

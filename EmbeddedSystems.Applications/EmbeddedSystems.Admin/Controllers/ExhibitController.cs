@@ -12,11 +12,15 @@ namespace EmbeddedSystems.Admin.Controllers
     {
         private readonly IAudioFileService _audioFileService;
         private readonly IExhibitService _exhibitService;
+        private readonly IKnowledgeLevelService _knowledgeLevelService;
+        private readonly ILanguageService _languageService;
 
-        public ExhibitController(IAudioFileService audioFileService, IExhibitService exhibitService)
+        public ExhibitController(IAudioFileService audioFileService, IExhibitService exhibitService, IKnowledgeLevelService knowledgeLevelService, ILanguageService languageService)
         {
             this._audioFileService = audioFileService;
             this._exhibitService = exhibitService;
+            this._knowledgeLevelService = knowledgeLevelService;
+            this._languageService = languageService;
         }
 
         public ActionResult Index()
@@ -30,7 +34,27 @@ namespace EmbeddedSystems.Admin.Controllers
         {
             var exhibitFiles = this._audioFileService.GetFilesForExhibit(exhibitId);
 
+            foreach (var file in exhibitFiles)
+            {
+                file.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(file.KnowledgeLevelId);
+                file.Language = this._languageService.GetLanguage(file.LanguageId);
+            }
+
             return this.PartialView("~/Views/Audio/ExhibitAudio.cshtml", exhibitFiles);
+        }
+
+        public ActionResult AddExhibit(Exhibit exhibit)
+        {
+            this._exhibitService.CreateExhibit(exhibit);
+
+            return this.RedirectToAction("Index", "Exhibit");
+        }
+
+        public ActionResult AudioUpload()
+        {
+            var model = this._knowledgeLevelService.GetAll();
+
+            return this.PartialView("~/Views/Exhibit/AudioFiles.cshtml", model);
         }
     }
 }

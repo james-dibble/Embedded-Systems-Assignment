@@ -14,7 +14,9 @@
 
         public ActionResult Index()
         {
-            return View();
+            var model = this._knowledgeLevelService.GetAll();
+
+            return View(model);
         }
 
         public ActionResult KnowledgeLevelSelect()
@@ -22,6 +24,13 @@
             var knowledgeLevels = this._knowledgeLevelService.GetAll();
 
             return this.PartialView(knowledgeLevels);
+        }
+
+        public ActionResult AddKnowledgeLevel(string description)
+        {
+            this._knowledgeLevelService.AddKnowledgeLevel(description);
+
+            return RedirectToAction("Index", "KnowledgeLevel");
         }
     }
 }
