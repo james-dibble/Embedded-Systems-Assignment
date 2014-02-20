@@ -2,9 +2,15 @@
 
 Network::Network(QObject *parent) :
     QObject(parent)
-//{
-//}
-//NetworkClass::NetworkClass()
+{
+
+}
+
+Network::~Network()
+{
+}
+
+void Network::begin()
 {
     networkMan = new QNetworkAccessManager();
 
@@ -17,17 +23,14 @@ Network::Network(QObject *parent) :
      QNetworkProxy::setApplicationProxy(proxy);
      networkMan->setProxy(proxy);
 
-
      QObject::connect(networkMan, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyReceived(QNetworkReply*)));
+
+     // QThread::exec();
 }
 
-Network::~Network()
+QString Network::getRequest(QUrl url)
 {
-}
 
-QByteArray Network::getRequest(QUrl url)
-{
-    QByteArray response;
 
     QNetworkRequest request(url);
     request.setUrl(url);
@@ -45,7 +48,7 @@ QByteArray Network::getRequest(QUrl url)
     QByteArray data ;
     data.append(namePinKey);
 
-    qDebug() << "\nIt should be: MTIzOjEyMzQ=\n";
+    qDebug() << "\nIt should be: MTIzOjEyMzQ=";
     qDebug() << "data base64: " << data.toBase64();
 
     QString headerData = "Basic " + data.toBase64();
@@ -56,22 +59,31 @@ QByteArray Network::getRequest(QUrl url)
     QList<QByteArray> list = request.rawHeaderList();
     qDebug() << list;
 
+    qDebug() << "sending" << url;
     networkMan->get(request);
 
-    qDebug() << url << " & " << url.toString();
+    qDebug() << "get sent to" << url;
 
-    return response;
+   // QMutex locker(&netMutex);
+   // netMutex.lock();
+    qDebug() << "locked";
+ //   QWaitCondition waiter;
+  //  waiter.wait(&netMutex);
+    qDebug() << "waited";
+    return replyString;
 }
 
 QUrl Network::getTrackLocation()
 {
-    QUrl url;
-
+    QUrl url("ik0097@my.bristol.ac.uk");
     return url;
 }
 
-QByteArray Network::replyReceived(QNetworkReply* reply)
+void Network::replyReceived(QNetworkReply* reply)
 {
+   // QMutexLocker locker(&netMutex);
+    qDebug() << "gonna lock";
+  //  netMutex.lock();
     QByteArray replyData;
     qDebug() << "reply received";
     qDebug() << "Qt NetworkCode Error" << reply->error();
@@ -80,8 +92,8 @@ QByteArray Network::replyReceived(QNetworkReply* reply)
     if (reply->error() == QNetworkReply::NoError)
     {
             replyData = reply->readAll();
-            QString str = QString::fromUtf8(replyData.data(), replyData.size());
-            qDebug() << "the reply " << str;
+            replyString = QString::fromUtf8(replyData.data(), replyData.size());
+            qDebug() << "the reply " << replyString;
     }
     else
     {
@@ -89,9 +101,10 @@ QByteArray Network::replyReceived(QNetworkReply* reply)
     //    qDebug() << "the error" << reply->attribute();
             replyData = reply->readAll();
 
-            QString str = QString::fromUtf8(replyData.data(), replyData.size());
-            qDebug() << "the reply " << str;
+            replyString = QString::fromUtf8(replyData.data(), replyData.size());
+            qDebug() << "the reply " << replyString;
     }
 
-    return replyData;
+    emit forwardMessage(replyString);
+    qDebug() << "reprec";
 }

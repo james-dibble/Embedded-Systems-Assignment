@@ -9,20 +9,25 @@ class Network : public QObject
 public:
     explicit Network(QObject *parent = 0);
     ~Network();
-    QByteArray getRequest(QUrl);
     QUrl getTrackLocation();
 
 private:
     QNetworkAccessManager* networkMan;
     int deviceName = 123;
-    int pin = 1234;
+    int pin = 3196;
+    QMutex netMutex;
+    QString replyString;
 
 signals:
+    void forwardMessage(QString);
+    void networkFinished();
 
 public slots:
+    void begin();
+    QString getRequest(QUrl);
 
 private slots:
-    QByteArray replyReceived(QNetworkReply*);
+    void replyReceived(QNetworkReply*);
 };
 
 #endif // NETWORK_H
