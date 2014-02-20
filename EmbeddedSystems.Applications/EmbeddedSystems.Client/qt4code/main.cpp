@@ -8,7 +8,7 @@ using namespace std;
 void playAudioFile(QString track);
 QMediaPlayer::State pauseHandle(QMediaPlayer *player);
 bool muteHandle(QMediaPlayer *player);
-QTime getTotalTime(QMediaPlayer *player);
+void setVolume(QMediaPlayer *player);
 QTime getCurrentTime(QMediaPlayer *player);
 
 int main(int argc, char *argv[])
@@ -16,8 +16,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     QString audio_one = "mms://esd.jdibble.biz:8080/ESD/levels.mp3";
-    QString audio_two = "http://www.wavsource.com/snds_2013-11-17_1534218342679325/animals/bird.wav";
-    QString audio_three = "http://www.wavsource.com/snds_2013-11-17_1534218342679325/animals/cow3.wav";
+    QString audio_two = "mms://esd.jdibble.biz:8080/ESD/Dancing.mp3";
 
     int selected = 0;
 
@@ -35,10 +34,6 @@ int main(int argc, char *argv[])
         case 2:
             cout << "Track streaming from: " << audio_two.toStdString() << endl;
             playAudioFile(audio_two);
-            break;
-        case 3:
-            cout << "Track streaming from: " << audio_three.toStdString() << endl;
-            playAudioFile(audio_three);
             break;
         }
     }
@@ -61,7 +56,7 @@ void playAudioFile(QString track)
     while(player->state() == QMediaPlayer::PlayingState)
     {
 
-        cout << "Stop (0), Pause (1), Mute/Unmute (2): ";
+        cout << "Stop (0), Pause (1), Mute/Unmute (2), Volume (3): ";
         cin >> selected;
 
         switch(selected)
@@ -71,6 +66,8 @@ void playAudioFile(QString track)
         case 1: pauseHandle(player);
             break;
         case 2: muteHandle(player);
+            break;
+        case 3: setVolume(player);
             break;
         default: pauseHandle(player);
         }
@@ -82,7 +79,8 @@ QMediaPlayer::State pauseHandle(QMediaPlayer *player)
 {
     int selected;
     player->pause();
-    cout << "Paused track: " << endl;
+    cout << "Paused track..." << endl;
+    cout << "Position: " << getCurrentTime(player).toString("mm:ss").toStdString() << endl;
     cout << "Stop (0), Play (1): ";
     cin >> selected;
 
@@ -112,24 +110,20 @@ bool muteHandle(QMediaPlayer *player)
         player->setMuted(true); // Mute audio
         cout << "Audio muted..." << endl;
     }
-
+    cout << "Volume: " << player->volume() << endl;
     cout << "Position: " << getCurrentTime(player).toString("mm:ss").toStdString() << endl;
 
     return muteState;
 }
 
-QTime getTotalTime(QMediaPlayer *player)
+void setVolume(QMediaPlayer *player)
 {
-    const qint64 duration = player->duration();
+    int volumeValue;
+    cout << "New Volume: ";
+    cin >> volumeValue;
 
-    int seconds = (duration/1000) % 60;
-    int minutes = (duration/60000) % 60;
-    int hours = (duration/3600000) % 24;
+    player->setVolume(volumeValue);
 
-    QTime time;
-    time.setHMS(hours, minutes, seconds);
-
-    return time;
 }
 
 QTime getCurrentTime(QMediaPlayer *player)
@@ -145,3 +139,4 @@ QTime getCurrentTime(QMediaPlayer *player)
 
     return time;
 }
+
