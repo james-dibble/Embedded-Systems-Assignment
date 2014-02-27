@@ -12,7 +12,9 @@ namespace EmbeddedSystems.Services.HandsetApi
     {
         public static void Register(HttpConfiguration config)
         {
-            config.Routes.MapHttpRoute("GetAudioFile", "api/file/{exhibitId}", new { controller = "File", action = "Get" });
+            config.Routes.MapHttpRoute("GetAudioFile", "file/{exhibitId}", new { controller = "File", action = "Get" });
+
+            config.Routes.MapHttpRoute("Authenticate", "authenticate", new { controller = "Handset", action = "Authenticate" });
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

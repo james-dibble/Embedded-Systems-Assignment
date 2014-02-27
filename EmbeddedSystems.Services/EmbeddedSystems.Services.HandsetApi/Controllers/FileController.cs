@@ -19,7 +19,7 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
         private readonly IExhibitService _exhibitService;
         private readonly ICustomerService _customerService;
 
-        public FileController(IAudioFileService audioFileService, IExhibitService exhibitService, ICustomerService customerService, IAuthorizationService authorizationService)
+        public FileController(IAudioFileService audioFileService, IExhibitService exhibitService, ICustomerService customerService)
         {
             this._audioFileService = audioFileService;
             this._exhibitService = exhibitService;

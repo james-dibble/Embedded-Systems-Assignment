@@ -66,19 +66,19 @@
             Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Language"/> set.
             </summary>
         </member>
-        <member name="T:EmbeddedSystems.Persistence.Migrations.InitialCreate">
+        <member name="T:EmbeddedSystems.Persistence.Migrations.AddColumns">
             <summary>
-            <see cref="T:System.Data.Entity.Migrations.DbMigration"/> for creating the database.
+            Add relevant columns to database table.
             </summary>
         </member>
-        <member name="M:EmbeddedSystems.Persistence.Migrations.InitialCreate.Up">
+        <member name="M:EmbeddedSystems.Persistence.Migrations.AddColumns.Up">
             <summary>
-            Operations to be performed during the upgrade process.
+            Create the columns when migration is used.
             </summary>
         </member>
-        <member name="M:EmbeddedSystems.Persistence.Migrations.InitialCreate.Down">
+        <member name="M:EmbeddedSystems.Persistence.Migrations.AddColumns.Down">
             <summary>
-            Operations to be performed during the downgrade process.
+            Drop the columns if migration is reversed.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.Persistence.Migrations.Configuration">

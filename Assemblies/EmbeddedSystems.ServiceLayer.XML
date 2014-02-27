@@ -42,6 +42,31 @@
             <param name="customerId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.</param>
             <returns>The <see cref="T:EmbeddedSystems.DomainModel.Customer"/> that matches the given <paramref name="customerId"/>.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.CustomerService.CreateCustomer(System.String,System.String,System.String,System.String,EmbeddedSystems.DomainModel.Language,EmbeddedSystems.DomainModel.KnowledgeLevel)">
+            <summary>
+            Create a new customer.
+            </summary>
+            <param name="name">The name of the new customer.</param>
+            <param name="email">The email address of the new customer.</param>
+            <param name="mobile">The mobile number of the new customer.</param>
+            <param name="address">The address of the new customer.</param>
+            <param name="language">The language of the new customer.</param>
+            <param name="knowledgeLevel">The knowledge level of the new customer.</param>
+            <returns>The newly created customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.CustomerService.CreateCustomer(EmbeddedSystems.DomainModel.Customer)">
+            <summary>
+            Create a new customer with a given customer object.
+            </summary>
+            <param name="customer">The customer to be added.</param>
+            <returns>The newly created customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.CustomerService.GetAllCustomers">
+            <summary>
+            Get all of the customers.
+            </summary>
+            <returns>All of the customers.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.ExhibitService">
             <summary>
             A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.
@@ -85,6 +110,57 @@
             <param name="handsetNumber">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
             <returns>A collection of the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for the given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.RentHandset(EmbeddedSystems.DomainModel.Customer)">
+            <summary>
+            Rent a handset.
+            </summary>
+            <param name="customer">The customer requesting the handset rental.</param>
+            <returns>A new handset rental.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.GetAllRentalsForCustomer(System.Int32)">
+            <summary>
+            Get all rentals for a given customer.
+            </summary>
+            <param name="customerId">The id of the customer.</param>
+            <returns>A collection of handset rentals belonging to a customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.GetAvailableHandsets(System.DateTime)">
+            <summary>
+            Get the available handsets.
+            </summary>
+            <param name="dateAvailableFrom">The date from which will be checked.</param>
+            <returns>A collection of available handsets.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.HandsetService.GeneratePin">
+            <summary>
+            Generate a 4 digit pin number.
+            </summary>
+            <returns>The generated pin number.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.KnowledgeLevelService">
+            <summary>
+            Methods for getting and setting information about knowledge levels.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.KnowledgeLevelService.#ctor(EmbeddedSystems.Persistence.IUnitOfWork)">
+            <summary>
+            Initialises a new instance of the <see cref="T:EmbeddedSystems.ServiceLayer.KnowledgeLevelService"/> class.
+            </summary>
+            <param name="persistence">Inject the unit of work so that database calls can be made.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.KnowledgeLevelService.GetKnowledgeLevel(System.Int32)">
+            <summary>
+            Get the knowledge level by id.
+            </summary>
+            <param name="knowledgeLevelId">The id of the knowledge level.</param>
+            <returns>The knowledge level requested.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.KnowledgeLevelService.GetAll">
+            <summary>
+            Get a collection of all the knowledge level.
+            </summary>
+            <returns>The collection of knowledge levels.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.LanguageService">
             <summary>
             A class for interacting with <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
@@ -102,6 +178,12 @@
             </summary>
             <param name="languageId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</param>
             <returns>The <see cref="T:EmbeddedSystems.DomainModel.Language"/> that matches the given <paramref name="languageId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.LanguageService.GetAll">
+            <summary>
+            Retrieve all <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
+            </summary>
+            <returns>All of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>s in the DB.</returns>
         </member>
     </members>
 </doc>

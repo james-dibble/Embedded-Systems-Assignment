@@ -19,7 +19,7 @@ namespace EmbeddedSystems.ServiceLayer
         /// </summary>
         /// <param name="handsetNumber">The unique identifier of the <see cref="Handset"/>.</param>
         /// <returns>A collection of the <see cref="HandsetRental"/>s for the given <see cref="Handset"/>.</returns>
-        IEnumerable<HandsetRental> GetRentalsOfHandset(int handsetNumber);
+        IEnumerable<HandsetRental> GetRentalsOfHandset(string handsetNumber);
 
         /// <summary>
         /// Set a <see cref="Handset"/> to be rented.

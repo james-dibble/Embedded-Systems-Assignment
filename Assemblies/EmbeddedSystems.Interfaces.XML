@@ -186,6 +186,31 @@
             <param name="customerId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.</param>
             <returns>The <see cref="T:EmbeddedSystems.DomainModel.Customer"/> that matches the given <paramref name="customerId"/>.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ICustomerService.CreateCustomer(System.String,System.String,System.String,System.String,EmbeddedSystems.DomainModel.Language,EmbeddedSystems.DomainModel.KnowledgeLevel)">
+            <summary>
+            Will create a new customer and return it.
+            </summary>
+            <param name="name">The name for the new customer.</param>
+            <param name="email">The email address of the new customer.</param>
+            <param name="mobile">The mobile number for the new customer.</param>
+            <param name="address">The address for the new customer.</param>
+            <param name="language">The language for the new customer.</param>
+            <param name="knowledgeLevel">The knowledge level of the new customer.</param>
+            <returns>The new customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ICustomerService.CreateCustomer(EmbeddedSystems.DomainModel.Customer)">
+            <summary>
+            Create a new customer with a customer object.
+            </summary>
+            <param name="customer">The customer to save to the database.</param>
+            <returns>The newly created customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ICustomerService.GetAllCustomers">
+            <summary>
+            Get all of the customers.
+            </summary>
+            <returns>A collection containing all customers.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.IExhibitService">
             <summary>
             Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.
@@ -217,6 +242,64 @@
             <param name="handsetNumber">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
             <returns>A collection of the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for the given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.RentHandset(EmbeddedSystems.DomainModel.Customer)">
+            <summary>
+            Set a <see cref="T:EmbeddedSystems.DomainModel.Handset"/> to be rented.
+            </summary>
+            <param name="customer">The customer renting the handset.</param>
+            <returns>A new handset rental.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetAvailableHandsets(System.DateTime)">
+            <summary>
+            Get the available handsets.
+            </summary>
+            <param name="dateAvailableFrom">The DateTime you want to check.</param>
+            <returns>A collection of available handsets.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetAllRentalsForCustomer(System.Int32)">
+            <summary>
+            Get all of the handsets for a given customer.
+            </summary>
+            <param name="customerId">The id of the customer.</param>
+            <returns>A collection containing all of the rentals belonging to a customer.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetAllRentals">
+            <summary>
+            Get all of the rentals that have occurred.
+            </summary>
+            <returns>All of the rentals.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetAllHandsets">
+            <summary>
+            Get all of the handsets.
+            </summary>
+            <returns>Return a collection of all the handsets.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetHandset(System.Int32)">
+            <summary>
+            Get a handset by a given id.
+            </summary>
+            <param name="handsetId">The id of the requested handset.</param>
+            <returns>The handset.</returns>
+        </member>
+        <member name="T:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService">
+            <summary>
+            Interface for the KnowledgeLevelService.
+            </summary>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService.GetAll">
+            <summary>
+            Get all of the knowledge levels.
+            </summary>
+            <returns>A collection containing all of the knowledge levels.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService.GetKnowledgeLevel(System.Int32)">
+            <summary>
+            Get a Knowledge level by id.
+            </summary>
+            <param name="knowledgeLevelId">The id of the required knowledge level.</param>
+            <returns>The knowledge level requested.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.ILanguageService">
             <summary>
             Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
@@ -228,6 +311,12 @@
             </summary>
             <param name="languageId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</param>
             <returns>The <see cref="T:EmbeddedSystems.DomainModel.Language"/> that matches the given <paramref name="languageId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ILanguageService.GetAll">
+            <summary>
+            Retrieve all <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
+            </summary>
+            <returns>All of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>s in the DB.</returns>
         </member>
     </members>
 </doc>

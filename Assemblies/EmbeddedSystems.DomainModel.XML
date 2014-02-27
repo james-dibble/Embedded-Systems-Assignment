@@ -65,6 +65,11 @@
             Gets or sets the name of this <see cref="!:ICustomer"/>.
             </summary>
         </member>
+        <member name="P:EmbeddedSystems.DomainModel.Customer.Email">
+            <summary>
+            Gets or sets the email of this <see cref="!:ICustomer"/>.
+            </summary>
+        </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.MobileNumber">
             <summary>
             Gets or sets the mobile telephone number of this <see cref="!:ICustomer"/>.
@@ -163,7 +168,12 @@
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Language.Name">
             <summary>
-            Gets or sets the name of this <see cref="!:ILanguage"/>.
+            Gets or sets the name of this <see cref="T:EmbeddedSystems.DomainModel.Language"/>.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.Language.FlagUrl">
+            <summary>
+            Gets or sets the address of the image for this <see cref="T:EmbeddedSystems.DomainModel.Language"/>s flag.
             </summary>
         </member>
     </members>

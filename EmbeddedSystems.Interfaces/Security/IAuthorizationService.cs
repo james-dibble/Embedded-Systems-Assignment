@@ -21,6 +21,6 @@ namespace EmbeddedSystems.Security
         /// The <see cref="HandsetRental"/> represented by the given information or null if the information
         /// does not correspond to a valid <see cref="HandsetRental"/>.
         /// </returns>
-        HandsetRental AuthenticateHandsetRental(int handsetNumber, int pin);
+        HandsetRental AuthenticateHandsetRental(string handsetNumber, int pin);
     }
 }

@@ -35,7 +35,7 @@ namespace EmbeddedSystems.ServiceLayer
         /// </summary>
         /// <param name="handsetNumber">The unique identifier of the <see cref="Handset"/>.</param>
         /// <returns>A collection of the <see cref="HandsetRental"/>s for the given <see cref="Handset"/>.</returns>
-        public IEnumerable<HandsetRental> GetRentalsOfHandset(int handsetNumber)
+        public IEnumerable<HandsetRental> GetRentalsOfHandset(string handsetNumber)
         {
             var number = handsetNumber.ToString(CultureInfo.CurrentCulture);
 

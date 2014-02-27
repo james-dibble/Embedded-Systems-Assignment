@@ -56,7 +56,7 @@ namespace EmbeddedSystems.Security
 
             try
             {
-                var handsetNumber = Convert.ToInt32(tokens.ElementAt(0));
+                var handsetNumber = tokens.ElementAt(0);
                 var handsetPin = Convert.ToInt32(tokens.ElementAt(1));
 
                 var rental = this._authorizationService.AuthenticateHandsetRental(handsetNumber, handsetPin);

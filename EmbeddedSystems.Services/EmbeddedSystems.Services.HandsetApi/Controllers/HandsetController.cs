@@ -10,6 +10,8 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
 
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Security;
+    using System.Net.Http;
+    using System.Net;
 
     public class HandsetController : ApiController
     {
@@ -22,11 +24,16 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
 
         [HttpGet]
         [RequiresAuthentication]
-        public HandsetRental Authenticate()
+        public HttpResponseMessage Authenticate()
         {
             var handset = HttpContext.Current.User.Identity as AuthenticatedHandset;
 
-            return handset.Rental;
+            if (handset == null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.Forbidden);
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }
