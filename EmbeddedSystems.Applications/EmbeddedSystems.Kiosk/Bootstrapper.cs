@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
+using EmbeddedSystems.ServiceLayer;
 
 namespace EmbeddedSystems.Kiosk
 {
@@ -30,7 +31,10 @@ namespace EmbeddedSystems.Kiosk
 
     public static void RegisterTypes(IUnityContainer container)
     {
-    
+        /*container.RegisterType<IHandsetService, HandsetService>();
+        container.RegisterType<ILanguageService, LanguageService>();
+        container.RegisterType<IKnowledgeLevelService, KnowledgeLevelService>();
+        container.RegisterType<ICustomerService, CustomerService>();*/
     }
   }
 }

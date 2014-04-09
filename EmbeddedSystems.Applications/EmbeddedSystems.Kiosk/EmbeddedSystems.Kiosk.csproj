@@ -119,7 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -131,6 +132,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="images\Flags.png" />
+    <Content Include="Styles\KioskStyle.css" />
     <Content Include="Unity.Mvc4.README.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -144,11 +147,43 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\KioskSignUp.en.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Language.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\KioskSignUp.fr.cshtml" />
+    <Content Include="Views\Home\KioskSignUp.de.cshtml" />
+    <Content Include="Views\Home\KioskSignUp.es.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EmbeddedSystems.DomainModel\EmbeddedSystems.DomainModel.csproj">
+      <Project>{025222ce-ea0e-48d3-bbcf-8a53a5fa80a9}</Project>
+      <Name>EmbeddedSystems.DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EmbeddedSystems.Interfaces\EmbeddedSystems.Interfaces.csproj">
+      <Project>{4b949ad2-d089-4643-a9b2-a714ce520d4a}</Project>
+      <Name>EmbeddedSystems.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EmbeddedSystems.ServiceLayer\EmbeddedSystems.ServiceLayer.csproj">
+      <Project>{97370a94-c1f1-49a1-adc1-4858dd5c29ec}</Project>
+      <Name>EmbeddedSystems.ServiceLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Confirm.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

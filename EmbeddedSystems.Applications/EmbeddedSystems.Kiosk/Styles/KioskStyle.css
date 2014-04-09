@@ -1,0 +1,68 @@
+﻿.flag {
+    display: block;
+    width: 389px;
+    height: 261px;
+    background-image: url(/images/Flags.png);
+}
+
+.flag2 {
+    display: block;
+    width: 389px;
+    height: 261px;
+    background-image: url(/images/Flags.png);
+    background-repeat: no-repeat;
+    background-position: -389px 0px;
+}
+
+.flag3 {
+    display: block;
+    width: 389px;
+    height: 261px;
+    background-image: url(/images/Flags.png);
+    background-repeat: no-repeat;
+    background-position: 0px -261px;
+}
+
+.flag4 {
+    display: block;
+    width: 389px;
+    height: 261px;
+    background-image: url(/images/Flags.png);
+    background-repeat: no-repeat;
+    background-position: -389px -261px;
+}
+
+body#lang {
+    margin: 0;
+    background: url(/images/europe-background.png);
+    /*background-size: (1440px 800px);*/
+    background-repeat: no-repeat;
+    display: compact;
+    background-position: center;
+}
+
+.transbox {
+    /*width: 400px;
+    height: 180px;*/
+    margin: 15px -15px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+.fade {
+    opacity: 1;
+}
+
+
+/*.col {
+  padding-left: 20px;
+}*/
+
+.wideBox {
+    width: 150px;
+}
+
+.wideDiv {
+    width: 400px;
+}
