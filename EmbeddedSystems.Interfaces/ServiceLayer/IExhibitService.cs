@@ -27,7 +27,7 @@ using System.Collections.Generic;
         /// <returns>The <see cref="Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
         Exhibit GetExhibitByHandsetKey(int handsetKey);
 
-        IEnumerable<Exhibit> GetAllExhibits();
+        IEnumerable<Exhibit> GetAll();
 
         Exhibit CreateExhibit(Exhibit exhibit);
     }

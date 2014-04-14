@@ -1,0 +1,22 @@
+﻿@model EmbeddedSystems.DomainModel.AudioFile
+@*
+<div class="form-group">
+    @Html.LabelFor(af => af.FileName, "File Name")
+    @Html.TextBoxFor(af => af.FileName, new { @class="form-control" })
+</div>*@
+<div class="form-group">
+    @Html.Label("exhibitId", "Exhibit")
+    @Html.Action("ExhibitSelect","Exhibit")
+</div>
+<div class="form-group">
+    @Html.Label("languageId", "Language")
+    @Html.Action("LanguageSelect","Language")
+</div>
+<div class="form-group">
+    @Html.Label("knowledgeLevelId", "Knowledge Level")
+    @Html.Action("KnowledgeLevelSelect","KnowledgeLevel")
+</div>
+<div class="form-group">
+    @Html.Label("file", "Audio File")
+    @Html.TextBox("file", "", new { type = "file", @class="form-control" })
+</div>

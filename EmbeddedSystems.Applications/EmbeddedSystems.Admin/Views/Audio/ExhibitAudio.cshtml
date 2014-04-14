@@ -3,18 +3,20 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
+            <td>Exhibit</td>
             <td>Knowledge Level</td>
             <td>Language</td>
-            <td>File Path</td>
+            <td>File Name</td>
         </tr>
     </thead>
     <tbody>
         @foreach (var audioFile in this.Model)
         {             
             <tr>
+                <td>@audioFile.Exhibit.Name</td>
                 <td>@audioFile.KnowledgeLevel.Description</td>
                 <td>@audioFile.Language.Name</td>
-                <td>@audioFile.FilePath</td>
+                <td>@audioFile.FileName</td>
             </tr>
         }
     </tbody>

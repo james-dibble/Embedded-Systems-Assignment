@@ -25,7 +25,7 @@ namespace EmbeddedSystems.Admin.Controllers
 
         public ActionResult Index()
         {
-            var allExhibits = this._exhibitService.GetAllExhibits();
+            var allExhibits = this._exhibitService.GetAll();
 
             return View(allExhibits);
         }
@@ -55,6 +55,13 @@ namespace EmbeddedSystems.Admin.Controllers
             var model = this._knowledgeLevelService.GetAll();
 
             return this.PartialView("~/Views/Exhibit/AudioFiles.cshtml", model);
+        }
+
+        public ActionResult ExhibitSelect()
+        {
+            var exhibits = this._exhibitService.GetAll();
+
+            return this.PartialView(exhibits);
         }
     }
 }

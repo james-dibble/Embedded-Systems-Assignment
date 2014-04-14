@@ -1,0 +1,3 @@
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.Exhibit>
+
+@this.Html.DropDownList("exhibitId", this.Model.Select(e => new SelectListItem() { Text = e.Name, Value = e.Id.ToString() }), new { @class="form-control" })

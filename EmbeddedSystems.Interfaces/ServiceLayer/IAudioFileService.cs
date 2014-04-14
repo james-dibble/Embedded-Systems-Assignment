@@ -23,5 +23,9 @@ namespace EmbeddedSystems.ServiceLayer
         AudioFile GetFile(Exhibit exhibit, KnowledgeLevel knowledgeLevel, Language language);
 
         IEnumerable<AudioFile> GetFilesForExhibit(int exhibitId);
+
+        IEnumerable<AudioFile> GetAll();
+
+        AudioFile CreateAudioFile(AudioFile audioFile);
     }
 }

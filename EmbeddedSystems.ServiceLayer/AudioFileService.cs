@@ -56,5 +56,20 @@ namespace EmbeddedSystems.ServiceLayer
 
             return files;
         }
+
+        public IEnumerable<AudioFile> GetAll()
+        {
+            var files = this._persistence.GetRepository<AudioFile>().GetAll();
+
+            return files;
+        }
+
+        public AudioFile CreateAudioFile(AudioFile audioFile)
+        {
+            this._persistence.GetRepository<AudioFile>().Add(audioFile);
+            this._persistence.Commit();
+
+            return audioFile;
+        }
     }
 }

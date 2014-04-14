@@ -49,7 +49,7 @@ namespace EmbeddedSystems.ServiceLayer
             return exhibit;
         }
 
-        public IEnumerable<Exhibit> GetAllExhibits()
+        public IEnumerable<Exhibit> GetAll()
         {
             return this._persistence.GetRepository<Exhibit>().GetAll();
         }

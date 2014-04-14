@@ -1,8 +1,54 @@
-﻿<h1>AUDIO</h1>
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.AudioFile>
 
-<div class="col-lg-6 col-md-6">
-    Upload audio file (pick against an xzibition)
+<h1>Audio Files</h1>
+<div class="col-lg-6">
+    <h2>Add Audio File</h2>
+    @using (Html.BeginForm("AddAudioFile", "Audio"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+    
+        <fieldset>
+            <legend></legend>
+            @Html.Partial("~/Views/Audio/NewAudioFile.cshtml", new EmbeddedSystems.DomainModel.AudioFile())
+            <button type="submit" value="Submit" class="btn btn-default btn-sm">Submit</button>
+        </fieldset>
+    }
 </div>
-<div class="col-lg-6 col-md-6">
-    View a list of all the audio files (from database) and be able to see their assigned xzibit
+<div class="col-lg-6">
+    <h2>All Audio Files</h2>
+    <div class="table-responsive">
+        @Html.Partial("~/Views/Audio/ExhibitAudio.cshtml", this.Model)
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Audio Files</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/Images/loading-lg.gif" alt="Loading..." style="display: block; margin: auto auto;">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+
+        $('#myModal').on('show.bs.modal', function (e) {
+            var exhibitId = $(e.relatedTarget).data("exhibit-id");
+
+            $.get('@Url.Action("GetAudioFilesByExhibit", "Exhibit")/' + exhibitId, function (data) {
+                $('#myModal .modal-body').html(data);
+            });
+        });
+    </script>
+}
