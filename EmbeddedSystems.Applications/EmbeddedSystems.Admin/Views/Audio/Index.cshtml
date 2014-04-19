@@ -3,7 +3,7 @@
 <h1>Audio Files</h1>
 <div class="col-lg-6">
     <h2>Add Audio File</h2>
-    @using (Html.BeginForm("AddAudioFile", "Audio"))
+    @using (Html.BeginForm("AddAudioFile", "Audio", FormMethod.Post, new { enctype="multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary()

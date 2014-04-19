@@ -2,7 +2,10 @@
 using EmbeddedSystems.ServiceLayer;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -29,17 +32,22 @@ namespace EmbeddedSystems.Admin.Controllers
             return View(allfiles);
         }
 
-        public ActionResult AddAudioFile(AudioFile audioFile, int exhibitId, int languageId, int knowledgeLevelId, HttpPostedFileBase file)
+        public async Task<ActionResult> AddAudioFile(AudioFile audioFile, int exhibitId, int languageId, int knowledgeLevelId, HttpPostedFileBase postedAudioFile)
         {
             //upload file & return file path
-            string filePath = "test/test.mp3";
-            
-            this._audioFileService.CreateAudioFile(audioFile);
-            
+            string filePath = Path.Combine(ConfigurationManager.AppSettings["AudioPath"], postedAudioFile.FileName);
+
+            var saveTask = Task.Factory.StartNew(() => postedAudioFile.SaveAs(filePath));
+
+            audioFile.FilePath = filePath;
+            audioFile.FileName = postedAudioFile.FileName;
             audioFile.Exhibit = this._exhibitService.GetExhibit(exhibitId);
             audioFile.Language = this._languageService.GetLanguage(languageId);
             audioFile.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(knowledgeLevelId);
-            audioFile.FilePath = filePath;
+            
+            this._audioFileService.CreateAudioFile(audioFile);
+
+            await saveTask;
 
             return this.RedirectToAction("Index", "Audio");
         }
