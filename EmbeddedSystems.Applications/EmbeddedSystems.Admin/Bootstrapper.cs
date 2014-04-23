@@ -1,12 +1,12 @@
-using System.Web.Mvc;
-using Microsoft.Practices.Unity;
-using Unity.Mvc4;
-using EmbeddedSystems.ServiceLayer;
-using EmbeddedSystems.Persistence;
-using System.Data.Entity;
-
 namespace EmbeddedSystems.Admin
 {
+    using System.Data.Entity;
+    using System.Web.Mvc;
+    using Microsoft.Practices.Unity;
+    using Unity.Mvc4;
+    using EmbeddedSystems.ServiceLayer;
+    using EmbeddedSystems.Persistence;
+
     public static class Bootstrapper
     {
         public static IUnityContainer Initialise()
