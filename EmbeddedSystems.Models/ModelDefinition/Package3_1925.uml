@@ -286,6 +286,7 @@
       <class
         Id="680420e0-3909-4553-a890-48fbca8e131d"
         name="Func"
+        visibility="Private"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">

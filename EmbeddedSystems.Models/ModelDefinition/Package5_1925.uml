@@ -985,5 +985,85 @@
         </ownedRedefinableTemplateSignatureInternal>
       </Interface>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="088e9ae9-4db6-423a-84ad-d11ce2ff2a40"
+        name="ICollection&lt;HandsetRental‎&gt;"
+        isAbstract="false"
+        isLeaf="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="6e41dddc-3f52-4773-90de-11c3d56f76d9"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4a8d5f90-16fc-4e29-8933-c14c05e71f7c">
+                <propertyInstance
+                  Id="cebf3c1c-0c8c-419c-b75a-feb8a003691b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eae04cc6-ab98-437c-9e1f-25226ce13396">
+                <propertyInstance
+                  Id="4715e3c0-def0-46e2-a0ad-fef1e34b9840"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="113aebe8-c0fb-4e89-9b60-990271bc28dd">
+                <propertyInstance
+                  Id="d318df03-4d91-4938-9ac8-6621e94dbbdb"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="46b40ac1-04db-4b0f-a1e9-6a7b28c964d4">
+                <propertyInstance
+                  Id="0cebe895-7a72-4a37-b594-25f4e4b1e71f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <signatures>
+          <templateBinding
+            Id="4696327b-a6b1-4309-bf4f-ca886855999e">
+            <redefinableTemplateSignatureMoniker
+              Id="2ff5dd67-b852-4dcd-bab6-e1ac74e08d1c"
+              LastKnownLocation="Package5_1925.uml" />
+            <relationshipOwnedElementsInternal>
+              <templateBindingHasTemplateParameterSubstitution>
+                <templateParameterSubstitution
+                  Id="d474f60d-ad6d-42b0-88df-309ca7fd43c8">
+                  <actuals>
+                    <classMoniker
+                      Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+                      LastKnownName="HandsetRental"
+                      LastKnownLocation="Package2_1925.uml" />
+                  </actuals>
+                  <formal>
+                    <classifierTemplateParameterMoniker
+                      Id="3ff50a31-e5fc-4c0d-a97c-f3e72d95b97f"
+                      LastKnownLocation="Package5_1925.uml" />
+                  </formal>
+                </templateParameterSubstitution>
+              </templateBindingHasTemplateParameterSubstitution>
+            </relationshipOwnedElementsInternal>
+          </templateBinding>
+        </signatures>
+        <generalsInternal>
+          <generalization
+            Id="e2f968af-eb94-40ec-8618-424fc815e4df"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="e3291d18-033c-4b5e-90da-74718ab2389f"
+              LastKnownName="IEnumerable&lt;HandsetRental‎&gt;"
+              LastKnownLocation="Package5_1925.uml" />
+          </generalization>
+        </generalsInternal>
+      </Interface>
+    </packageHasNamedElement>
   </packagedElements>
 </package>
