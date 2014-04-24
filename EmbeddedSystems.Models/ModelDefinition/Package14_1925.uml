@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="8002d9fd-cf8c-4a39-8db2-51feeafa0440"
+  name="Filters"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="18bcb5b3-205f-4787-a43b-ab9fadecb890"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Web.Http.Filters"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a445bbb4-aae5-4eb0-b3fc-9cb189115ca2"
+        name="ActionFilterAttribute"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="394e0cd2-9699-4bdc-809f-a5a5ee032012"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2Fpackages%2FMicrosoft.AspNet.WebApi.Core.5.0.0%2Flib%2Fnet45%2FSystem.Web.Http.dll Namespace%3DSystem.Web.Http.Filters Type%3DActionFilterAttribute"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="98127b0a-f8b9-4a08-bc79-e9a944e7d03f"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e83443a-1833-4858-866f-342afcb21256">
+                <propertyInstance
+                  Id="7c103b12-07e7-4c53-b6c2-00529478af04"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f144364e-7708-4246-95d8-3730faaaf109">
+                <propertyInstance
+                  Id="3ff6fdca-c8eb-422a-933e-0676baba04cd"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6ec65c75-c6d6-4a87-ba73-fd5547456e85">
+                <propertyInstance
+                  Id="3b750366-19fb-484c-afd6-264cb078b2c9"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4ae9c514-8f73-492a-b890-fbf1ed01a54e">
+                <propertyInstance
+                  Id="6c4da099-53a2-4e98-b2ec-6e6dcabe2cff"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="42b8f821-b825-4e03-8770-ef6339d907cd">
+                <propertyInstance
+                  Id="6828e555-542b-4198-aedf-39aaa56addec"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
