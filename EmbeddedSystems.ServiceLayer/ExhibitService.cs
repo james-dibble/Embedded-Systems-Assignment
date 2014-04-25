@@ -5,9 +5,10 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Collections.Generic;
+
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
-    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="Exhibit"/>s.
@@ -49,11 +50,20 @@ namespace EmbeddedSystems.ServiceLayer
             return exhibit;
         }
 
+        /// <summary>
+        /// Retrieve all known <see cref="Exhibit"/>s.
+        /// </summary>
+        /// <returns>All known <see cref="Exhibit"/>s.</returns>
         public IEnumerable<Exhibit> GetAll()
         {
             return this._persistence.GetRepository<Exhibit>().GetAll();
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="Exhibit"/>.
+        /// </summary>
+        /// <param name="exhibit">A new <see cref="Exhibit"/></param>
+        /// <returns>The persisted <see cref="Exhibit"/>.</returns>
         public Exhibit CreateExhibit(Exhibit exhibit)
         {
             this._persistence.GetRepository<Exhibit>().Add(exhibit);

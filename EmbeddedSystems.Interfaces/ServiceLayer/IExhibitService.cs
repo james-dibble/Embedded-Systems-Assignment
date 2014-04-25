@@ -5,8 +5,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Collections.Generic;
     using EmbeddedSystems.DomainModel;
-using System.Collections.Generic;
 
     /// <summary>
     /// Implementing classes define methods for interacting with <see cref="Exhibit"/>s.
@@ -27,8 +27,17 @@ using System.Collections.Generic;
         /// <returns>The <see cref="Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
         Exhibit GetExhibitByHandsetKey(int handsetKey);
 
+        /// <summary>
+        /// Retrieve all known <see cref="Exhibit"/>s.
+        /// </summary>
+        /// <returns>All known <see cref="Exhibit"/>s.</returns>
         IEnumerable<Exhibit> GetAll();
 
+        /// <summary>
+        /// Build and persist a new <see cref="Exhibit"/>.
+        /// </summary>
+        /// <param name="exhibit">A new <see cref="Exhibit"/></param>
+        /// <returns>The persisted <see cref="Exhibit"/>.</returns>
         Exhibit CreateExhibit(Exhibit exhibit);
     }
 }

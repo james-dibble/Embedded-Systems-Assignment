@@ -5,12 +5,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.ServiceLayer
 {
+    using System.Collections.Generic;
     using System.Configuration;
     using System.IO;
 
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
-    using System.Collections.Generic;
 
     /// <summary>
     /// A class for interacting with <see cref="AudioFile"/>s.
@@ -50,6 +50,11 @@ namespace EmbeddedSystems.ServiceLayer
             return file;
         }
 
+        /// <summary>
+        /// Retrieve all the <see cref="AudioFile"/>s for a given <paramref name="exhibitId"/>.
+        /// </summary>
+        /// <param name="exhibitId">The unique identifier of the <see cref="Exhibit"/>.</param>
+        /// <returns>All the <see cref="AudioFile"/>s for a given <paramref name="exhibitId"/>.</returns>
         public IEnumerable<AudioFile> GetFilesForExhibit(int exhibitId)
         {
             var files = this._persistence.GetRepository<AudioFile>().GetMany(af => af.Exhibit.Id == exhibitId);
@@ -57,6 +62,10 @@ namespace EmbeddedSystems.ServiceLayer
             return files;
         }
 
+        /// <summary>
+        /// Retrieve all known <see cref="AudioFile"/>s.
+        /// </summary>
+        /// <returns>All known <see cref="AudioFile"/>s.</returns>
         public IEnumerable<AudioFile> GetAll()
         {
             var files = this._persistence.GetRepository<AudioFile>().GetAll();
@@ -64,6 +73,11 @@ namespace EmbeddedSystems.ServiceLayer
             return files;
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="AudioFile"/>.
+        /// </summary>
+        /// <param name="audioFile">A new <see cref="AudioFile"/></param>
+        /// <returns>The persisted Audio File.</returns>
         public AudioFile CreateAudioFile(AudioFile audioFile)
         {
             this._persistence.GetRepository<AudioFile>().Add(audioFile);

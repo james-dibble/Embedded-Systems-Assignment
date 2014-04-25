@@ -27,8 +27,18 @@ namespace EmbeddedSystems.ServiceLayer
         /// <returns>The knowledge level requested.</returns>
         KnowledgeLevel GetKnowledgeLevel(int knowledgeLevelId);
 
+        /// <summary>
+        /// Build and persist a new <see cref="KnowledgeLevel"/>.
+        /// </summary>
+        /// <param name="knowledgeLevelDesc">A new <see cref="KnowledgeLevel"/></param>
+        /// <returns>The persisted <see cref="KnowledgeLevel"/>.</returns>
         KnowledgeLevel AddKnowledgeLevel(string knowledgeLevelDesc);
 
+        /// <summary>
+        /// Build and persist a new <see cref="KnowledgeLevel"/>.
+        /// </summary>
+        /// <param name="knowledgeLevel">A new <see cref="KnowledgeLevel"/></param>
+        /// <returns>The persisted <see cref="KnowledgeLevel"/>.</returns>
         KnowledgeLevel AddKnowledgeLevel(KnowledgeLevel knowledgeLevel);
     }
 }

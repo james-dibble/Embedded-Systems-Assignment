@@ -48,6 +48,11 @@ namespace EmbeddedSystems.ServiceLayer
             return languages;
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="Language"/>.
+        /// </summary>
+        /// <param name="languageName">A new <see cref="Language"/></param>
+        /// <returns>The persisted <see cref="Language"/>.</returns>
         public Language AddLanguage(string languageName)
         {
             var language = new Language()
@@ -59,6 +64,11 @@ namespace EmbeddedSystems.ServiceLayer
             return this.AddLanguage(language);
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="Language"/>.
+        /// </summary>
+        /// <param name="language">A new <see cref="Language"/></param>
+        /// <returns>The persisted <see cref="Language"/>.</returns>
         public Language AddLanguage(Language language)
         {
             this._persistence.GetRepository<Language>().Add(language);

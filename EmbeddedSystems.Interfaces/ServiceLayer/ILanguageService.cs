@@ -26,8 +26,18 @@ namespace EmbeddedSystems.ServiceLayer
         /// <returns>All of the <see cref="Language"/>s in the DB.</returns>
         IEnumerable<Language> GetAll();
 
+        /// <summary>
+        /// Build and persist a new <see cref="Language"/>.
+        /// </summary>
+        /// <param name="languageName">A new <see cref="Language"/></param>
+        /// <returns>The persisted <see cref="Language"/>.</returns>
         Language AddLanguage(string languageName);
 
+        /// <summary>
+        /// Build and persist a new <see cref="Language"/>.
+        /// </summary>
+        /// <param name="language">A new <see cref="Language"/></param>
+        /// <returns>The persisted <see cref="Language"/>.</returns>
         Language AddLanguage(Language language);
     }
 }
