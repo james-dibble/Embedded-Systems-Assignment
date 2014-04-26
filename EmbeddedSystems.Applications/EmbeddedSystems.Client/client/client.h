@@ -7,6 +7,9 @@
 
 #include "clientIncludes.h"
 #include "network.h"
+#include "keypadcontroller.h"
+
+#include <json/json.h>
 
 class Client : public QObject
 {
@@ -27,15 +30,19 @@ protected:
 private:
     Network* network;
     QString reply;
+    int httpCode;
     bool authenticated;
     QMutex clientMutex;
     bool waitOver;
+    KeypadController* keypad;
 
 signals:
-    void request(QUrl);
+    void request(QUrl, QString = "");
+    void getPin(QString&);
 
 public slots:
-    void networkReply(QString);
+    void networkReply(QString, unsigned int);
+    void buttonPressed(KeypadButton);
 
 };
 

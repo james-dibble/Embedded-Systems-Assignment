@@ -3,7 +3,6 @@
 Network::Network(QObject *parent) :
     QObject(parent)
 {
-
 }
 
 Network::~Network()
@@ -12,8 +11,11 @@ Network::~Network()
 
 void Network::begin()
 {
+    deviceName = 123;
+    pin = "0000";
     networkMan = new QNetworkAccessManager();
 
+#if PROXY
     QNetworkProxy proxy;
      proxy.setType(QNetworkProxy::HttpProxy);
      proxy.setHostName("proxysg.uwe.ac.uk");
@@ -22,15 +24,20 @@ void Network::begin()
    //  proxy.setPassword("password");
      QNetworkProxy::setApplicationProxy(proxy);
      networkMan->setProxy(proxy);
+#endif
 
      QObject::connect(networkMan, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyReceived(QNetworkReply*)));
 
      // QThread::exec();
 }
 
-QString Network::getRequest(QUrl url)
+void Network::getRequest(QUrl url, QString newPin /* = -1*/ )
 {
-
+    // update pin if supplied with one
+    if (!newPin.isEmpty())
+    {
+        pin = newPin;
+    }
 
     QNetworkRequest request(url);
     request.setUrl(url);
@@ -48,7 +55,7 @@ QString Network::getRequest(QUrl url)
     QByteArray data ;
     data.append(namePinKey);
 
-    qDebug() << "\nIt should be: MTIzOjEyMzQ=";
+ //   qDebug() << "\nIt should be: MTIzOjEyMzQ=";
     qDebug() << "data base64: " << data.toBase64();
 
     QString headerData = "Basic " + data.toBase64();
@@ -59,18 +66,17 @@ QString Network::getRequest(QUrl url)
     QList<QByteArray> list = request.rawHeaderList();
     qDebug() << list;
 
-    qDebug() << "sending" << url;
+  //  qDebug() << "sending" << url;
     networkMan->get(request);
 
     qDebug() << "get sent to" << url;
 
    // QMutex locker(&netMutex);
    // netMutex.lock();
-    qDebug() << "locked";
+  //  qDebug() << "locked";
  //   QWaitCondition waiter;
   //  waiter.wait(&netMutex);
-    qDebug() << "waited";
-    return replyString;
+  //  qDebug() << "waited";
 }
 
 QUrl Network::getTrackLocation()
@@ -82,12 +88,13 @@ QUrl Network::getTrackLocation()
 void Network::replyReceived(QNetworkReply* reply)
 {
    // QMutexLocker locker(&netMutex);
-    qDebug() << "gonna lock";
   //  netMutex.lock();
     QByteArray replyData;
+    unsigned int httpStatusCode;
     qDebug() << "reply received";
+    httpStatusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toUInt();
     qDebug() << "Qt NetworkCode Error" << reply->error();
-    qDebug() << "Actual HTTP response" << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toUInt();
+    qDebug() << "Actual HTTP response" << httpStatusCode;
 
     if (reply->error() == QNetworkReply::NoError)
     {
@@ -105,6 +112,6 @@ void Network::replyReceived(QNetworkReply* reply)
             qDebug() << "the reply " << replyString;
     }
 
-    emit forwardMessage(replyString);
-    qDebug() << "reprec";
+    qDebug() << "forwarding message";
+    emit forwardMessage(replyString, httpStatusCode);
 }

@@ -13,18 +13,18 @@ public:
 
 private:
     QNetworkAccessManager* networkMan;
-    int deviceName = 123;
-    int pin = 3196;
+    int deviceName;
+    QString pin;
     QMutex netMutex;
     QString replyString;
 
 signals:
-    void forwardMessage(QString);
+    void forwardMessage(QString, unsigned int);
     void networkFinished();
 
 public slots:
     void begin();
-    QString getRequest(QUrl);
+    void getRequest(QUrl, QString);
 
 private slots:
     void replyReceived(QNetworkReply*);
