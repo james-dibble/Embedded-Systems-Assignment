@@ -8,6 +8,7 @@
 #include "clientIncludes.h"
 #include "network.h"
 #include "keypadcontroller.h"
+#include "locationtracker.h"
 
 #include <json/json.h>
 
@@ -27,14 +28,20 @@ protected:
     bool getWaitOver();
     void setWaitOver(bool);
 
+    void requestExhibit(int);
+    void playPause();
+    void fastForward();
+    void rewind();
+
 private:
     Network* network;
+    KeypadController* keypad;
+    LocationTracker* tracker;
     QString reply;
     int httpCode;
     bool authenticated;
     QMutex clientMutex;
     bool waitOver;
-    KeypadController* keypad;
 
 signals:
     void request(QUrl, QString = "");
@@ -43,7 +50,7 @@ signals:
 public slots:
     void networkReply(QString, unsigned int);
     void buttonPressed(KeypadButton);
-
+    void locationChanged(QString);
 };
 
 #endif // CLIENT_H

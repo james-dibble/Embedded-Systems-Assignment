@@ -3,8 +3,8 @@
 
 #include <QObject>
 #include <QProcess>
-#include <QString>
-#include <QDebug>
+
+#include "clientIncludes.h"
 
 class LocationTracker : public QObject
 {
@@ -12,12 +12,24 @@ class LocationTracker : public QObject
 public:
     explicit LocationTracker(QObject *parent = 0);
     ~LocationTracker();
-    void startTracking();
+
+protected:
+    QString getAccessPointName();
+
+private:
+    int lastStrength;
+    QTimer *timer;
+    bool firstRun;
     
 signals:
+    void forwardNewLocation(QString);
+    void trackerFinished();
     
 public slots:
+    void startTracking();
     
+private slots:
+    void scan();
 };
 
 #endif // LOCATIONTRACKER_H

@@ -1,5 +1,4 @@
 #include "client.h"
-#include "locationtracker.h"
 
 extern const QString baseUrl;
 extern const QString handsetApiUrl;
@@ -16,7 +15,6 @@ Client::~Client()
 
 void Client::startClient()
 {
-    LocationTracker tracker;
     authenticated = false;
 
     keypad = new KeypadController();
@@ -52,13 +50,18 @@ void Client::startClient()
     }
     qDebug() << "Authenticated";
 
-    emit request(handsetApiUrl);
-    blockOnReply();
-    qDebug() << "end block";
 
-    parseResponse();
+    // setup location tracker thread
+    tracker = new LocationTracker();
 
-    tracker.startTracking();
+ //   QObject::connect(this, SIGNAL(request(QUrl, QString)), network, SLOT(getRequest(QUrl, QString)));
+    QObject::connect(tracker, SIGNAL(forwardNewLocation(QString)), this, SLOT(locationChanged(QString)));
+    QThread* trackerThread = new QThread();
+    QObject::connect(trackerThread, SIGNAL(started()), tracker, SLOT(startTracking()));
+    QObject::connect(tracker, SIGNAL(trackerFinished()), trackerThread, SLOT(quit()));
+
+    tracker->moveToThread(trackerThread);
+    trackerThread->start();
 }
 
 /*
@@ -86,7 +89,7 @@ bool Client::authenticateDevice()
 
     success = parseResponse();
     //#ifdef DEBUG
-    //    success = true;
+        success = true;
     //#else
     //    success = false;
     //#endif
@@ -95,19 +98,6 @@ bool Client::authenticateDevice()
 
 bool Client::parseResponse()
 {
-//    QVector<QStringList> parsedResponse;
-//    QStringList lines;
-
-//    lines = reply.split("\n");
-
-//    // split each line into words
-//    foreach (QString line, lines)
-//    {
-//        QStringList words;
-//        words = line.split(' ');
-//        parsedResponse.push_back(words);
-//    }
-
     if (httpCode != 200)
     {
         qWarning() << "Authentication error";
@@ -142,16 +132,6 @@ qDebug() << "done";
     return true;
 }
 
-//QStringList Client::splitString(QString str)
-//{
-//    return str.split("\n");
-//}
-
-//void Client::splitLine()
-//{
-
-//}
-
 void Client::blockOnReply()
 {
     setWaitOver(false);
@@ -171,9 +151,51 @@ void Client::networkReply(QString theReply, unsigned int statusCode)
     setWaitOver(true);
 }
 
-void Client::buttonPressed(KeypadButton)
+void Client::buttonPressed(KeypadButton button)
 {
+    if (!authenticated)
+    {
+        // we shouldnt do anything
+        return;
+    }
 
+    switch (button)
+    {
+    case KeypadButton::KEY_1:
+        requestExhibit(1); break;
+    case KeypadButton::KEY_2:
+        requestExhibit(2); break;
+    case KeypadButton::KEY_3:
+        requestExhibit(3); break;
+    case KeypadButton::KEY_4:
+        requestExhibit(4); break;
+    case KeypadButton::KEY_5:
+        requestExhibit(5); break;
+    case KeypadButton::KEY_6:
+        requestExhibit(6); break;
+    case KeypadButton::KEY_7:
+        requestExhibit(7); break;
+    case KeypadButton::KEY_8:
+        requestExhibit(8); break;
+    case KeypadButton::KEY_9:
+        requestExhibit(9); break;
+    case KeypadButton::KEY_0:
+        requestExhibit(0); break;
+    case KeypadButton::KEY_A: // play/pause button
+        playPause(); break;
+    case KeypadButton::KEY_B: // fast forward button
+        fastForward(); break;
+    case KeypadButton::KEY_C: // rewind button
+        rewind(); break;
+    case KeypadButton::KEY_D:
+        qDebug() << "Not implemented"; break;
+    case KeypadButton::KEY_E:
+        qDebug() << "Not implemented"; break;
+    case KeypadButton::KEY_F:
+        qDebug() << "Not implemented"; break;
+    default /*NONE*/:
+        qWarning() << "Bad key press!"; break;
+    }
 }
 
 bool Client::getWaitOver()
@@ -188,4 +210,37 @@ void Client::setWaitOver(bool newWait)
     QMutexLocker locker(&clientMutex);
     qDebug() << "set " << newWait;
     waitOver = newWait;
+}
+
+void Client::playPause()
+{
+
+}
+
+void Client::fastForward()
+{
+
+}
+
+void Client::rewind()
+{
+
+}
+
+void Client::requestExhibit(int exhibit)
+{
+    if (exhibit == 1)
+    {
+        emit request(handsetApiUrl);
+        blockOnReply();
+        qDebug() << "end block";
+
+        parseResponse();
+    }
+
+}
+
+void Client::locationChanged(QString)
+{
+
 }

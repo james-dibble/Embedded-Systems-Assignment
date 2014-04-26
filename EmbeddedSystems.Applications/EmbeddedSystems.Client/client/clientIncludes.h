@@ -12,6 +12,7 @@
 #include <QNetworkProxy>
 #include <QtTest/QTest>
 #include <QtCore>
+#include <QTimer>
 
 #define DEBUG 1
 

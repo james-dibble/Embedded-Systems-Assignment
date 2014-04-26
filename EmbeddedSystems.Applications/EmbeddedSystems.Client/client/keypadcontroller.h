@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QVector>
-#include <QTimer>
 
 #include "clientIncludes.h"
 

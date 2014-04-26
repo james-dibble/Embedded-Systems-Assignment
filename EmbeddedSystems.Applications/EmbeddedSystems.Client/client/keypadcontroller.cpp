@@ -83,7 +83,7 @@ void KeypadController::read()
 void KeypadController::write()
 {
     // write number for that 7 seg
-    if (pincodeVector.size() >= col)
+    if (pincodeVector.size() > col)
     {
         // we have something to write
     }

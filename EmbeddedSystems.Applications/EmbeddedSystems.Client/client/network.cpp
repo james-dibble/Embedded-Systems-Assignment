@@ -66,7 +66,6 @@ void Network::getRequest(QUrl url, QString newPin /* = -1*/ )
     QList<QByteArray> list = request.rawHeaderList();
     qDebug() << list;
 
-  //  qDebug() << "sending" << url;
     networkMan->get(request);
 
     qDebug() << "get sent to" << url;
