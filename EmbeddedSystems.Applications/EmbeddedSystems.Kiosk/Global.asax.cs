@@ -23,6 +23,7 @@ namespace EmbeddedSystems.Kiosk
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ViewEngines.Engines.Insert(0, new LocalisedViewEngine());
+            Bootstrapper.Initialise();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)

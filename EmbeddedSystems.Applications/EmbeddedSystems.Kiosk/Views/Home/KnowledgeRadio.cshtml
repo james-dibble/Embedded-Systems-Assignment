@@ -1,0 +1,5 @@
+﻿@model IEnumerable<EmbeddedSystems.DomainModel.KnowledgeLevel>
+@foreach(var kl in this.Model)
+{
+    this.Html.RadioButton("knowledgeLevelId", kl.Id.ToString(), false);
+}

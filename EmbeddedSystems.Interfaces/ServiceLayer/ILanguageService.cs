@@ -29,5 +29,7 @@ namespace EmbeddedSystems.ServiceLayer
         Language AddLanguage(string languageName);
 
         Language AddLanguage(Language language);
+
+        Language GetByName(string languageName);
     }
 }

@@ -1,4 +1,5 @@
-﻿ @using (Html.BeginForm("GetForm", "Home"))
+﻿@model System.Globalization.CultureInfo
+@using (Html.BeginForm("NewRental", "Rental"))
 {
  @Html.AntiForgeryToken()
     <div class="btn-group pull-right">
@@ -27,14 +28,9 @@
 
         <form role="form">
             <div class="form-group">
-                <label for="inputFirstName">Nombre de pila</label>
-                <input data-val="true" data-val-required="Por favor ingrese un nombre válido." type="text" class="form-control" id="inputFirstName" placeholder="Ingrese el nombre" name="FirstName" />
-                     <span class="field-validation-valid help-block" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
-            </div>
-            <div class="form-group">
-                <label for="inputSurname">Apellido</label>
-                <input data-val="true" data-val-required="Por favor, introduzca un apellido válido." type="text" class="form-control" id="inputSurname" placeholder="Ingrese Apellidos" name="Surname" />
-                     <span class="field-validation-valid help-block" data-valmsg-for="Surname" data-valmsg-replace="true"></span>
+                <label for="inputFirstName">Nombre</label>
+                <input data-val="true" data-val-required="Por favor ingrese un nombre válido." type="text" class="form-control" id="inputName" placeholder="Ingrese el nombre" name="Name" />
+                     <span class="field-validation-valid help-block" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Dirección</label>
@@ -51,12 +47,30 @@
                 <input data-val="true" data-val-required="Por favor, introduce una dirección de correo electrónico válida." type="email" class="form-control" id="inputEmail" placeholder="Ingrese su dirección de correo electrónico" name="Email" />
                      <span class="field-validation-valid help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox">
-                    #Yolo Swaggins
+
+            <div class="panel panel-default text-center wideDiv">
+            <div class="panel-body">
+                Por favor, seleccione el nivel de conocimiento:
+            </div>
+            </div>
+
+            <div data-toggle="buttons">
+                <label class="btn btn-default">
+                    <input type="radio" />
+                    Básico
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" />
+                    Intermedio
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" />
+                    Avanzado
                 </label>
             </div>
+
+            @Html.HiddenFor(ci => ci.DisplayName, new { id = "cultureName" })
+
             <button type="submit" class="btn btn-default">Presentar</button>
         </form>
 

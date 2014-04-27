@@ -66,5 +66,11 @@ namespace EmbeddedSystems.ServiceLayer
 
             return language;
         }
+
+        public Language GetByName(string languageName)
+        {
+            var language = this._persistence.GetRepository<Language>().Single(l => l.Name == languageName);
+            return language;
+        }
     }
 }

@@ -1,7 +1,9 @@
-﻿@using (Html.BeginForm("GetForm", "Home"))
+﻿@*@model System.Globalization.CultureInfo*@
+
+
+@using (Html.BeginForm("NewRental", "Rental"))
 {
- @Html.AntiForgeryToken()
-    
+    @Html.AntiForgeryToken()
     <div class="btn-group pull-right">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
             Language <span class="caret"></span>
@@ -22,20 +24,15 @@
 
         <div class="panel panel-default text-center wideDiv">
             <div class="panel-body">
-                Pls enta detels yo:
+                Please enter your details below:
             </div>
         </div>
 
         <form role="form">
             <div class="form-group">
-                <label for="inputFirstName">First Name</label>
-                <input data-val="true" data-val-required="Please enter a valid first name." type="text" class="form-control" id="inputFirstName" placeholder="Enter First Name" name="FirstName" />
-                <span class="field-validation-valid help-block" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
-            </div>
-            <div class="form-group">
-                <label for="inputSurname">Surname</label>
-                <input data-val="true" data-val-required="Please enter a valid surname." type="text" class="form-control" id="inputSurname" placeholder="Enter Surname" name="Surname" />
-                <span class="field-validation-valid help-block" data-valmsg-for="Surname" data-valmsg-replace="true"></span>
+                <label for="inputFirstName">Name</label>
+                <input data-val="true" data-val-required="Please enter a valid name." type="text" class="form-control" id="inputName" placeholder="Enter Name" name="Name" />
+                <span class="field-validation-valid help-block" data-valmsg-for="Name" data-valmsg-replace="true"></span>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
@@ -44,7 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="inputTelNumber">Telephone Number</label>
-                <input class="form-control" data-val="true" data-val-regex-pattern="^[0-9]{11}$" data-val-required="Please enter a valid phone number." placeholder="Telephone Number" name="Tel" type="tel" value="" />
+                <input class="form-control" data-val="true" data-val-regex-pattern="^[0-9]{11}$" data-val-required="Please enter a valid phone number." placeholder="Enter Telephone Number" name="Tel" type="tel" value="" />
                 <span class="field-validation-valid help-block" data-valmsg-for="Tel" data-valmsg-replace="true"></span>
             </div>
             <div class="form-group">
@@ -52,28 +49,19 @@
                 <input data-val="true" data-val-required="Please enter a valid email address." type="email" class="form-control" id="inputEmail" placeholder="Enter Email Address" name="Email" />
                 <span class="field-validation-valid help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox">
-                    #Yolo Swaggins
-                </label>
+
+            <div class="panel panel-default text-center wideDiv">
+                <div class="panel-body">
+                    Please select knowledge level:
+                </div>
             </div>
 
+            @*<div class="form-group">
+                @Html.Label("knowledgeLevelId", "Knowledge Level")
+                @Html.Action("KnowledgeLevelSelect", "Home")
+            </div>*@
 
-            <div data-toggle="buttons">
-                <label class="btn btn-default">
-                    <input type="radio" />
-                    Radio Button1
-                </label>
-                <label class="btn btn-default">
-                    <input type="radio" />
-                    Radio Button1
-                </label>
-                <label class="btn btn-default">
-                    <input type="radio" />
-                    Radio Button1
-                </label>
-            </div>
+            @*@Html.HiddenFor(ci => ci.DisplayName, new { id = "cultureName" })*@
 
             <button type="submit" class="btn btn-default">Submit</button>
         </form>

@@ -5,38 +5,52 @@ using System.Web;
 using System.Web.Mvc;
 using EmbeddedSystems.DomainModel;
 using EmbeddedSystems.ServiceLayer;
+using System.Globalization;
 
 namespace EmbeddedSystems.Kiosk.Controllers
 {
     public class HomeController : Controller
     {
-        /*private readonly IHandsetService _handsetService;
-        private readonly ILanguageService _languageService;
         private readonly IKnowledgeLevelService _knowledgeLevelService;
-        private readonly ICustomerService _customerService;
 
-        public HomeController(IHandsetService handsetService, ILanguageService languageService, IKnowledgeLevelService knowledgeLevelService, ICustomerService customerService)
+        public HomeController(IKnowledgeLevelService knowledgeLevelService)
         {
-            this._handsetService = handsetService;
-
-            this._languageService = languageService;
             this._knowledgeLevelService = knowledgeLevelService;
-            this._customerService = customerService;
-        }*/
+        }
+
+        public ActionResult Index()
+        {
+            return this.View();
+        }
 
         public ActionResult KioskSignUp()
         {
-            return View();
+            //var language = (CultureInfo)Session["Culture"];
+            //var displayName = language.DisplayName;
+            return this.View();
+        }
+
+        public ActionResult KnowledgeLevelSelect()
+        {
+            var knowledgeLevels = this._knowledgeLevelService.GetAll();
+
+            return this.PartialView(knowledgeLevels);
         }
 
         public ActionResult Language()
-        {
-            return View();
+        { 
+            return this.View();
         }
 
-        public ActionResult GetForm(string FirstName, string Surname, string Address, string Tel, string Email)
+        public ActionResult KnowledgeRadio()
         {
-            return this.Content("First Name =" + FirstName + ", Surname =" + Surname + ", Address =" + Address + ", Tel =" + Tel + ", Email =" +
+            var knowledgeLevels = this._knowledgeLevelService.GetAll();
+            return this.PartialView(knowledgeLevels);
+        }
+
+        public ActionResult GetForm(string Name, string Address, string Tel, string Email)
+        {
+            return this.Content("Name =" + Name + ", Address =" + Address + ", Tel =" + Tel + ", Email =" +
                 Email);
 
         }

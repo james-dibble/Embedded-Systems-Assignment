@@ -2,6 +2,8 @@ using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
 using EmbeddedSystems.ServiceLayer;
+using EmbeddedSystems.Persistence;
+using System.Data.Entity;
 
 namespace EmbeddedSystems.Kiosk
 {
@@ -35,6 +37,15 @@ namespace EmbeddedSystems.Kiosk
         container.RegisterType<ILanguageService, LanguageService>();
         container.RegisterType<IKnowledgeLevelService, KnowledgeLevelService>();
         container.RegisterType<ICustomerService, CustomerService>();*/
+
+        container.RegisterType<DbContext, Context>(new HierarchicalLifetimeManager());
+        container.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
+        container.RegisterType<IAudioFileService, AudioFileService>();
+        container.RegisterType<IExhibitService, ExhibitService>();
+        container.RegisterType<ICustomerService, CustomerService>();
+        container.RegisterType<IHandsetService, HandsetService>();
+        container.RegisterType<IKnowledgeLevelService, KnowledgeLevelService>();
+        container.RegisterType<ILanguageService, LanguageService>();
     }
   }
 }

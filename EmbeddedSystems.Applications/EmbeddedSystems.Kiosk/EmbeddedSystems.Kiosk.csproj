@@ -41,6 +41,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -120,7 +127,9 @@
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\RentalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,6 +186,10 @@
       <Project>{4b949ad2-d089-4643-a9b2-a714ce520d4a}</Project>
       <Name>EmbeddedSystems.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\EmbeddedSystems.Persistence\EmbeddedSystems.Persistence.csproj">
+      <Project>{8428a3b0-19d7-4a2e-a029-07b7fedc4cca}</Project>
+      <Name>EmbeddedSystems.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\EmbeddedSystems.ServiceLayer\EmbeddedSystems.ServiceLayer.csproj">
       <Project>{97370a94-c1f1-49a1-adc1-4858dd5c29ec}</Project>
       <Name>EmbeddedSystems.ServiceLayer</Name>
@@ -184,6 +197,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Confirm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\KnowledgeRadio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\KnowledgeLevelSelect.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
