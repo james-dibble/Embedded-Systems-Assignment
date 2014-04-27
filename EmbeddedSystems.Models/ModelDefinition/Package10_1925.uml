@@ -1,0 +1,1652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="75554184-a198-4836-a4e3-dc0a617f7824"
+  name="Security"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="996a258a-b1b6-4796-aa3e-237519890160"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DEmbeddedSystems.Security"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="928f19c9-423f-4195-9003-0680a342623a"
+        name="RequiresAuthenticationAttribute"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="3df69b34-8488-4ed7-9389-5eb3dcc66b83"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationAttribute"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0bed093a-e66d-4c9d-8062-b1fcd229261a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d7125fc1-803e-4a7c-a522-a1b802f55428">
+                <propertyInstance
+                  Id="2c47d66c-0430-461e-86c8-9e374364a25b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0c38c999-e338-4cdb-88b5-9ca79684bf20">
+                <propertyInstance
+                  Id="a075f317-72a6-4375-b55a-5664ebfd6f81"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c6c44101-1a07-44fc-bb9a-2d064c0bf4ba">
+                <propertyInstance
+                  Id="12e4e964-eeeb-4438-ae50-2a4de990f2d7"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bcc89a50-8239-4911-a1b2-1382510163fd">
+                <propertyInstance
+                  Id="6c711ab1-63b2-4849-9c01-8c520360fa54"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="716a9ee6-29ef-4b74-917b-7140e7af1503">
+                <propertyInstance
+                  Id="7999ed22-91ce-45c8-bbf7-9620df21c61d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="0e54b8af-47bc-4da5-a82b-bd86798c9726"
+            isSubstitutable="false">
+            <classMoniker
+              Id="77303e56-6307-4ae4-8a1e-d079f21f3855"
+              LastKnownName="Attribute"
+              LastKnownLocation="Package3_1925.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3e647f1a-30f7-41f8-bc71-5e882f422d73"
+            name="RequiresAuthenticationAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8394541e-1b0c-4259-be68-3bd8598c2a24"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationAttribute Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7ca64ea5-c8fa-46d7-858e-b61b86f8b535"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ca33e351-9009-41ec-ad55-a8087f2d563b">
+                    <propertyInstance
+                      Id="ee65123e-3465-40c7-8ce4-00c44e99be2e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ad11a2ed-4197-4477-9b51-0e6d6b1257e8">
+                    <propertyInstance
+                      Id="f7ee2414-ffd2-4053-be8e-8a711ce5e828"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da2d7bb2-ece5-4519-beb7-b72ec925e88a">
+                    <propertyInstance
+                      Id="25a36cb7-1bb6-4df7-83b3-1e17fcb72697"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d605ebeb-e5b2-427a-8472-1332b82bac2b">
+                    <propertyInstance
+                      Id="f0bcf2f2-1f19-4c9a-9721-5ea8778e9822"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c184022c-0850-47dd-bccc-90fee349fc5f">
+                    <propertyInstance
+                      Id="22b34059-9b53-4299-b516-d86a76725284"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87cd4305-cc84-4bd8-9963-e59f770b6d13">
+                    <propertyInstance
+                      Id="3108a394-1baa-4e0d-9b08-d277e7ce6bca"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="75f06ded-635b-424f-90b9-d52a906ce874"
+        name="RequiresAuthenticationFilter"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="5a58551b-f59f-4581-83cd-872a80358650"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="23285365-4aec-43f4-b664-ae1bbe40d580"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b66f3c4e-4000-4229-bcf3-45e92c8758d9">
+                <propertyInstance
+                  Id="867f0668-e445-401c-8d6e-e9eb67073ecc"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0611747e-41f5-42f5-aa2e-09e78b118534">
+                <propertyInstance
+                  Id="cf9fc338-62e0-461c-bfca-3e2752076c2c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d0a387cf-fec1-4bf7-9b70-c1ae06c3cfe8">
+                <propertyInstance
+                  Id="510af82e-326d-4f30-a39b-f415db047447"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3e2d83ea-3a3c-4b8a-a672-aca405e91ff1">
+                <propertyInstance
+                  Id="16284f45-3c3f-4a18-8fcd-374073b6d08c"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="01248c9f-659c-4c99-9369-4c1f8b766d55">
+                <propertyInstance
+                  Id="9d07ef65-9729-4b80-a3c4-e6830d2ac1a4"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="45203607-1de5-4b98-bfac-bc9fc5219470"
+            isSubstitutable="false">
+            <classMoniker
+              Id="a445bbb4-aae5-4eb0-b3fc-9cb189115ca2"
+              LastKnownName="ActionFilterAttribute"
+              LastKnownLocation="Package14_1925.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="885f0318-590a-4d71-844c-c914b283e42a"
+            name="_authorizationService"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="57e9e8b2-5111-493c-b7c7-1aead3a0f9f6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter Member%3D_authorizationService"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e42d977a-8bd7-46ec-a3bc-b600c58e9212"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bd2f24c6-11aa-44d4-87ef-7f63c9a68bff">
+                    <propertyInstance
+                      Id="685995b9-7506-422d-8bcb-5604e60feded"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ccbf4a08-5d9c-4f89-9a6a-2d8ee906d8d0">
+                    <propertyInstance
+                      Id="f26f24d0-2c7e-4fd6-bbb4-4e8604c1b4d0"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7fe11cb0-63a3-4812-8b0e-3102d239dc1f">
+                    <propertyInstance
+                      Id="d33234bd-b5f9-4d80-8591-4f5fe82f2e7a"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9655c19a-8955-4c01-913e-a5743c35e8d5">
+                    <propertyInstance
+                      Id="41028c6e-b6a5-46da-b612-19d41aaad897"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1707de5d-67ac-44f1-9476-979881fd3306">
+                    <propertyInstance
+                      Id="6e44229a-67b9-46f4-8c8e-ab9f08a0ceed"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="3670d645-d661-4360-b9dd-6de55d31b817"
+                LastKnownName="IAuthorizationService"
+                LastKnownLocation="Package10_1925.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0ed3c36c-e3fb-4a7d-9763-0971585d84fc"
+            name="RequiresAuthenticationFilter"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b423b802-7b5f-45da-80ee-7211e343e419"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="b1010c46-1ae7-4c9a-aa9f-1fbc5da07510"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e73ccdae-2571-4c19-8d49-262630c36a60">
+                    <propertyInstance
+                      Id="a03c97c7-aba9-4d37-915b-2c2cb2d7a669"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f64e3c24-c097-43a7-8881-3b64c8dde4a2">
+                    <propertyInstance
+                      Id="b71b49dc-69be-4cd8-8b9e-fa84b93af145"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7af9dc0e-1cbe-42ce-87ff-d69fc0ffad30">
+                    <propertyInstance
+                      Id="6f54fc32-8aa0-44da-b56b-75d18f7e4a9a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7ce36dba-b244-4ac8-a60e-974f8cb1631d">
+                    <propertyInstance
+                      Id="347799fa-9a60-4048-8e21-614a5fd25316"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a47a289d-106d-400d-b56f-ff7130f2897d">
+                    <propertyInstance
+                      Id="d95b6dde-ce07-4fbe-879d-f4f271116feb"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23745d9a-fbf6-4a92-8110-aa7b2b93c66f">
+                    <propertyInstance
+                      Id="1236db04-7022-4a9d-a76d-f8ef1c037f6a"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6093ea83-4de0-4bdb-8330-687648689ee7"
+                  name="authorizationService"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="b4acac9f-5df7-4f3e-b326-56b30cdf89a4"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService)]) ParameterIdentifier%3DauthorizationService"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="3670d645-d661-4360-b9dd-6de55d31b817"
+                      LastKnownName="IAuthorizationService"
+                      LastKnownLocation="Package10_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="8daaf120-81ca-46b5-905a-0afa55fde62a"
+            name="OnActionExecuting"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="20090f1c-dc1d-4180-8573-9a0b8071f434"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter Member%3D(Name%3DOnActionExecuting OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2Fpackages%2FMicrosoft.AspNet.WebApi.Core.5.0.0%2Flib%2Fnet45%2FSystem.Web.Http.dll Namespace%3DSystem.Web.Http.Controllers Type%3DHttpActionContext)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1d925c40-2c96-4ed8-b296-1c9724548990"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3763d404-7376-480b-95f9-042d99f3fda9">
+                    <propertyInstance
+                      Id="fbc22d91-6d9f-4c5f-b707-b4b26b606573"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="96677d8d-5d4d-4bfa-ba77-cfc8edc21363">
+                    <propertyInstance
+                      Id="1f6c6bb9-e11d-4cb9-aa99-40620ab1f075"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="cf817ece-3792-41e8-a76e-e35bcc872397">
+                    <propertyInstance
+                      Id="64e82cc1-f8fe-4757-a2ad-c9c59da511f3"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="00882452-a1fe-4116-afcd-2069d97ad27e">
+                    <propertyInstance
+                      Id="0e5ffaed-2366-47e4-860d-f3067a271ccc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3d2416b-62f1-49b6-a234-ae94702e08ca">
+                    <propertyInstance
+                      Id="a56e4f7c-e080-4c70-8b05-61c05affbe24"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="52226d45-3531-4c1a-99ed-36ca7ec6e06a">
+                    <propertyInstance
+                      Id="183c7bf3-1337-4ea1-90c1-2e444d4225c1"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ff7a0b6e-1808-4bf8-b3ac-89673768d8f1"
+                  name="actionContext"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="3bf09686-37c4-4974-9828-19e5eb2f032c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DRequiresAuthenticationFilter Member%3D(Name%3DOnActionExecuting OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2Fpackages%2FMicrosoft.AspNet.WebApi.Core.5.0.0%2Flib%2Fnet45%2FSystem.Web.Http.dll Namespace%3DSystem.Web.Http.Controllers Type%3DHttpActionContext)]) ParameterIdentifier%3DactionContext"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="ed840b3d-33c1-4797-9e12-bbd246302864"
+                      LastKnownName="HttpActionContext"
+                      LastKnownLocation="Package13_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3670d645-d661-4360-b9dd-6de55d31b817"
+        name="IAuthorizationService"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="02042a6f-a7ec-4450-aa80-9d035733ad4a"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="cfa6c0d8-0173-4787-9674-a9c9f146a67c"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b344ae6a-687f-464c-a480-bd7663e3ae5f">
+                <propertyInstance
+                  Id="79f64b76-51fb-4a54-8d17-0165bac99155"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b379ef68-0bac-4f9f-83fe-99edc7ff1472">
+                <propertyInstance
+                  Id="5c70c83b-9408-43b7-bab8-382ecffae81a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a29b449b-d522-47f9-a927-e9647b30c410">
+                <propertyInstance
+                  Id="ff126d69-d212-48f5-88d2-a1c52914419b"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccde8c0c-2ae2-48e8-ae21-72913174d70e">
+                <propertyInstance
+                  Id="28470982-576d-4719-b684-c3bbf8d0f761"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedOperations>
+          <operation
+            Id="7d6351e5-9226-4c53-847e-ec6d9654f1d8"
+            name="AuthenticateHandsetRental"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="1eef215a-b027-4df8-b74a-6ea7bf892e3f"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a84c989f-b41b-4588-bfb4-41ef90597dd3"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d7c6e69f-291d-453d-ab57-2758d41c6c5b">
+                    <propertyInstance
+                      Id="ea7f4fa6-10e9-4d80-bf21-475853c59319"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="48367d5c-3a1e-4674-8239-bc7d510801f2">
+                    <propertyInstance
+                      Id="e003675c-9414-4736-a35d-38d4f8949c24"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a25303e-e7c5-4423-af46-a74548a6c6dd">
+                    <propertyInstance
+                      Id="493815ef-ff33-4067-95f3-098ad7e54d6d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="eef411aa-24de-4282-a56a-4f6f837517b3">
+                    <propertyInstance
+                      Id="ee206c2d-4115-4f50-8352-52be3fb6a39c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="41c59634-4cdf-429b-8b0a-6ed24f9353f1">
+                    <propertyInstance
+                      Id="f26e47c5-f34a-42ee-89d2-e3882347c8f5"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ee6192d-da4f-4e4a-bf52-ed0cad262fc7">
+                    <propertyInstance
+                      Id="1652ec0c-f4ef-4b30-8b0f-28f021fb2f16"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="68b818e8-3ef0-44dc-9ee6-847a46898c4d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+                      LastKnownName="HandsetRental"
+                      LastKnownLocation="Package2_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1f8f111-f4cf-4f98-b7be-b61708483a45"
+                  name="handsetNumber"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fc2b7213-8814-44bf-9c49-6e9b74eb2346"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DhandsetNumber"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="EmbeddedSystems.Models.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b38a349d-a20f-4397-9e4e-4ad6aabd2a95"
+                  name="pin"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="92607de9-ddb6-4e60-8e00-74176d1d4b85"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dpin"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="EmbeddedSystems.Models.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0120e8df-5ae8-426b-8964-5c8b20236e3d"
+        name="AuthenticatedHandset"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="f73870f8-39cc-4318-8e55-95d90915998f"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="aecb9575-7d9b-4251-a4d3-556ed64e9805"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9f0880b0-73dc-44cb-990f-db09ffedf8be">
+                <propertyInstance
+                  Id="669aebbe-a6db-493c-9e68-3484de47f47d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ccf998c5-ae6d-42fa-8d60-9b4863ed1b76">
+                <propertyInstance
+                  Id="d4b4ce15-c344-4869-af2e-9e089ee12471"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="87743671-c775-4c92-9858-cb233193bb46">
+                <propertyInstance
+                  Id="97a48a65-5c5b-4381-962e-d8abfc782542"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="650de455-a0a0-4dce-996f-5e39eab09e64">
+                <propertyInstance
+                  Id="c17230f6-0755-45fc-9c8a-b1c554d3c6e8"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8856353f-334f-4faa-8787-421b6bff5026">
+                <propertyInstance
+                  Id="1f1db363-674f-4f63-a0ec-022ad1d46e08"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="45a898c0-87b1-4ee2-b436-e7d7995ef39d">
+            <interfaceMoniker
+              Id="48f4e0b6-7384-4897-88e4-13f37de1a941"
+              LastKnownName="IAuthenticatedHandset"
+              LastKnownLocation="Package10_1925.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association
+            Id="455ffcda-18c7-43f0-b6e1-a0179ce39963"
+            isDerived="false"
+            sourceEndRoleName="AuthenticatedHandset"
+            targetEndRoleName="Rental"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+              LastKnownName="HandsetRental"
+              LastKnownLocation="Package2_1925.uml" />
+            <description>Property Rental references type HandsetRental.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a6a0976c-335d-4955-a0f1-9620bb0faa1d"
+                  name="AuthenticatedHandset"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ab3eeaa4-7e0d-4f40-b446-4b19ca37cf63"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="85de347f-6285-471b-893d-1c5e1fa679c7"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5906c123-6f11-4d44-90fa-5736ecb7a724"
+                  name="Rental"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="27f73ba1-5780-449a-ac20-af7ee01862a0"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="de254afd-afdc-4c27-a142-b67e81754047"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="97dcec75-8aab-495b-8dc7-594984e21fd7"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="dc6ae06b-2a93-4215-8ce6-8667044ce25d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3DName"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="7eaf218a-93a4-44a4-ad27-0c6ff83f2951"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f784af66-567f-475e-bbe8-43c0bcae6201">
+                    <propertyInstance
+                      Id="a3d5e45b-29b7-4228-a9a0-3f77caea83e1"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11e281fa-ffef-4519-a220-4c28d84e0921">
+                    <propertyInstance
+                      Id="e4a0cc48-7080-4d46-8eb6-7d77b7ddbc35"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="372b0ced-b32e-40ea-b965-0723ac7d1425">
+                    <propertyInstance
+                      Id="36decc60-1706-4246-9e62-a35c6903c127"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f65423b3-cbe2-42dc-a836-bf8c768e1c8a">
+                    <propertyInstance
+                      Id="b61a7cf2-bd2f-4a5b-a79b-3bd24caa9b86"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="78ca8a8a-c63f-44fb-ab4c-70bbeb20dbda">
+                    <propertyInstance
+                      Id="32489925-24dd-4845-9b8e-116c451c17c9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="30baea98-3383-4a90-b4d6-6e79a0076b99">
+                    <propertyInstance
+                      Id="53f8be99-ed96-446c-87f3-ba15899b68d1"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="032d4457-2867-4569-9115-0a5ea9055c97">
+                    <propertyInstance
+                      Id="afb1ab5e-9bc1-4a9e-8012-e73ba5b5db58"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="EmbeddedSystems.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0cd523ee-bc2d-4904-aabf-6d592e11b3b8"
+            name="AuthenticationType"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="663b5823-e9f8-4416-aa28-b81b86489bbd"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3DAuthenticationType"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2f0ec11a-c820-439b-b5c1-3a9bbb4ea8f7"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9a136704-01ea-4368-bc1b-a5e9ebd8bb50">
+                    <propertyInstance
+                      Id="44172138-c7a0-4d0d-b331-68f1e79465ad"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5e1cc742-3722-4eb4-a636-13ab160a883c">
+                    <propertyInstance
+                      Id="ae40ee21-9651-4dbe-be7e-727f660c959e"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b6d8c73-8883-4419-b283-b4e58cea3ded">
+                    <propertyInstance
+                      Id="6f32ec57-51a8-4760-bdcf-f3337af7c8c1"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c4f1c8b0-6f1c-4a31-8174-d29c565dd0ce">
+                    <propertyInstance
+                      Id="e11dfef9-1d16-4285-804f-b8305631aca4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ffaf59b5-1363-434a-915c-92b8faf3d9d2">
+                    <propertyInstance
+                      Id="776e384b-ae54-47be-8e00-defaa3844e91"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e705b1a6-3200-438b-9cad-510903e47fda">
+                    <propertyInstance
+                      Id="1cbb76d1-e545-4d5b-b69f-77b88cc4950e"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="23484c89-8363-450c-92c9-c7eb0bd13258">
+                    <propertyInstance
+                      Id="fc38a1db-2134-4a62-a520-58593040a639"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                LastKnownName="String"
+                LastKnownLocation="EmbeddedSystems.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8b82f036-cbf9-4254-adaf-8164a7ccc4d4"
+            name="IsAuthenticated"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="9f117da6-0868-425a-a0e8-8c364fbca02b"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3DIsAuthenticated"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="78f6ca4b-706e-4bea-90f6-b54eb5cb8d17"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4bc80e5d-06b5-485d-98b6-de9d5b1f0a0e">
+                    <propertyInstance
+                      Id="4411d94b-06fd-4902-b542-c784d92e13b8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c8b2b407-4cdc-420f-a2f2-452f372215eb">
+                    <propertyInstance
+                      Id="e146911e-e031-415f-8ab2-cbcab22251e1"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="94f44e3d-86cd-4cf4-87fe-572223686af0">
+                    <propertyInstance
+                      Id="c1cfce53-d801-4f6e-a868-d422f24958cb"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="777a5f2f-9a08-4c57-8cd4-6bcbe37a96ba">
+                    <propertyInstance
+                      Id="9d643898-32ce-4db1-90c4-582c8f5e5a31"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91b267f3-6ad5-4971-a7a1-0c505b6862bd">
+                    <propertyInstance
+                      Id="f3c46ed7-395d-4c63-b3b2-4052f98923f4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a8f55607-6369-4319-9956-593aee4cab60">
+                    <propertyInstance
+                      Id="9221684e-8bc9-4814-9f45-041302ef95df"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1f5fc0bb-ef48-4081-ad04-dba58b7558cb">
+                    <propertyInstance
+                      Id="bb4aa7bb-4724-43f5-8720-59f1c8f586f4"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
+                LastKnownLocation="EmbeddedSystems.Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="50594d68-560e-4d0b-b07f-ae1007bee9fb"
+            name="Rental"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="aceddb9a-05a1-4b34-be0c-8c498505f832"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3DRental"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ef0b3488-9c45-4f7c-8c6e-0d7e27a87e7d"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4df604a6-75e1-4784-b006-eb9f82d20624">
+                    <propertyInstance
+                      Id="756e00c3-b599-4b67-8a3b-ab71b358d70f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b8541215-7bf0-49ba-a294-b0aa94cf5397">
+                    <propertyInstance
+                      Id="768ec748-e07e-472c-82f0-13b01dbd72ac"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="691d5175-1e0b-4366-8c34-f0c9c122578c">
+                    <propertyInstance
+                      Id="e1304d1b-d239-45cb-bb82-1969b5e96493"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="496fd440-4dc7-4bdf-b7b8-e7a71389700b">
+                    <propertyInstance
+                      Id="dd2bd864-5496-4b6b-929b-8f4bf0dd3aed"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88374892-f1b8-4779-9284-2590217c838c">
+                    <propertyInstance
+                      Id="d08b25a2-5a34-45a1-b57b-ea7988ddcb70"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="28892ec5-5f00-482e-855c-ce13e4698f46">
+                    <propertyInstance
+                      Id="56c68908-b8f6-45e1-b49e-1816b8f9a4bf"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="18ab106c-b9af-4234-8156-62ec0e411f91">
+                    <propertyInstance
+                      Id="7fe363b4-ca90-4d07-acd9-94c0dc6f8534"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+                LastKnownName="HandsetRental"
+                LastKnownLocation="Package2_1925.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="ca5360ba-c757-4aa7-939e-1c7e5a761c4c"
+            name="AuthenticatedHandset"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="8ba1f37b-7b2e-4100-9463-9af5b29f0330"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.DomainModel%2Fbin%2FDebug%2FEmbeddedSystems.DomainModel.dll Namespace%3DEmbeddedSystems.DomainModel Type%3DHandsetRental)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="088a0877-bb01-49e9-aa59-4a033a0f9d91"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f699262-ecdc-48c5-b092-a8d4bfda1c2b">
+                    <propertyInstance
+                      Id="d198c282-5df5-4ee6-9321-74233ec4b6b4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6073f473-693f-4e68-adb7-a499b0622827">
+                    <propertyInstance
+                      Id="67235755-9b7c-47cd-a0b7-2edf8b34b6fa"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="56b8a0d5-f48a-4808-8a16-bde43dc788c7">
+                    <propertyInstance
+                      Id="91b5a80f-4f63-48ac-8406-1cda24091c87"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e34aaa9-7a97-42c4-81e9-7e5e1bb83813">
+                    <propertyInstance
+                      Id="5e17aa7e-bbf4-4ded-9ce9-94d17d6f6e6d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e6d3e47-f402-4764-aecd-be2bb7c61d54">
+                    <propertyInstance
+                      Id="52a696dd-0291-4d98-b099-2c582a1dc04b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4894378-07c7-40d9-991e-d64e2ad8997b">
+                    <propertyInstance
+                      Id="087ff35b-d4cd-44b4-9b63-19b645ee93e2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be2a3e19-933c-4f3f-9bc2-eb83d56c3f29"
+                  name="rental"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="fee22fb3-c8b1-4f34-bc82-85a6c0c4e53d"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthenticatedHandset Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.DomainModel%2Fbin%2FDebug%2FEmbeddedSystems.DomainModel.dll Namespace%3DEmbeddedSystems.DomainModel Type%3DHandsetRental)]) ParameterIdentifier%3Drental"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+                      LastKnownName="HandsetRental"
+                      LastKnownLocation="Package2_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="48f4e0b6-7384-4897-88e4-13f37de1a941"
+        name="IAuthenticatedHandset"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="207014fa-716e-496e-89a9-567480569d94"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthenticatedHandset"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b088f3fe-f711-40d6-8ef2-49cd842cd8a6"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="75aa58b0-e042-4faf-b250-560ec9913a86">
+                <propertyInstance
+                  Id="68467177-a72f-4daf-9ac6-3f26912f200a"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f9c20308-45fc-4586-ba90-c575eed1bbf0">
+                <propertyInstance
+                  Id="e77429a7-390c-405f-9fa5-3d576be6377c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="023c46f8-26d4-44d2-bca3-6eea2f81dd5f">
+                <propertyInstance
+                  Id="b5ad3295-cc00-41ae-ba4c-97a7f5217565"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eb77cac6-0fa3-49ec-99b3-c0ca131b22cd">
+                <propertyInstance
+                  Id="7f6a6391-a61e-4773-ae60-827d0f3105f2"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="cbed22fa-d7cb-4118-a90f-0d181ded98e7"
+            isSubstitutable="false">
+            <interfaceMoniker
+              Id="0655f55e-434d-4808-80e1-de20b6654f98"
+              LastKnownName="IIdentity"
+              LastKnownLocation="Package22_1925.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributes>
+          <property
+            Id="adf32544-6503-4585-884e-7dfdd3a3a81e"
+            name="Rental"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="true"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="6d73e61b-18ce-4352-8393-2f8b69a999eb"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.Security Type%3DIAuthenticatedHandset Member%3DRental"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="8aaa32d4-7b7a-4ccf-8e6d-74e377603b32"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f212434-1ada-4634-a2cf-82859f1941b0">
+                    <propertyInstance
+                      Id="07bc5e83-81ea-45b2-acfa-c24fdc691bba"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66c4c09f-f568-411a-a284-b2a2e814fb75">
+                    <propertyInstance
+                      Id="aa2ea1d4-c991-4d28-846e-c89019f59f92"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="addebb15-9e65-42eb-96d0-811786abba58">
+                    <propertyInstance
+                      Id="6da26d8f-9d91-4677-9fe9-285a0c0cceee"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b6dd28d1-abc7-4b27-9b76-4c3c8cad0efc">
+                    <propertyInstance
+                      Id="6af03495-3e2b-434e-855c-54317c32f3b2"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bde4a221-a238-47c8-9c1b-2e69b79c153f">
+                    <propertyInstance
+                      Id="4cbbcec9-cf38-493a-bea8-bf2878425e28"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8d6f45d1-9461-4042-8eda-68174300ead9">
+                    <propertyInstance
+                      Id="dd676f28-7dc2-4691-bad6-dcef8d63e83b"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1240980e-3eaf-48d6-a783-c120aa888799">
+                    <propertyInstance
+                      Id="13af5fa0-ad49-4fc4-aea9-5a05de12a1b4"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ed759481-b6c3-43b7-beaf-03e4e8b53be1"
+        name="AuthorizationService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="217e6d96-5dd0-4b77-89f4-c75b8dc0cc54"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="4bd22ad9-bfbb-431a-8941-f98f18b7e715"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="49afe86e-6d76-4f7e-aaf5-b70f6acf43da">
+                <propertyInstance
+                  Id="d75ffd95-667e-42c2-9bca-809dc04d22ff"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6eda7922-e038-458a-9a0c-d0e53fa654f7">
+                <propertyInstance
+                  Id="dd27861b-b715-4288-88df-81d22f738993"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4112d50-6eed-4769-858d-dd627e27486c">
+                <propertyInstance
+                  Id="e9cf3612-d9c8-41f8-9f73-58313c60d709"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="75692957-9de0-45c0-aa9d-0a78df480155">
+                <propertyInstance
+                  Id="cb1c5fad-dbcf-4f34-94ca-e05a6e1a93dd"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="aa1fbeb5-0c95-44a5-ab9b-02b46e7e3d52">
+                <propertyInstance
+                  Id="2930c671-8c66-446e-8d7e-0a3def6a1282"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="f2f99071-4889-430c-a9ad-8506798a971d">
+            <interfaceMoniker
+              Id="3670d645-d661-4360-b9dd-6de55d31b817"
+              LastKnownName="IAuthorizationService"
+              LastKnownLocation="Package10_1925.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="8cac94af-0586-4641-8e24-93b2aeb01f74"
+            name="_handsetService"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="7215d22c-c928-4dc7-87fa-3ed835f2d44b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D_handsetService"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="97f93b08-e4b2-4d27-80cc-ab36de2e20f6"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a85e4dd-8cca-4434-9514-0b5a8e988e1a">
+                    <propertyInstance
+                      Id="891c8798-3eb3-4587-b1ca-95d48a86295c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0e25f4fa-f5ac-4657-a117-794b38545873">
+                    <propertyInstance
+                      Id="7fc27edd-1a1b-4b0f-a4f1-39d220311768"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f3f8a32d-da83-47fd-98d6-96910ad08817">
+                    <propertyInstance
+                      Id="047aa18c-c032-42d3-ba04-162c8821e25e"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d2eeba4-dd19-410c-8e69-bfb922d19e4f">
+                    <propertyInstance
+                      Id="41ff781a-0d4f-4082-afc4-5e33f8693840"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6afd2ef-7b19-4397-854a-bf5c45b558c8">
+                    <propertyInstance
+                      Id="ba7bedb8-cdfb-4ab6-868a-e311d87ab6f3"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <interfaceMoniker
+                Id="cb2b9fd9-3c66-4ad8-9659-f879cc63826b"
+                LastKnownName="IHandsetService"
+                LastKnownLocation="Package1_1925.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="4a82ef02-57d2-4d18-a116-acf6a1e5ea9d"
+            name="AuthorizationService"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="355bdbdd-38f8-430a-ada5-6baff2b3f4bd"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.ServiceLayer Type%3DIHandsetService)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3402dd40-cbe2-4b0b-bd06-e507c01ce5e7"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3660d8e1-6d0f-4b79-954c-d39e6c536bfe">
+                    <propertyInstance
+                      Id="4760cd8d-344a-4ad9-b3af-d2c4e094d08e"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0720508a-3dfc-4aae-a31a-d8c12c04d278">
+                    <propertyInstance
+                      Id="970a4ccb-61c4-4ed6-aa3d-eca1914aa513"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ddb2161-a7df-41a6-911b-7a529d5cf698">
+                    <propertyInstance
+                      Id="ff1225e9-bc5a-461a-bccf-24b73d459c00"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e9c34473-2364-44ce-bd3d-814fcd59bada">
+                    <propertyInstance
+                      Id="6c73319f-d2e3-4fa1-8584-d5304d753d60"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9692d989-6abd-4a02-8a55-8ce76439d6b3">
+                    <propertyInstance
+                      Id="285984e4-a300-4377-a64f-b87a3aee5250"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="153f2549-480a-4a0c-a314-5bc8ae76a182">
+                    <propertyInstance
+                      Id="17772de5-b594-42e3-b85a-66965137490f"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d174b03e-178f-4ab5-8a44-1828e161d3c7"
+                  name="handsetService"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="d203e419-5092-437b-925a-553480c51ec8"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D(Name%3D.ctor OverloadingParameters%3D[(Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Interfaces%2Fbin%2FDebug%2FEmbeddedSystems.Interfaces.dll Namespace%3DEmbeddedSystems.ServiceLayer Type%3DIHandsetService)]) ParameterIdentifier%3DhandsetService"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="cb2b9fd9-3c66-4ad8-9659-f879cc63826b"
+                      LastKnownName="IHandsetService"
+                      LastKnownLocation="Package1_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="cd193610-e20a-4550-ae96-e9c0f851ea12"
+            name="AuthenticateHandsetRental"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="a3f1bef3-13e6-4b46-93f6-adfc285db7aa"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="2a6ee425-2039-46e4-bd84-a2b2d5362295"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="59128b01-46da-48b4-9c1e-afc161c2b43e">
+                    <propertyInstance
+                      Id="b42ba4c0-e7ca-4760-9360-7e44d7a12a9c"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72661f70-af33-4cac-8f13-9814be0a72f3">
+                    <propertyInstance
+                      Id="dc94b860-5556-44b3-a58e-0d5d862be2b1"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f0a7e6d-2c85-4fc1-80c5-440538031745">
+                    <propertyInstance
+                      Id="fa18b705-7f78-4efe-8b27-f73e9271c23f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c120b3c0-6b5a-4fb9-a5f2-a2d20bb517c0">
+                    <propertyInstance
+                      Id="cca5aedc-d910-4593-bbec-af1bf0f03c4c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0807c913-94a4-427f-b93e-ed104da78e0b">
+                    <propertyInstance
+                      Id="b3969008-4704-4267-abe0-2218bb541168"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6e3818a6-9076-4765-ab4b-396b41d53574">
+                    <propertyInstance
+                      Id="a1fab73a-b0e0-4571-8ffd-0f39a2e5f6e2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4fc897c5-5b3c-4cf3-af93-febba4e5ac83"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="afdba1b7-ac9d-4700-b79a-d359c353ab43"
+                      LastKnownName="HandsetRental"
+                      LastKnownLocation="Package2_1925.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e5169e93-b544-4148-91f5-b91af30b4854"
+                  name="handsetNumber"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="374257dd-6ccf-489b-beba-4bafdc67735a"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3DhandsetNumber"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="EmbeddedSystems.Models.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6ba48fa3-b1fb-49ef-bab0-d3ad075208aa"
+                  name="pin"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="096a9a06-1490-4517-a5de-2829ddaf5671"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2FEmbeddedSystems.Security%2Fbin%2FDebug%2FEmbeddedSystems.Security.dll Namespace%3DEmbeddedSystems.Security Type%3DAuthorizationService Member%3D(Name%3DAuthenticateHandsetRental OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)%2C(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DInt32)]) ParameterIdentifier%3Dpin"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="EmbeddedSystems.Models.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

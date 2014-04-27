@@ -61,10 +61,24 @@ namespace EmbeddedSystems.ServiceLayer
         /// <returns>The handset.</returns>
         Handset GetHandset(int handsetId);
 
+        /// <summary>
+        /// Retrieve the details of the current <see cref="HandsetRental"/> for a given <paramref name="handsetId"/>.
+        /// </summary>
+        /// <param name="handsetId">The unique identifier of the <see cref="Handset"/>.</param>
+        /// <returns>The details of the current <see cref="HandsetRental"/> for a given <paramref name="handsetId"/>.</returns>
         HandsetRental GetCurrentRentalForHandset(int handsetId);
 
+        /// <summary>
+        /// Set a <see cref="HandsetRental"/> to be inactive now.
+        /// </summary>
+        /// <param name="rental">The <see cref="HandsetRental"/> to deactivate.</param>
         void ExpireRental(HandsetRental rental);
 
+        /// <summary>
+        /// Build and persist a new <see cref="Handset"/>.
+        /// </summary>
+        /// <param name="handsetNumber">A new <see cref="Handset"/></param>
+        /// <returns>The persisted <see cref="Handset"/>.</returns>
         Handset CreateHandset(string handsetNumber);
     }
 }

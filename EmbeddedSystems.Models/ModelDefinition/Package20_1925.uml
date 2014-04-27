@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="02fa0e91-07e9-491b-b93e-6c1e0ff6e99c"
+  name="Infrastructure"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1187cdc8-4c76-4196-890c-593cd1ed31a5"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSystem.Data.Entity.Migrations.Infrastructure"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="6ddbb29e-f11c-4177-a8eb-6aa5cbd8c7c0"
+        name="IMigrationMetadata"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="59de7244-648e-4eb4-bc5c-21cb29c60e9b"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3Dfile:%2F%2F%2FC:%2FWorkspace%2FGIT%2FEmbedded-Systems-Assignment%2Fpackages%2FEntityFramework.6.1.0%2Flib%2Fnet45%2FEntityFramework.dll Namespace%3DSystem.Data.Entity.Migrations.Infrastructure Type%3DIMigrationMetadata"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b306736f-acc6-45f3-8775-604cb3d767c2"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a33a28bc-d0a7-4bac-8d2f-247b032f47d5">
+                <propertyInstance
+                  Id="42ee76ae-f3e1-4e94-b409-a8c63b709ed1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fd719b8b-8394-430f-8680-ba9fe1df2057">
+                <propertyInstance
+                  Id="95bc92e6-ffc1-475d-9e87-2a23da7f9c0a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="37340e3b-96be-43ee-9b2c-8de0e599650b">
+                <propertyInstance
+                  Id="313edfb9-2255-46ed-aee2-ecb421ea8ce7"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="494d8bf1-d83c-4220-af1b-f2f3c497d30d">
+                <propertyInstance
+                  Id="aae2e012-8414-4bcc-b8a6-d5ed1de66b09"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

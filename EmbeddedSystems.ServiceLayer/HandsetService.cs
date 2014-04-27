@@ -89,53 +89,67 @@ namespace EmbeddedSystems.ServiceLayer
         /// <returns>A collection of available handsets.</returns>
         public IEnumerable<Handset> GetAvailableHandsets(DateTime dateAvailableFrom)
         {
-            // For now just get all handsets.
-            //return this._persistence.GetRepository<Handset>().GetAll();
-
             var handsets = this._persistence.GetRepository<Handset>().GetAll();
 
             var availableHandsets = handsets.Where(h => h.Rentals.All(hr => hr.RentalExpires < DateTime.Now));
 
             return availableHandsets;
-
         }
 
         /// <summary>
-        /// Generate a 4 digit pin number.
+        /// Get all of the rentals that have occurred.
         /// </summary>
-        /// <returns>The generated pin number.</returns>
-        private int GeneratePin()
-        {
-            return this._randomNumberGenerator.Next(1000, 9999);
-        }
-
+        /// <returns>All of the rentals.</returns>
         public IEnumerable<HandsetRental> GetAllRentals()
         {
             return this._persistence.GetRepository<HandsetRental>().GetAll();
         }
 
+        /// <summary>
+        /// Get all of the handsets.
+        /// </summary>
+        /// <returns>Return a collection of all the handsets.</returns>
         public IEnumerable<Handset> GetAllHandsets()
         {
             return this._persistence.GetRepository<Handset>().GetAll();
         }
 
+        /// <summary>
+        /// Get a handset by a given id.
+        /// </summary>
+        /// <param name="handsetId">The id of the requested handset.</param>
+        /// <returns>The handset.</returns>
         public Handset GetHandset(int handsetId)
         {
             return this._persistence.GetRepository<Handset>().Single(x => x.Id == handsetId);
         }
 
+        /// <summary>
+        /// Retrieve the details of the current <see cref="HandsetRental"/> for a given <paramref name="handsetId"/>.
+        /// </summary>
+        /// <param name="handsetId">The unique identifier of the <see cref="Handset"/>.</param>
+        /// <returns>The details of the current <see cref="HandsetRental"/> for a given <paramref name="handsetId"/>.</returns>
         public HandsetRental GetCurrentRentalForHandset(int handsetId)
         {
-           return this._persistence.GetRepository<HandsetRental>().GetMany(hr=>hr.HandsetId == handsetId)
+           return this._persistence.GetRepository<HandsetRental>().GetMany(hr => hr.HandsetId == handsetId)
                .FirstOrDefault(hr => hr.WhenRentedOut < DateTime.Now && hr.RentalExpires > DateTime.Now);
         }
 
+        /// <summary>
+        /// Set a <see cref="HandsetRental"/> to be inactive now.
+        /// </summary>
+        /// <param name="rental">The <see cref="HandsetRental"/> to deactivate.</param>
         public void ExpireRental(HandsetRental rental)
         {
             rental.RentalExpires = DateTime.Now;
             this._persistence.Commit();
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="Handset"/>.
+        /// </summary>
+        /// <param name="handsetNumber">A new <see cref="Handset"/></param>
+        /// <returns>The persisted <see cref="Handset"/>.</returns>
         public Handset CreateHandset(string handsetNumber)
         {
             var handset = new Handset
@@ -147,6 +161,15 @@ namespace EmbeddedSystems.ServiceLayer
             this._persistence.Commit();
 
             return handset;
+        }
+
+        /// <summary>
+        /// Generate a 4 digit pin number.
+        /// </summary>
+        /// <returns>The generated pin number.</returns>
+        private int GeneratePin()
+        {
+            return this._randomNumberGenerator.Next(1000, 9999);
         }
     }
 }

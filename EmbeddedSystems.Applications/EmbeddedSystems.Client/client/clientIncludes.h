@@ -12,20 +12,25 @@
 #include <QNetworkProxy>
 #include <QtTest/QTest>
 #include <QtCore>
-#include <QtScript/QScriptEngine>
+#include <QTimer>
 
 #define DEBUG 1
 
+#define PROXY 0
+
 enum class Exhibit{EXHIBIT_1, EXHIBIT_2, EXHIBIT_3};
 
-enum class KeypadButton{KEY_1, KEY_2, KEY_3, KEY_F,
+enum class KeypadButton{KEY_NONE,
+                        KEY_1, KEY_2, KEY_3, KEY_F,
                         KEY_4, KEY_5, KEY_6, KEY_E,
                         KEY_7, KEY_8, KEY_9, KEY_D,
                         KEY_A, KEY_0, KEY_B, KEY_C};
 
 const QString baseUrl = "http://esd.jdibble.biz/";
 const QString handsetApiUrl = "http://handset.api.esd.jdibble.biz/api/handset/authenticate";
-// const QString handsetApiUrl = "http://esd.jdibble.biz/api/handset/authorise";
 // const QString handsetApiUrl = "http://esd.jdibble.biz:8080/ESD/levels.mp3";
-
+// const QString handsetApiUrl = "http://json.org/example";
+// const QString handsetApiUrl = "http://www.google.co.uk";
+const QString adminUrl = "admin.console.esd.jdibble.biz/";
+const QString pintsUrl = "http://handset.api.esd.jdibble.biz/file/1";
 #endif // CLIENTINCLUDES_H

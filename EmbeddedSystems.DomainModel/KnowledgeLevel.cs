@@ -3,16 +3,16 @@
 //    Copyright 2013
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-using System.Collections.Generic;
+
 namespace EmbeddedSystems.DomainModel
 {
     /// <summary>
-    /// An object to represent the competency level of an <see cref="ICustomer"/>.
+    /// An object to represent the competency level of an <see cref="Customer"/>.
     /// </summary>
     public class KnowledgeLevel : UniqueObject<int>
     {
         /// <summary>
-        /// Gets or sets the description of this <see cref="IKnowledgeLevel"/>.
+        /// Gets or sets the description of this <see cref="KnowledgeLevel"/>.
         /// </summary>
         public string Description { get; set; }
     }

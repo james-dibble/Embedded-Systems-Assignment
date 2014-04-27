@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="ESDModel.Exhibit" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ESDModel.HandsetRental" Width="1.5" PointX="7.25" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ESDModel.Handset" Width="1.5" PointX="7.25" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ESDModel.KnowledgeLevel" Width="1.5" PointX="2.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ESDModel.KnowledgeLevel" Width="1.625" PointX="2.875" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ESDModel.Language" Width="1.5" PointX="4.5" PointY="0.625" IsExpanded="true" />
         <AssociationConnector Association="ESDModel.FK_dbo_AudioFiles_dbo_Exhibits_ExhibitId" ManuallyRouted="false" />
         <AssociationConnector Association="ESDModel.FK_dbo_AudioFiles_dbo_KnowledgeLevels_KnowledgeLevelId" ManuallyRouted="false" />

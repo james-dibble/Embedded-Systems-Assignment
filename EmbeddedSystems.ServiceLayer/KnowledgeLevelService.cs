@@ -49,7 +49,11 @@ namespace EmbeddedSystems.ServiceLayer
             return knowledgeLevels;
         }
 
-
+        /// <summary>
+        /// Build and persist a new <see cref="KnowledgeLevel"/>.
+        /// </summary>
+        /// <param name="knowledgeLevelDesc">A new <see cref="KnowledgeLevel"/></param>
+        /// <returns>The persisted <see cref="KnowledgeLevel"/>.</returns>
         public KnowledgeLevel AddKnowledgeLevel(string knowledgeLevelDesc)
         {
             var knowledgeLevel = new KnowledgeLevel()
@@ -60,6 +64,11 @@ namespace EmbeddedSystems.ServiceLayer
             return this.AddKnowledgeLevel(knowledgeLevel);
         }
 
+        /// <summary>
+        /// Build and persist a new <see cref="KnowledgeLevel"/>.
+        /// </summary>
+        /// <param name="knowledgeLevel">A new <see cref="KnowledgeLevel"/></param>
+        /// <returns>The persisted <see cref="KnowledgeLevel"/>.</returns>
         public KnowledgeLevel AddKnowledgeLevel(KnowledgeLevel knowledgeLevel)
         {
             this._persistence.GetRepository<KnowledgeLevel>().Add(knowledgeLevel);

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="7ff03a61-660b-4405-a2b5-aa248fde98b6"
+  name="EmbeddedSystems"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="28c8e051-8885-4fb7-afe2-fd7cd4ea5db4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DEmbeddedSystems"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="d81694df-1388-47e8-9ec2-dbaa9b879784"
+        LastKnownName="ServiceLayer"
+        LastKnownLocation="Package1_1925.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="07e5cc06-6158-4f36-8df4-09583c6b7837"
+        LastKnownName="DomainModel"
+        LastKnownLocation="Package2_1925.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="92cab276-08a6-4d09-92d0-54447c12eb6e"
+        LastKnownName="Persistence"
+        LastKnownLocation="Package6_1925.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="75554184-a198-4836-a4e3-dc0a617f7824"
+        LastKnownName="Security"
+        LastKnownLocation="Package10_1925.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
