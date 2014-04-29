@@ -25,9 +25,9 @@ namespace EmbeddedSystems.Kiosk.Controllers
 
         public ActionResult KioskSignUp()
         {
-            //var language = (CultureInfo)Session["Culture"];
-            //var displayName = language.DisplayName;
-            return this.View();
+            var language = (CultureInfo)Session["Culture"];
+            var displayName = language.DisplayName;
+            return this.View(language);
         }
 
         public ActionResult KnowledgeLevelSelect()

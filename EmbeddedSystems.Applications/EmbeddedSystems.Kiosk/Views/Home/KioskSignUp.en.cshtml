@@ -1,4 +1,4 @@
-﻿@*@model System.Globalization.CultureInfo*@
+﻿@model System.Globalization.CultureInfo
 
 
 @using (Html.BeginForm("NewRental", "Rental"))
@@ -56,12 +56,12 @@
                 </div>
             </div>
 
-            @*<div class="form-group">
+            <div class="form-group">
                 @Html.Label("knowledgeLevelId", "Knowledge Level")
                 @Html.Action("KnowledgeLevelSelect", "Home")
-            </div>*@
+            </div>
 
-            @*@Html.HiddenFor(ci => ci.DisplayName, new { id = "cultureName" })*@
+            @Html.HiddenFor(ci => ci.DisplayName, new { id = "cultureName" })
 
             <button type="submit" class="btn btn-default">Submit</button>
         </form>

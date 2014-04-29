@@ -24,14 +24,14 @@ namespace EmbeddedSystems.Kiosk.Controllers
         }
 
 
-        public ActionResult NewRental(Customer customer, string cultureName, int knowledgeLevelId)
+        public ActionResult NewRental(Customer customer, string DisplayName, int knowledgeLevelId)
         {
-            customer.Language = this._languageService.GetByName(cultureName);
+            customer.Language = this._languageService.GetByName(DisplayName);
             customer.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(knowledgeLevelId);
 
             this._customerService.CreateCustomer(customer);
-            this._handsetService.RentHandset(customer);
-            return this.RedirectToAction("Index", "Home");
+            var rental = this._handsetService.RentHandset(customer);
+            return View("~/Views/Home/Confirm.cshtml", rental);
         }
 
     }

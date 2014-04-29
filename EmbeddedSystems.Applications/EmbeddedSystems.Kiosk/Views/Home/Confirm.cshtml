@@ -1,9 +1,17 @@
-﻿<div class="transbox">
+﻿@model EmbeddedSystems.DomainModel.HandsetRental
+
+<div class="transbox">
     <h1 class="fade"><b>Confirmation</b></h1>
-    <h2><b>Your details have been submitted sucessfully.</b></h2>
+    <h2><b>Your details have been submitted successfully.</b></h2>
 </div>
 
+<div class="transbox">
+    <h4><b>@Model.Customer.Name</b></h4>
+    <h4><b>Handset pin: @Model.Pin</b></h4>
+</div>
+
+
 <p>
-  <button type="submit" class="btn btn-primary btn-lg">Large button</button>
-  <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg">Large button</button>
+    <button type="submit" value="Submit" class="btn btn-default">Submit</button>
 </p>
