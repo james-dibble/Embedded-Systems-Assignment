@@ -10,12 +10,20 @@ Client::Client(QObject *parent) :
 
 Client::~Client()
 {
+    delete tracker;
+    delete mediaPlayer;
+    delete keypad;
+    delete lcd;
     delete network;
 }
 
 void Client::startClient()
 {
     authenticated = false;
+
+    lcd = new LcdController();
+
+    MediaPlayer = new MediaPlayer();
 
     keypad = new KeypadController();
 
@@ -41,7 +49,6 @@ void Client::startClient()
     netThread->start();
 
     QMetaObject::invokeMethod(network,"begin");
-    //network->begin();
 
     // we need to authenticate the handset before we can do anything
     while (!authenticated)
@@ -194,7 +201,7 @@ void Client::buttonPressed(KeypadButton button)
     case KeypadButton::KEY_F:
         qDebug() << "Not implemented"; break;
     default /*NONE*/:
-        qWarning() << "Bad key press!"; break;
+        normalPlay();
     }
 }
 
@@ -214,17 +221,22 @@ void Client::setWaitOver(bool newWait)
 
 void Client::playPause()
 {
-
+    mediaPlayer->playPauseHandle();
 }
 
 void Client::fastForward()
 {
-
+    mediaPlayer->fastForward();
 }
 
 void Client::rewind()
 {
+    mediaPlayer->rewind();
+}
 
+void Client::normalPlay()
+{
+    mediaPlayer->normal();
 }
 
 void Client::requestExhibit(int exhibit)
@@ -238,6 +250,8 @@ void Client::requestExhibit(int exhibit)
         parseResponse();
     }
 
+    QUrl url = network->getTrackLocation();
+    mediaPlayer->playAudioFile(url);
 }
 
 void Client::locationChanged(QString)

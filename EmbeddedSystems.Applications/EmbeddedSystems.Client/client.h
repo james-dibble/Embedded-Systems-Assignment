@@ -8,7 +8,9 @@
 #include "clientIncludes.h"
 #include "network.h"
 #include "keypadcontroller.h"
+#include "lcdcontroller.h"
 #include "locationtracker.h"
+#include "mediaplayer.h"
 
 #include <json/json.h>
 
@@ -37,6 +39,8 @@ private:
     Network* network;
     KeypadController* keypad;
     LocationTracker* tracker;
+    LcdController* lcd;
+    MediaPlayer* mediaPlayer;
     QString reply;
     int httpCode;
     bool authenticated;

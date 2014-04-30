@@ -69,13 +69,6 @@ void Network::getRequest(QUrl url, QString newPin /* = -1*/ )
     networkMan->get(request);
 
     qDebug() << "get sent to" << url;
-
-   // QMutex locker(&netMutex);
-   // netMutex.lock();
-  //  qDebug() << "locked";
- //   QWaitCondition waiter;
-  //  waiter.wait(&netMutex);
-  //  qDebug() << "waited";
 }
 
 QUrl Network::getTrackLocation()
@@ -86,8 +79,6 @@ QUrl Network::getTrackLocation()
 
 void Network::replyReceived(QNetworkReply* reply)
 {
-   // QMutexLocker locker(&netMutex);
-  //  netMutex.lock();
     QByteArray replyData;
     unsigned int httpStatusCode;
     qDebug() << "reply received";
@@ -103,12 +94,7 @@ void Network::replyReceived(QNetworkReply* reply)
     }
     else
     {
-
-    //    qDebug() << "the error" << reply->attribute();
-            replyData = reply->readAll();
-
-            replyString = QString::fromUtf8(replyData.data(), replyData.size());
-            qDebug() << "the reply " << replyString;
+            qDebug() << "Error";
     }
 
     qDebug() << "forwarding message";

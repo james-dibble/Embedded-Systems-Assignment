@@ -13,8 +13,6 @@ public:
     explicit KeypadController(QObject *parent = 0);
     ~KeypadController();
 
-//    int getPin();
-
 protected:
     void read();
     void write();

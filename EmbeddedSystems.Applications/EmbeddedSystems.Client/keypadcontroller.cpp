@@ -62,7 +62,7 @@ void KeypadController::read()
     KeypadButton button;
     bool pressed = false;
     // read 4 rows looking for keypress
-# if 1
+# if DEBUG
     pressed = true;
 #endif
     if (pressed)

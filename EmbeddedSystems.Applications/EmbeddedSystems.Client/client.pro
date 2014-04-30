@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core network script
+QT       += core network
 
 QT       -= gui
 
@@ -19,14 +19,18 @@ SOURCES += main.cpp \
     client.cpp \
     network.cpp \
     locationtracker.cpp \
-    keypadcontroller.cpp
+    keypadcontroller.cpp \
+    lcdcontroller.cpp \
+    mediaplayer.cpp
 
 HEADERS += \
     client.h \
     clientIncludes.h \
     network.h \
     locationtracker.h \
-    keypadcontroller.h
+    keypadcontroller.h \
+    lcdcontroller.h \
+    mediaplayer.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
