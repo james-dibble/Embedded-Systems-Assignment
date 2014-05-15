@@ -4,12 +4,12 @@
 #
 #-------------------------------------------------
 
-QT       += core network
+QT       += core network serialport
 
 QT       -= gui
 
 TARGET = client
-CONFIG   += console mobility
+CONFIG   += console serialport mobility
 CONFIG   -= app_bundle
 
 MOBILITY = multimedia
