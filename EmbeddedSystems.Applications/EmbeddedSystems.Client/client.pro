@@ -4,12 +4,12 @@
 #
 #-------------------------------------------------
 
-QT       += core network
+QT       += core network serialport
 
 QT       -= gui
 
 TARGET = client
-CONFIG   += console
+CONFIG   += console serialport
 CONFIG   -= app_bundle
 
 TEMPLATE = app
