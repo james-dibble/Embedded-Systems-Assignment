@@ -13,7 +13,7 @@ public:
 
 private:
     QNetworkAccessManager* networkMan;
-    int deviceName;
+    QString deviceName;
     QString pin;
     QMutex netMutex;
     QString replyString;

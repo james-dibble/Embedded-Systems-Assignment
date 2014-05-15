@@ -9,8 +9,10 @@ QT       += core network
 QT       -= gui
 
 TARGET = client
-CONFIG   += console
+CONFIG   += console mobility
 CONFIG   -= app_bundle
+
+MOBILITY = multimedia
 
 TEMPLATE = app
 
@@ -34,9 +36,9 @@ HEADERS += \
 
 QMAKE_CXXFLAGS += -std=c++11
 
-INCLUDEPATH += ../../../../jsoncpp-src-0.6.0-rc2/include
+INCLUDEPATH += jsoncpp-src-0.6.0-rc2/include
 # INCLUDEPATH += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/include
 #               /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/src/lib_json
 
-LIBS += ../../../../jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
+LIBS += jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
 # LIBS += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7.2/libjson_linux-gcc-4.7.2_libmt.a

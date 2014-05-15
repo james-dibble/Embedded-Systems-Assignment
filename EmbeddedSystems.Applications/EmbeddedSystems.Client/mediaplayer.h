@@ -2,7 +2,8 @@
 #define MEDIAPLAYER_H
 
 #include <QObject>
-#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimediaKit/QMediaPlayer>
+//#include <QtMultimedia/QtMultimedia>
 
 class MediaPlayer : public QObject
 {

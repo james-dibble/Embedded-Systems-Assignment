@@ -100,6 +100,11 @@ bool Client::authenticateDevice()
     //#else
     //    success = false;
     //#endif
+
+    emit request(pintsUrl, pincode);
+    blockOnReply();
+    parseResponse();
+
     return success;
 }
 
@@ -132,10 +137,15 @@ bool Client::parseResponse()
     int pints = yes.get("ExhibitId", -1).asInt();
     qDebug() << "Exhibit is " << pints;
 
-    std::string file = yes.get("FilePath", "ERROR ERROR ERROR ERROR ERROR").asString();
-    qDebug() << "FilePath is " << file.c_str();
+    std::string filePath = yes.get("FilePath", "ERROR ERROR ERROR ERROR ERROR").asString();
+    qDebug() << "FilePath is " << filePath.c_str();
+    // something like:
+    // C:\wmpub\wmroot\esd\Kalimba.mp3
+    int slashPos = filePath.find_last_of('\\');
+    std::string actualFile = filePath.substr(slashPos+1);
+    file = actualFile.c_str();
+    qDebug() << "File is " << file;
 
-qDebug() << "done";
     return true;
 }
 
@@ -195,11 +205,11 @@ void Client::buttonPressed(KeypadButton button)
     case KeypadButton::KEY_C: // rewind button
         rewind(); break;
     case KeypadButton::KEY_D:
-        qDebug() << "Not implemented"; break;
+        qDebug() << "Mute"; break;
     case KeypadButton::KEY_E:
-        qDebug() << "Not implemented"; break;
+        qDebug() << "Volume Up"; break;
     case KeypadButton::KEY_F:
-        qDebug() << "Not implemented"; break;
+        qDebug() << "Volume Down"; break;
     default /*NONE*/:
         normalPlay();
     }
