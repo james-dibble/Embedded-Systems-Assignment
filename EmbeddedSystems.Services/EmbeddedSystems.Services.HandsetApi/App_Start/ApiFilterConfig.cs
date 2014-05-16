@@ -20,7 +20,6 @@ namespace EmbeddedSystems.Services.HandsetApi
                 (IAuthorizationService)GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(IAuthorizationService));
 
             filters.Add(new RequiresAuthenticationFilter(authorizationService));
-            filters.Add(new NullObjectActionFilter());
         } 
     }
     

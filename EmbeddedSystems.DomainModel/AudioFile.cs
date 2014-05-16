@@ -18,7 +18,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="Exhibit"/> that this <see cref="AudioFile"/> is for.
         /// </summary>
-        public Exhibit Exhibit { get; set; }
+        public virtual Exhibit Exhibit { get; set; }
 
         /// <summary>
         /// Gets or sets the the ID of the <see cref="Language"/>. DO NOT USE.
@@ -28,7 +28,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="Language"/> that this <see cref="AudioFile"/> is spoken in.
         /// </summary>
-        public Language Language { get; set; }
+        public virtual Language Language { get; set; }
 
         /// <summary>
         /// Gets or sets the the ID of the <see cref="KnowledgeLevel"/>. DO NOT USE.
@@ -38,7 +38,7 @@ namespace EmbeddedSystems.DomainModel
         /// <summary>
         /// Gets or sets the <see cref="KnowledgeLevel"/> of this <see cref="AudioFile"/>.
         /// </summary>
-        public KnowledgeLevel KnowledgeLevel { get; set; }
+        public virtual KnowledgeLevel KnowledgeLevel { get; set; }
 
         /// <summary>
         /// Gets or sets the location of this <see cref="AudioFile"/>.

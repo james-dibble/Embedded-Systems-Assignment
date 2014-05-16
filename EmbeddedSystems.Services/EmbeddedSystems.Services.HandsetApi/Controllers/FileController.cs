@@ -26,6 +26,7 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
             this._customerService = customerService;
         }
 
+        [NullObjectActionFilter]
         [RequiresAuthentication]
         public AudioFile Get(int exhibitId)
         {

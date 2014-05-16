@@ -34,12 +34,6 @@ namespace EmbeddedSystems.Admin.Controllers
         {
             var exhibitFiles = this._audioFileService.GetFilesForExhibit(exhibitId);
 
-            foreach (var file in exhibitFiles)
-            {
-                file.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(file.KnowledgeLevelId);
-                file.Language = this._languageService.GetLanguage(file.LanguageId);
-            }
-
             return this.PartialView("~/Views/Audio/ExhibitAudio.cshtml", exhibitFiles);
         }
 

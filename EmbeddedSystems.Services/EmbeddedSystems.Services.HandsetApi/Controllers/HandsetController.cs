@@ -33,7 +33,7 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
                 return new HttpResponseMessage(HttpStatusCode.Forbidden);
             }
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return new HttpResponseMessage(HttpStatusCode.Accepted);
         }
     }
 }
