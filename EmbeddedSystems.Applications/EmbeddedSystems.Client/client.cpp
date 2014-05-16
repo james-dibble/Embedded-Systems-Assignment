@@ -87,7 +87,7 @@ bool Client::authenticateDevice()
 
     qDebug() << "Authenticating";
     //  QString reply = network->getRequest(handsetApiUrl);
-    emit request(handsetApiUrl, pincode);
+    emit request(authenticateUrl, pincode);
     //  QMetaObject::invokeMethod(network,"getRequest",Q_ARG(QUrl, handsetApiUrl));
 
     // block thread until reply receieved
@@ -101,10 +101,15 @@ bool Client::authenticateDevice()
     //    success = false;
     //#endif
 
-    emit request(pintsUrl, pincode);
-    blockOnReply();
-    parseResponse();
+#if DEBUG
+//    QString requestString = fileRequestUrl;
+//    requestString.append("1");
+//    emit request(requestString, pincode);
+//    blockOnReply();
+//    parseResponse();
 
+    requestExhibit(1);
+#endif
     return success;
 }
 
@@ -116,7 +121,7 @@ bool Client::parseResponse()
         return false;
     }
 
-    if (reply.isEmpty())
+    if (reply.isEmpty() && !authenticated)
     {
         qDebug() << "Empty message, not a problem";
         return true;
@@ -125,19 +130,19 @@ bool Client::parseResponse()
     qDebug() << "its parsing time";
 
     const std::string stdreply = reply.toStdString();
-    Json::Value yes;
+    Json::Value root;
     Json::Reader reader;
 
-    if (!(reader.parse(stdreply, yes, true)))
+    if (!(reader.parse(stdreply, root, true)))
     {
         // parsing failed
         qDebug() << reader.getFormattedErrorMessages().c_str();
     }
 
-    int pints = yes.get("ExhibitId", -1).asInt();
+    int pints = root.get("ExhibitId", -1).asInt();
     qDebug() << "Exhibit is " << pints;
 
-    std::string filePath = yes.get("FilePath", "ERROR ERROR ERROR ERROR ERROR").asString();
+    std::string filePath = root.get("FilePath", "NULL").asString();
     qDebug() << "FilePath is " << filePath.c_str();
     // something like:
     // C:\wmpub\wmroot\esd\Kalimba.mp3
@@ -147,6 +152,24 @@ bool Client::parseResponse()
     qDebug() << "File is " << file;
 
     return true;
+}
+
+void Client::requestExhibit(int exhibit)
+{
+    QString requestString = fileRequestUrl;
+    QString exhibitString = QString("%1").arg(exhibit);
+    requestString.append(exhibitString);
+    qDebug() << requestString << " " << exhibit;
+    emit request(requestString);
+    blockOnReply();
+    qDebug() << "end block";
+
+    parseResponse();
+
+    QString url = mmsBaseUrl;
+    url.append(file);
+//    url = "mms://esd.jdibble.biz:8080/ESD/Dancing.mp3";
+    mediaPlayer->playAudioFile(url);
 }
 
 void Client::blockOnReply()
@@ -166,6 +189,45 @@ void Client::networkReply(QString theReply, unsigned int statusCode)
     httpCode = statusCode;
     qDebug() << "networkReply";
     setWaitOver(true);
+}
+
+bool Client::getWaitOver()
+{
+    QMutexLocker locker(&clientMutex);
+  //  qDebug() << "get ";
+    return waitOver;
+}
+
+void Client::setWaitOver(bool newWait)
+{
+    QMutexLocker locker(&clientMutex);
+    qDebug() << "set " << newWait;
+    waitOver = newWait;
+}
+
+void Client::playPause()
+{
+    mediaPlayer->playPauseHandle();
+}
+
+void Client::fastForward()
+{
+    mediaPlayer->fastForward();
+}
+
+void Client::rewind()
+{
+    mediaPlayer->rewind();
+}
+
+void Client::normalPlay()
+{
+    mediaPlayer->normal();
+}
+
+void Client::locationChanged(int exhibit)
+{
+    requestExhibit(exhibit);
 }
 
 void Client::buttonPressed(KeypadButton button)
@@ -213,58 +275,4 @@ void Client::buttonPressed(KeypadButton button)
     default /*NONE*/:
         normalPlay();
     }
-}
-
-bool Client::getWaitOver()
-{
-    QMutexLocker locker(&clientMutex);
-  //  qDebug() << "get ";
-    return waitOver;
-}
-
-void Client::setWaitOver(bool newWait)
-{
-    QMutexLocker locker(&clientMutex);
-    qDebug() << "set " << newWait;
-    waitOver = newWait;
-}
-
-void Client::playPause()
-{
-    mediaPlayer->playPauseHandle();
-}
-
-void Client::fastForward()
-{
-    mediaPlayer->fastForward();
-}
-
-void Client::rewind()
-{
-    mediaPlayer->rewind();
-}
-
-void Client::normalPlay()
-{
-    mediaPlayer->normal();
-}
-
-void Client::requestExhibit(int exhibit)
-{
-    if (exhibit == 1)
-    {
-        emit request(handsetApiUrl);
-        blockOnReply();
-        qDebug() << "end block";
-
-        parseResponse();
-    }
-
-    QUrl url = network->getTrackLocation();
-    mediaPlayer->playAudioFile(url);
-}
-
-void Client::locationChanged(QString)
-{
-
 }

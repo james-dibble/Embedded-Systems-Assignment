@@ -11,9 +11,7 @@ LocationTracker::~LocationTracker()
 
 void LocationTracker::startTracking()
 {
-    lastStrength = 0;
-    firstRun = true;
-
+    lastExhibit = EXHIBIT_A;
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(scan()));
     timer->start(5000);
@@ -21,81 +19,48 @@ void LocationTracker::startTracking()
 
 void LocationTracker::scan()
 {
-    QProcess trackProc;
-    QString processName = "iwlist wlan0 scan";
-    // QString processName("ifconfig");
-    int ourAccessPointNumber = -1;
+    int exhibit, quality;
 
-    QString ourAccessPointName = getAccessPointName();
+    // force wireless rescan
+    scanWireless();
 
-    if (ourAccessPointName.isEmpty())
+    quality = getSignalQuality();
+
+    if (quality > strengthThreshold)
     {
-        return;
+        qDebug() << "Exhibit A";
+        exhibit = EXHIBIT_A;
+    }
+    else
+    {
+        qDebug() << "Exhibit B";
+        exhibit = EXHIBIT_B;
     }
 
-    trackProc.start(processName);
-    trackProc.waitForFinished();
-
-    QString output = trackProc.readAllStandardOutput();
-
-    if (trackProc.exitStatus() != 0)
+    if (exhibit != lastExhibit)
     {
-        qDebug() << trackProc.readAllStandardError();
-        return;
-    }
-
-    qDebug() << output;
-    QStringList lines = output.split("\n");
-    QStringList ssids = lines.filter("ESSID:");
-
-    if (ssids.isEmpty())
-    {
-        // found no access points
-        qWarning() << "No access points found, you may be offline!";
-        return;
-    }
-    for (int i=0; i < ssids.size(); i++)
-    {
-        QString ssid = ssids.at(i);
-        if (ssid.indexOf(ourAccessPointName) >= 0)
-        {
-            qDebug() << "Found our access point";
-            ourAccessPointNumber = i;
-        }
-    }
-
-    if (ourAccessPointNumber != -1)
-    {
-        QStringList signalStengths = lines.filter("Quality=");
-        QString strengthLine = signalStengths.at(ourAccessPointNumber);
-        qDebug() << strengthLine;
-
-        int start = strengthLine.indexOf("=");
-        // make start next char after '='
-        start++;
-        int end = strengthLine.indexOf(" ", start);
-        int length = end - start;
-        QString strengthFraction = strengthLine.mid(start, length);
-        qDebug() << strengthFraction;
-
-        int mid = strengthFraction.indexOf("/");
-        int numerator = strengthFraction.left(mid).toInt();
-        int denominator = strengthFraction.right(mid).toInt();
-        double thisStrength = numerator;
-        qDebug() << thisStrength;
-
-        if (thisStrength != lastStrength && !firstRun)
-        {
-            qDebug() << "Strength changed";
-        }
-        firstRun = false;
-        lastStrength = thisStrength;
+        emit forwardNewLocation(exhibit);
+        lastExhibit = exhibit;
     }
 }
 
-QString LocationTracker::getAccessPointName()
+void LocationTracker::scanWireless()
 {
-    QString accessPoint = "";
+    QProcess scanProc;
+    QString processName = "iwlist wlan0 scan";
+
+    scanProc.start(processName);
+    scanProc.waitForFinished();
+
+    if (scanProc.exitStatus() != 0)
+    {
+        qDebug() << scanProc.readAllStandardError();
+    }
+}
+
+int LocationTracker::getSignalQuality()
+{
+    QString quality = "";
     QProcess iwconfigProc;
     QString processName = "iwconfig wlan0";
     iwconfigProc.start(processName);
@@ -104,22 +69,23 @@ QString LocationTracker::getAccessPointName()
     QString output = iwconfigProc.readAllStandardOutput();
     qDebug() << output;
 
-    QStringList ssids = output.split("\n").filter("ESSID:");
-    if (ssids.isEmpty())
+    QStringList qualities = output.split("\n").filter("Quality");
+    if (qualities.isEmpty())
     {
         // found no access points
-        qWarning() << "Not connected!";
+        qWarning() << "No quality!";
     }
     else
     {
-        QString ssidLine = ssids.at(0);
-        int start = ssidLine.indexOf("\"");
+        //           Link Quality=49/70  Signal level=-61 dBm
+        QString qualityLine = qualities.at(0);
+        int start = qualityLine.indexOf("=");
         // make start next char after '"'
         start++;
-        int end = ssidLine.indexOf("\"", start);
+        int end = qualityLine.indexOf("/", start);
         int length = end - start;
-        accessPoint = ssidLine.mid(start, length);
+        quality = qualityLine.mid(start, length);
     }
-    qDebug() << accessPoint;
-    return accessPoint;
+    qDebug() << quality;
+    return quality.toInt();
 }

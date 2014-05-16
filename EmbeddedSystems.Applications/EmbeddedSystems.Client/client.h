@@ -56,7 +56,7 @@ signals:
 public slots:
     void networkReply(QString, unsigned int);
     void buttonPressed(KeypadButton);
-    void locationChanged(QString);
+    void locationChanged(int);
 };
 
 #endif // CLIENT_H

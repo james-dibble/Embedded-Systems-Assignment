@@ -25,8 +25,9 @@ enum class KeypadButton{KEY_NONE,
                         KEY_A, KEY_0, KEY_B, KEY_C};
 
 const QString baseUrl = "http://esd.jdibble.biz/";
-const QString handsetApiUrl = "http://handset.api.esd.jdibble.biz/api/handset/authenticate";
+const QString authenticateUrl = "http://handset.api.esd.jdibble.biz/handset/authenticate";
 // const QString handsetApiUrl = "http://esd.jdibble.biz:8080/ESD/levels.mp3";
 const QString adminUrl = "admin.console.esd.jdibble.biz/";
-const QString pintsUrl = "http://handset.api.esd.jdibble.biz/file/1";
+const QString fileRequestUrl = "http://handset.api.esd.jdibble.biz/file/";
+const QString mmsBaseUrl = "mms://esd.jdibble.biz:8080/ESD/";
 #endif // CLIENTINCLUDES_H

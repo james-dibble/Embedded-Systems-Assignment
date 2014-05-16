@@ -12,11 +12,12 @@ MediaPlayer::~MediaPlayer()
 
 void MediaPlayer::playAudioFile(QUrl track)
 {
+    qDebug() << "Grabbing track: " << track;
     player->setMedia(track);
-    player->setVolume(100);
-//    player->play();
+    player->setVolume(100); 
 
-    qDebug() << "Playing track: " << track.toString() << endl;
+    player->play();
+    qDebug() << "Playing track: " << track;
 }
 
 void MediaPlayer::playPauseHandle()

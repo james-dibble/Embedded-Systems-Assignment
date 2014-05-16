@@ -6,6 +6,9 @@
 
 #include "clientIncludes.h"
 
+#define EXHIBIT_A 1
+#define EXHIBIT_B 2
+
 class LocationTracker : public QObject
 {
     Q_OBJECT
@@ -14,15 +17,16 @@ public:
     ~LocationTracker();
 
 protected:
-    QString getAccessPointName();
+    void scanWireless();
+    int getSignalQuality();
 
 private:
-    int lastStrength;
+    const int strengthThreshold = 60;
+    int lastExhibit;
     QTimer *timer;
-    bool firstRun;
     
 signals:
-    void forwardNewLocation(QString);
+    void forwardNewLocation(int);
     void trackerFinished();
     
 public slots:
