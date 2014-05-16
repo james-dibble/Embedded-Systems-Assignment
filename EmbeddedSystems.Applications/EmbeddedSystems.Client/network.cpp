@@ -11,7 +11,6 @@ Network::~Network()
 
 void Network::begin()
 {
-    deviceName = "HND123";
     pin = "0000";
     networkMan = new QNetworkAccessManager();
 

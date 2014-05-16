@@ -8,7 +8,7 @@
 #include <QtNetwork/QNetworkRequest>
 #include <QtNetwork/QNetworkReply>
 #include <QNetworkProxy>
-#include <QtTest/QTest>
+// #include <QtTest/QTest>
 #include <QtCore>
 #include <QTimer>
 

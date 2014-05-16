@@ -44,7 +44,7 @@ void KeypadController::pinRequested(QString& newPin)
     }
 #if DEBUG
     // force pincode
-    newPin = "9772";
+    newPin = "7414";
 #endif
 }
 

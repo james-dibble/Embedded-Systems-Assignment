@@ -4,12 +4,12 @@
 #
 #-------------------------------------------------
 
-QT       += core network serialport
+QT       += core network multimediakit
 
 QT       -= gui
 
 TARGET = client
-CONFIG   += console serialport mobility
+CONFIG   += console mobility serialport
 CONFIG   -= app_bundle
 
 MOBILITY = multimedia
@@ -22,8 +22,9 @@ SOURCES += main.cpp \
     network.cpp \
     locationtracker.cpp \
     keypadcontroller.cpp \
-    lcdcontroller.cpp \
     mediaplayer.cpp
+#    lcdcontroller.cpp
+
 
 HEADERS += \
     client.h \
@@ -31,14 +32,19 @@ HEADERS += \
     network.h \
     locationtracker.h \
     keypadcontroller.h \
-    lcdcontroller.h \
     mediaplayer.h
+#    lcdcontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
+INCLUDEPATH += /usr/include/QtMultimediaKit
+INCLUDEPATH += /usr/include/QtMobility
 INCLUDEPATH += jsoncpp-src-0.6.0-rc2/include
 # INCLUDEPATH += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/include
 #               /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/src/lib_json
 
-LIBS += jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
+#LIBS += -L./jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
+LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/ -ljson
 # LIBS += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7.2/libjson_linux-gcc-4.7.2_libmt.a
+
+message($$LIBS)

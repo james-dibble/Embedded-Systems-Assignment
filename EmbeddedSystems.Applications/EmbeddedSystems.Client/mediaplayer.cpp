@@ -16,12 +16,12 @@ void MediaPlayer::playAudioFile(QUrl track)
     player->setVolume(100);
 //    player->play();
 
-    qDebug() << "Playing track: " << track.toStdString() << endl;
+    qDebug() << "Playing track: " << track.toString() << endl;
 }
 
 void MediaPlayer::playPauseHandle()
 {
-    QMediaPlayer state = player->state();
+    QMediaPlayer::State state = player->state();
 
     if (state == QMediaPlayer::State::PlayingState)
     {
@@ -32,7 +32,7 @@ void MediaPlayer::playPauseHandle()
         player->play();
     }
     qDebug() << "Paused track..." << endl;
-    qDebug() << "Position: " << getCurrentTime().toString("mm:ss").toStdString() << endl;
+    qDebug() << "Position: " << getCurrentTime().toString("mm:ss");
 }
 
 void MediaPlayer::muteHandle()
@@ -43,19 +43,19 @@ void MediaPlayer::muteHandle()
     {
         // Audio is muted
         player->setMuted(false); // Unmute audio
-        cout << "Audio unmuted..." << endl;
+        qDebug() << "Audio unmuted...";
     } else {
         // Audio is not muted
         player->setMuted(true); // Mute audio
-        cout << "Audio muted..." << endl;
+        qDebug() << "Audio muted...";
     }
     qDebug() << "Volume: " << player->volume() << endl;
-    qDebug() << "Position: " << getCurrentTime().toString("mm:ss").toStdString() << endl;
+    qDebug() << "Position: " << getCurrentTime().toString("mm:ss");
 }
 
 void MediaPlayer::fastForward()
 {
-    QMediaPlayer state = player->state();
+    QMediaPlayer::State state = player->state();
 
     if (state == QMediaPlayer::State::PlayingState)
     {
@@ -69,7 +69,7 @@ void MediaPlayer::fastForward()
 
 void MediaPlayer::rewind()
 {
-    QMediaPlayer state = player->state();
+    QMediaPlayer::State state = player->state();
 
     if (state == QMediaPlayer::State::PlayingState)
     {
@@ -83,7 +83,7 @@ void MediaPlayer::rewind()
 
 void MediaPlayer::normal()
 {
-    QMediaPlayer state = player->state();
+    QMediaPlayer::State state = player->state();
 
     if (state == QMediaPlayer::State::PlayingState)
     {
@@ -95,11 +95,9 @@ void MediaPlayer::normal()
     }
 }
 
-void MediaPlayer::setVolume()
+void MediaPlayer::setVolume(int volumeValue)
 {
-    int volumeValue;
-    qDebug() << "New Volume: ";
-    qDebug() >> volumeValue;
+    qDebug() << "New Volume: " << volumeValue;
 
     player->setVolume(volumeValue);
 

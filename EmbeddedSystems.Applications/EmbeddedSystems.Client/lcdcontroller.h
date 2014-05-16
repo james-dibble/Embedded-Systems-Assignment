@@ -2,7 +2,7 @@
 #define LCDCONTROLLER_H
 
 #include <QObject>
-#include <QSerialPort/QSerialPort>
+#include <QSerialPort>
 
 #include "clientIncludes.h"
 

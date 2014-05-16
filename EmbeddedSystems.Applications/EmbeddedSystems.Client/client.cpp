@@ -13,7 +13,7 @@ Client::~Client()
     delete tracker;
     delete mediaPlayer;
     delete keypad;
-    delete lcd;
+//    delete lcd;
     delete network;
 }
 
@@ -21,9 +21,9 @@ void Client::startClient()
 {
     authenticated = false;
 
-    lcd = new LcdController();
+//    lcd = new LcdController();
 
-    MediaPlayer = new MediaPlayer();
+    mediaPlayer = new MediaPlayer();
 
     keypad = new KeypadController();
 
@@ -127,7 +127,7 @@ bool Client::parseResponse()
     const std::string stdreply = reply.toStdString();
     Json::Value yes;
     Json::Reader reader;
-  //  Json::
+
     if (!(reader.parse(stdreply, yes, true)))
     {
         // parsing failed

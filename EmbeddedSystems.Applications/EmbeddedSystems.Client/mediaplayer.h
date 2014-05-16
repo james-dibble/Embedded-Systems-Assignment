@@ -2,8 +2,9 @@
 #define MEDIAPLAYER_H
 
 #include <QObject>
+//#include <QMediaPlayer>
+#include <QTime>
 #include <QtMultimediaKit/QMediaPlayer>
-//#include <QtMultimedia/QtMultimedia>
 
 class MediaPlayer : public QObject
 {
@@ -19,7 +20,7 @@ public:
     void normal();
 
 protected:
-    void setVolume();
+    void setVolume(int);
     QTime getCurrentTime();
 
 private:
