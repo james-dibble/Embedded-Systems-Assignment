@@ -19,6 +19,7 @@ namespace EmbeddedSystems.Admin
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            SecurityConfig.Setup();
 
             Bootstrapper.Initialise();
         }

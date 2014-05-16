@@ -62,6 +62,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrator.cs" />
     <Compile Include="AudioFile.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Exhibit.cs" />

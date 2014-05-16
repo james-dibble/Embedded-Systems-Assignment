@@ -65,6 +65,7 @@
     <Compile Include="Security\IAuthenticatedHandset.cs" />
     <Compile Include="Security\IAuthorizationService.cs" />
     <Compile Include="ServiceLayer\IAudioFileService.cs" />
+    <Compile Include="ServiceLayer\IAdministratorService.cs" />
     <Compile Include="ServiceLayer\ICustomerService.cs" />
     <Compile Include="ServiceLayer\IExhibitService.cs" />
     <Compile Include="ServiceLayer\IHandsetService.cs" />

@@ -8,7 +8,7 @@ namespace EmbeddedSystems.DomainModel
     /// <summary>
     /// An object that represents an <see cref="Exhibit"/>'s audio file.
     /// </summary>
-    public class AudioFile : UniqueObject<int>
+    public class AudioFile
     {
         /// <summary>
         /// Gets or sets the the ID of the <see cref="Exhibit"/>. DO NOT USE.

@@ -37,6 +37,7 @@ namespace EmbeddedSystems.Admin
             container.RegisterType<IHandsetService, HandsetService>();
             container.RegisterType<IKnowledgeLevelService, KnowledgeLevelService>();
             container.RegisterType<ILanguageService, LanguageService>();
+            container.RegisterType<IAdministratorService, AdministratorService>();
         }
     }
 }
