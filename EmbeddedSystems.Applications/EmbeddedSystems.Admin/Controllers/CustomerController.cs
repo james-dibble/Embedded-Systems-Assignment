@@ -29,10 +29,10 @@ namespace EmbeddedSystems.Admin.Controllers
 
         public ActionResult AddCustomer(Customer customer, int languageId, int knowledgeLevelId)
         {
-            this._customerService.CreateCustomer(customer);
-
             customer.Language = this._languageService.GetLanguage(languageId);
             customer.KnowledgeLevel = this._knowledgeLevelService.GetKnowledgeLevel(knowledgeLevelId);
+
+            this._customerService.CreateCustomer(customer);
 
             return View();
         }
@@ -48,7 +48,7 @@ namespace EmbeddedSystems.Admin.Controllers
         {
             var customers = this._customerService.GetAllCustomers();
 
-            return this.PartialView(customers);
+            return this.PartialView(customers.OrderBy(cust => cust.Name));
         }
     }
 }

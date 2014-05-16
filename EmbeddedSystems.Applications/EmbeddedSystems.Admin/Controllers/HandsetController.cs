@@ -37,10 +37,7 @@ namespace EmbeddedSystems.Admin.Controllers
                 this._handsetService.ExpireRental(rental);
                 return RedirectToAction("Index", "Handset");
             }
-            else
-            {
-                return this.Content("NO RENTAL BLED :(");
-            }            
+            return RedirectToAction("Index", "Handset");
         }
 
         public ActionResult AddHandset(string handsetNumber)

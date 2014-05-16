@@ -9,6 +9,7 @@ namespace EmbeddedSystems.ServiceLayer
     using System.Collections.Generic;
     using EmbeddedSystems.DomainModel;
     using EmbeddedSystems.Persistence;
+    using System.Linq;
     
     /// <summary>
     /// A class for interacting with <see cref="Customer" />s.

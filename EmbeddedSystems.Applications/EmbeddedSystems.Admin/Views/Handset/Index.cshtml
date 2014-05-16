@@ -21,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var handset in this.Model)
+                @foreach (var handset in this.Model.OrderBy(hs => hs.HandsetNumber))
                 {
                     <tr>
                         <td>@handset.HandsetNumber</td>

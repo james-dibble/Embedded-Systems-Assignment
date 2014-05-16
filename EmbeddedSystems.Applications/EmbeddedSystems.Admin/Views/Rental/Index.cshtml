@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var rental in this.Model.OrderByDescending(r => r.RentalExpires).ThenBy(r => r.Customer.Name))
+                @foreach (var rental in this.Model.OrderByDescending(r => r.WhenRentedOut).ThenBy(r => r.Customer.Name))
                 {
                     <tr>
                         <td>@rental.Handset.HandsetNumber</td>

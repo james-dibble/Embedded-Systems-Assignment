@@ -22,7 +22,7 @@
         <table class="table table-striped table-hover">
             <thead></thead>
             <tbody>
-                @foreach (var customer in this.Model)
+                @foreach (var customer in this.Model.OrderBy(cust => cust.Name))
                 {
                     <tr>
                         <td>@customer.Name</td>
