@@ -67,7 +67,7 @@ int LocationTracker::getSignalQuality()
     iwconfigProc.waitForStarted();
     iwconfigProc.waitForFinished();
     QString output = iwconfigProc.readAllStandardOutput();
-    qDebug() << output;
+    // qDebug() << output;
 
     QStringList qualities = output.split("\n").filter("Quality");
     if (qualities.isEmpty())

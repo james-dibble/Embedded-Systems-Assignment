@@ -27,8 +27,12 @@ void Client::startClient()
 
     keypad = new KeypadController();
 
-    QObject::connect(this, SIGNAL(getPin(QString&)), keypad, SLOT(pinRequested(QString&)),Qt::BlockingQueuedConnection);
+    // must register own types or Qt wont connect them properly
+    qRegisterMetaType<KeypadButton>("KeypadButton");
+
+    QObject::connect(this, SIGNAL(getPin()), keypad, SLOT(pinRequested()));
     QObject::connect(keypad, SIGNAL(forwardButton(KeypadButton)), this, SLOT(buttonPressed(KeypadButton)));
+    QObject::connect(keypad, SIGNAL(forwardPincode(QString)), this, SLOT(pincodeReceived(QString)));
     QThread* keypadThread = new QThread();
     QObject::connect(keypadThread, SIGNAL(started()), keypad, SLOT(start()));
     QObject::connect(keypad, SIGNAL(keypadFinished()), keypadThread, SLOT(quit()));
@@ -62,7 +66,7 @@ void Client::startClient()
     tracker = new LocationTracker();
 
  //   QObject::connect(this, SIGNAL(request(QUrl, QString)), network, SLOT(getRequest(QUrl, QString)));
-    QObject::connect(tracker, SIGNAL(forwardNewLocation(QString)), this, SLOT(locationChanged(QString)));
+    QObject::connect(tracker, SIGNAL(forwardNewLocation(int)), this, SLOT(locationChanged(int)));
     QThread* trackerThread = new QThread();
     QObject::connect(trackerThread, SIGNAL(started()), tracker, SLOT(startTracking()));
     QObject::connect(tracker, SIGNAL(trackerFinished()), trackerThread, SLOT(quit()));
@@ -78,12 +82,17 @@ void Client::startClient()
 bool Client::authenticateDevice()
 {
     bool success;
-    QString pincode = "";
+    pincode = "";
    // int newPin = 0;
 
     qWarning() << "Enter 4 digit pin on keypad";
-    emit getPin(pincode);
-//    newPin = keypad->getPin();
+    emit getPin();
+    blockOnPincode();
+
+//#if DEBUG
+//    // force pincode
+//    pincode = "7414";
+//#endif
 
     qDebug() << "Authenticating";
     //  QString reply = network->getRequest(handsetApiUrl);
@@ -96,7 +105,7 @@ bool Client::authenticateDevice()
 
     success = parseResponse();
     //#ifdef DEBUG
-        success = true;
+    //    success = true;
     //#else
     //    success = false;
     //#endif
@@ -108,14 +117,14 @@ bool Client::authenticateDevice()
 //    blockOnReply();
 //    parseResponse();
 
-    requestExhibit(1);
+  //  requestExhibit(1);
 #endif
     return success;
 }
 
 bool Client::parseResponse()
 {
-    if (httpCode != 200)
+    if (httpCode < 200 || httpCode > 202)
     {
         qWarning() << "Authentication error";
         return false;
@@ -164,12 +173,28 @@ void Client::requestExhibit(int exhibit)
     blockOnReply();
     qDebug() << "end block";
 
-    parseResponse();
+    if (!parseResponse())
+    {
+        // error parsing
+        qWarning("Error on server");
+        return;
+    }
 
     QString url = mmsBaseUrl;
     url.append(file);
 //    url = "mms://esd.jdibble.biz:8080/ESD/Dancing.mp3";
     mediaPlayer->playAudioFile(url);
+}
+
+void Client::blockOnPincode()
+{
+    setPincodeReceived(false);
+
+    while (getPincodeReceived() == false)
+    {
+       QCoreApplication::processEvents();
+    //   qDebug() << "Blocked";
+    }
 }
 
 void Client::blockOnReply()
@@ -203,6 +228,27 @@ void Client::setWaitOver(bool newWait)
     QMutexLocker locker(&clientMutex);
     qDebug() << "set " << newWait;
     waitOver = newWait;
+}
+
+void Client::pincodeReceived(QString newPin)
+{
+    qDebug() << "pincode Received";
+    pincode = newPin;
+    setPincodeReceived(true);
+}
+
+bool Client::getPincodeReceived()
+{
+    QMutexLocker locker(&pincodeMutex);
+  //  qDebug() << "get ";
+    return pinReceived;
+}
+
+void Client::setPincodeReceived(bool newReceived)
+{
+    QMutexLocker locker(&pincodeMutex);
+    qDebug() << "set " << newReceived;
+    pinReceived = newReceived;
 }
 
 void Client::playPause()
