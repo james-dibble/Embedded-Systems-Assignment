@@ -5,6 +5,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.Services.HandsetApi
 {
+    using System.Net;
+    using System.Net.Http;
+    using System.Web.Http.Filters;
     using System.Web.Mvc;
 
     public class FilterConfig

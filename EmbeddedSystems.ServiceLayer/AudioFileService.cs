@@ -45,6 +45,11 @@ namespace EmbeddedSystems.ServiceLayer
                             && af.KnowledgeLevel.Id == knowledgeLevel.Id
                             && af.Language.Id == language.Id);
 
+            if (file == null || file.FilePath == null)
+            {
+                return null;
+            }
+
             file.FilePath = Path.Combine(ConfigurationManager.AppSettings["RemoteAudioFilePath"], file.FilePath);
 
             return file;

@@ -37,7 +37,20 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
 
             var file = this._audioFileService.GetFile(exhibit, customer.KnowledgeLevel, customer.Language);
 
-            return file;
+            if (file == null)
+            {
+                return null;   
+            }
+
+            return new AudioFile
+            {
+                ExhibitId = file.ExhibitId,
+                FileName = file.FileName,
+                FilePath = file.FilePath,
+                Id = file.Id,
+                KnowledgeLevelId = file.KnowledgeLevelId,
+                LanguageId = file.LanguageId
+            };
         }
     }
 }

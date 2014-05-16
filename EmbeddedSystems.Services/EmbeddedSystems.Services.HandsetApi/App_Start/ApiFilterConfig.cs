@@ -5,6 +5,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace EmbeddedSystems.Services.HandsetApi
 {
+    using System.Net;
+    using System.Net.Http;
     using System.Web.Http;
     using System.Web.Http.Filters;
 
@@ -18,6 +20,23 @@ namespace EmbeddedSystems.Services.HandsetApi
                 (IAuthorizationService)GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(IAuthorizationService));
 
             filters.Add(new RequiresAuthenticationFilter(authorizationService));
+            filters.Add(new NullObjectActionFilter());
         } 
+    }
+    
+    public class NullObjectActionFilter : ActionFilterAttribute
+    {
+        public override void OnActionExecuted(HttpActionExecutedContext actionExecutedContext)
+        {
+            if ((actionExecutedContext.Response != null) && actionExecutedContext.Response.IsSuccessStatusCode)
+            {
+                object contentValue = null;
+                actionExecutedContext.Response.TryGetContentValue(out contentValue);
+                if (contentValue == null)
+                {
+                    actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.NotFound, "Object not found");
+                }
+            }
+        }
     }
 }
