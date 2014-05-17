@@ -48,7 +48,6 @@ namespace EmbeddedSystems.Services.HandsetApi.Controllers
                 ExhibitId = file.ExhibitId,
                 FileName = file.FileName,
                 FilePath = file.FilePath,
-                Id = file.Id,
                 KnowledgeLevelId = file.KnowledgeLevelId,
                 LanguageId = file.LanguageId
             };
