@@ -4,6 +4,7 @@ MediaPlayer::MediaPlayer(QObject *parent) :
     QObject(parent)
 {
     player = new QMediaPlayer();
+    volume = 100;
 }
 
 MediaPlayer::~MediaPlayer()
@@ -14,7 +15,7 @@ void MediaPlayer::playAudioFile(QUrl track)
 {
     qDebug() << "Grabbing track: " << track;
     player->setMedia(track);
-    player->setVolume(100); 
+    player->setVolume(volume);
 
     player->play();
     qDebug() << "Playing track: " << track;
@@ -38,9 +39,7 @@ void MediaPlayer::playPauseHandle()
 
 void MediaPlayer::muteHandle()
 {
-    bool muteState = player->isMuted();
-
-    if (muteState)
+    if (player->isMuted())
     {
         // Audio is muted
         player->setMuted(false); // Unmute audio
@@ -96,12 +95,19 @@ void MediaPlayer::normal()
     }
 }
 
-void MediaPlayer::setVolume(int volumeValue)
+void MediaPlayer::changeVolume(bool up)
 {
-    qDebug() << "New Volume: " << volumeValue;
+    qDebug() << "Volume is: " << volume;
 
-    player->setVolume(volumeValue);
-
+    if (up && volume < 100)
+    {
+        volume += 25;
+    }
+    else if (!up && volume > 0)
+    {
+        volume -= 25;
+    }
+    player->setVolume(volume);
 }
 
 QTime MediaPlayer::getCurrentTime()

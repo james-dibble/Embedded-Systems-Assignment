@@ -24,6 +24,7 @@ public:
     bool authenticateDevice();
 
 protected:
+    void setup();
     void blockOnReply();
     void blockOnPincode();
     bool parseResponse();
@@ -31,12 +32,8 @@ protected:
     void setWaitOver(bool);
     bool getPincodeReceived();
     void setPincodeReceived(bool);
-
     void requestExhibit(int);
     void normalPlay();
-    void playPause();
-    void fastForward();
-    void rewind();
 
 private:
     Network* network;
@@ -53,6 +50,8 @@ private:
     bool pinReceived;
     QMutex pincodeMutex;
     QString pincode;
+    QTimer *buttonTimeout;
+    QString exhibit;
 
 signals:
     void request(QUrl, QString = "");
@@ -63,8 +62,9 @@ public slots:
     void buttonPressed(KeypadButton);
     void pincodeReceived(QString);
     void locationChanged(int);
+
+private slots:
+    void exhibitNumberEntered();
 };
 
 #endif // CLIENT_H
-
-// colon base 64

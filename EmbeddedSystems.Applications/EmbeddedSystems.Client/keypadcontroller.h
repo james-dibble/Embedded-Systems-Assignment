@@ -52,7 +52,6 @@ private:
 //    KeypadButton lastPressed;
     QVector<KeypadButton> pincodeVector;
     bool needPincode;
-    QTimer *timer;
     int col;
     int count;
 

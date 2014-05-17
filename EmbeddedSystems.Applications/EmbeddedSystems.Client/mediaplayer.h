@@ -18,13 +18,14 @@ public:
     void fastForward();
     void rewind();
     void normal();
+    void changeVolume(bool);
 
 protected:
-    void setVolume(int);
     QTime getCurrentTime();
 
 private:
     QMediaPlayer *player;
+    int volume;
     
 signals:
     

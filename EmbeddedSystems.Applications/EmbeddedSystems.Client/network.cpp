@@ -26,8 +26,6 @@ void Network::begin()
 #endif
 
      QObject::connect(networkMan, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyReceived(QNetworkReply*)));
-
-     // QThread::exec();
 }
 
 void Network::getRequest(QUrl url, QString newPin /* = -1*/ )
@@ -68,13 +66,6 @@ void Network::getRequest(QUrl url, QString newPin /* = -1*/ )
     networkMan->get(request);
 
     qDebug() << "get sent to" << url;
-}
-
-QUrl Network::getTrackLocation()
-{
-    QUrl url("ik0097@my.bristol.ac.uk");
-
-    return url;
 }
 
 void Network::replyReceived(QNetworkReply* reply)

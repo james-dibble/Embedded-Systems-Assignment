@@ -9,11 +9,10 @@ class Network : public QObject
 public:
     explicit Network(QObject *parent = 0);
     ~Network();
-    QUrl getTrackLocation();
 
 private:
     QNetworkAccessManager* networkMan;
-    QString deviceName = "PINTS";
+    QString deviceName = "123";
     QString pin;
     QMutex netMutex;
     QString replyString;

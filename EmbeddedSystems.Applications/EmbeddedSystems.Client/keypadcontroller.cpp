@@ -16,10 +16,6 @@ void KeypadController::start()
     int lastCol = -1;
     bool pressed = false;
     enum segChar writeChar;
-    // read and write keypad on timer
-//    timer = new QTimer(this);
-//    connect(timer,SIGNAL(timeout()),this,SLOT(readAndWrite()));
-//    timer->start(1);
 
     if (setup() != 0)
     {
@@ -113,11 +109,11 @@ int KeypadController::setup()
 
     // Set up Ports on PIO
     sendToKeypad("@00D000\r"); // Sets Port A to output
-    qDebug() << response;
+//    qDebug() << response;
     sendToKeypad("@00D1FF\r"); // Sets Port B to input
-    qDebug() << response;
+//    qDebug() << response;
     sendToKeypad("@00D200\r"); // Sets Port C to output
-    qDebug() << response;
+//    qDebug() << response;
     return 0;
 }
 

@@ -19,20 +19,8 @@ Client::~Client()
 
 void Client::startClient()
 {
-    authenticated = false;
+    setup();
 
-//    lcd = new LcdController();
-
-    mediaPlayer = new MediaPlayer();
-
-    keypad = new KeypadController();
-
-    // must register own types or Qt wont connect them properly
-    qRegisterMetaType<KeypadButton>("KeypadButton");
-
-    QObject::connect(this, SIGNAL(getPin()), keypad, SLOT(pinRequested()));
-    QObject::connect(keypad, SIGNAL(forwardButton(KeypadButton)), this, SLOT(buttonPressed(KeypadButton)));
-    QObject::connect(keypad, SIGNAL(forwardPincode(QString)), this, SLOT(pincodeReceived(QString)));
     QThread* keypadThread = new QThread();
     QObject::connect(keypadThread, SIGNAL(started()), keypad, SLOT(start()));
     QObject::connect(keypad, SIGNAL(keypadFinished()), keypadThread, SLOT(quit()));
@@ -40,11 +28,6 @@ void Client::startClient()
     keypad->moveToThread(keypadThread);
     keypadThread->start();
 
-    // network lives in a thread so hook up signals
-    network = new Network();
-
-    QObject::connect(this, SIGNAL(request(QUrl, QString)), network, SLOT(getRequest(QUrl, QString)));
-    QObject::connect(network, SIGNAL(forwardMessage(QString, unsigned int)), this, SLOT(networkReply(QString, unsigned int)));
     QThread* netThread = new QThread();
     QObject::connect(netThread, SIGNAL(started()), network, SLOT(begin()));
     QObject::connect(network, SIGNAL(networkFinished()), netThread, SLOT(quit()));
@@ -62,17 +45,41 @@ void Client::startClient()
     qDebug() << "Authenticated";
 
 
-    // setup location tracker thread
-    tracker = new LocationTracker();
-
- //   QObject::connect(this, SIGNAL(request(QUrl, QString)), network, SLOT(getRequest(QUrl, QString)));
-    QObject::connect(tracker, SIGNAL(forwardNewLocation(int)), this, SLOT(locationChanged(int)));
     QThread* trackerThread = new QThread();
     QObject::connect(trackerThread, SIGNAL(started()), tracker, SLOT(startTracking()));
     QObject::connect(tracker, SIGNAL(trackerFinished()), trackerThread, SLOT(quit()));
 
     tracker->moveToThread(trackerThread);
     trackerThread->start();
+}
+
+void Client::setup()
+{
+    authenticated = false;
+
+    buttonTimeout = new QTimer(this);
+    connect(buttonTimeout,SIGNAL(timeout()),this,SLOT(exhibitNumberEntered()));
+    buttonTimeout->setSingleShot(true);
+
+//    lcd = new LcdController();
+    mediaPlayer = new MediaPlayer();
+    keypad = new KeypadController();
+
+    // must register own types or Qt wont connect them properly
+    qRegisterMetaType<KeypadButton>("KeypadButton");
+
+    QObject::connect(this, SIGNAL(getPin()), keypad, SLOT(pinRequested()));
+    QObject::connect(keypad, SIGNAL(forwardButton(KeypadButton)), this, SLOT(buttonPressed(KeypadButton)));
+    QObject::connect(keypad, SIGNAL(forwardPincode(QString)), this, SLOT(pincodeReceived(QString)));
+
+    // network lives in a thread so hook up signals
+    network = new Network();
+    QObject::connect(this, SIGNAL(request(QUrl, QString)), network, SLOT(getRequest(QUrl, QString)));
+    QObject::connect(network, SIGNAL(forwardMessage(QString, unsigned int)), this, SLOT(networkReply(QString, unsigned int)));
+
+    // setup location tracker thread
+    tracker = new LocationTracker();
+    QObject::connect(tracker, SIGNAL(forwardNewLocation(int)), this, SLOT(locationChanged(int)));
 }
 
 /*
@@ -89,15 +96,13 @@ bool Client::authenticateDevice()
     emit getPin();
     blockOnPincode();
 
-//#if DEBUG
-//    // force pincode
-//    pincode = "7414";
-//#endif
+#if DEBUG
+    // force pincode
+    pincode = "6377";
+#endif
 
     qDebug() << "Authenticating";
-    //  QString reply = network->getRequest(handsetApiUrl);
     emit request(authenticateUrl, pincode);
-    //  QMetaObject::invokeMethod(network,"getRequest",Q_ARG(QUrl, handsetApiUrl));
 
     // block thread until reply receieved
     blockOnReply();
@@ -111,12 +116,6 @@ bool Client::authenticateDevice()
     //#endif
 
 #if DEBUG
-//    QString requestString = fileRequestUrl;
-//    requestString.append("1");
-//    emit request(requestString, pincode);
-//    blockOnReply();
-//    parseResponse();
-
   //  requestExhibit(1);
 #endif
     return success;
@@ -251,21 +250,6 @@ void Client::setPincodeReceived(bool newReceived)
     pinReceived = newReceived;
 }
 
-void Client::playPause()
-{
-    mediaPlayer->playPauseHandle();
-}
-
-void Client::fastForward()
-{
-    mediaPlayer->fastForward();
-}
-
-void Client::rewind()
-{
-    mediaPlayer->rewind();
-}
-
 void Client::normalPlay()
 {
     mediaPlayer->normal();
@@ -276,8 +260,18 @@ void Client::locationChanged(int exhibit)
     requestExhibit(exhibit);
 }
 
+void Client::exhibitNumberEntered()
+{
+    int exhibitNumber = exhibit.toInt();
+    qDebug() << exhibitNumber;
+    requestExhibit(exhibitNumber);
+    exhibit.clear();
+}
+
 void Client::buttonPressed(KeypadButton button)
 {
+    bool exhibitAltered = false;
+
     if (!authenticated)
     {
         // we shouldnt do anything
@@ -287,38 +281,74 @@ void Client::buttonPressed(KeypadButton button)
     switch (button)
     {
     case KeypadButton::KEY_1:
-        requestExhibit(1); break;
+        exhibit.append("1");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_2:
-        requestExhibit(2); break;
+        exhibit.append("2");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_3:
-        requestExhibit(3); break;
+        exhibit.append("3");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_4:
-        requestExhibit(4); break;
+        exhibit.append("4");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_5:
-        requestExhibit(5); break;
+        exhibit.append("5");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_6:
-        requestExhibit(6); break;
+        exhibit.append("6");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_7:
-        requestExhibit(7); break;
+        exhibit.append("7");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_8:
-        requestExhibit(8); break;
+        exhibit.append("8");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_9:
-        requestExhibit(9); break;
+        exhibit.append("9");
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_0:
-        requestExhibit(0); break;
+        if (!exhibit.isEmpty())
+        {
+            // only append 0 if its not the start
+            exhibit.append("0");
+        }
+        exhibitAltered = true;
+        break;
     case KeypadButton::KEY_A: // play/pause button
-        playPause(); break;
+        mediaPlayer->playPauseHandle();
+        break;
     case KeypadButton::KEY_B: // fast forward button
-        fastForward(); break;
+        mediaPlayer->fastForward();
+        break;
     case KeypadButton::KEY_C: // rewind button
-        rewind(); break;
-    case KeypadButton::KEY_D:
-        qDebug() << "Mute"; break;
-    case KeypadButton::KEY_E:
-        qDebug() << "Volume Up"; break;
-    case KeypadButton::KEY_F:
-        qDebug() << "Volume Down"; break;
+        mediaPlayer->rewind();
+        break;
+    case KeypadButton::KEY_D: // mute button
+        mediaPlayer->muteHandle();
+        break;
+    case KeypadButton::KEY_E: // volume up button
+        mediaPlayer->changeVolume(true);
+        break;
+    case KeypadButton::KEY_F: // volume down button
+        mediaPlayer->changeVolume(false);
+        break;
     default /*NONE*/:
         normalPlay();
+    }
+
+    if (exhibitAltered)
+    {
+        // reset timer as exhibit number was pressed
+        buttonTimeout->start(3000);
     }
 }

@@ -14,7 +14,7 @@
 
 #define DEBUG 1
 
-#define PROXY 1
+#define PROXY 0
 
 enum class Exhibit{EXHIBIT_1, EXHIBIT_2, EXHIBIT_3};
 
