@@ -56,7 +56,7 @@
             </summary>
             <param name="handsetService">The <see cref="T:EmbeddedSystems.ServiceLayer.IHandsetService"/> to use.</param>
         </member>
-        <member name="M:EmbeddedSystems.Security.AuthorizationService.AuthenticateHandsetRental(System.Int32,System.Int32)">
+        <member name="M:EmbeddedSystems.Security.AuthorizationService.AuthenticateHandsetRental(System.String,System.Int32)">
             <summary>
             Confirm that a handset can be used using the given <paramref name="pin"/>.
             </summary>

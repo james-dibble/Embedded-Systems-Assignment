@@ -66,19 +66,9 @@
             Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Language"/> set.
             </summary>
         </member>
-        <member name="T:EmbeddedSystems.Persistence.Migrations.AddColumns">
+        <member name="P:EmbeddedSystems.Persistence.Context.Administrators">
             <summary>
-            Add relevant columns to database table.
-            </summary>
-        </member>
-        <member name="M:EmbeddedSystems.Persistence.Migrations.AddColumns.Up">
-            <summary>
-            Create the columns when migration is used.
-            </summary>
-        </member>
-        <member name="M:EmbeddedSystems.Persistence.Migrations.AddColumns.Down">
-            <summary>
-            Drop the columns if migration is reversed.
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.Administrator"/> set.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.Persistence.Migrations.Configuration">

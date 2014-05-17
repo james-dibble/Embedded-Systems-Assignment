@@ -4,49 +4,9 @@
         <name>EmbeddedSystems.DomainModel</name>
     </assembly>
     <members>
-        <member name="T:EmbeddedSystems.DomainModel.AudioFile">
+        <member name="T:EmbeddedSystems.DomainModel.Administrator">
             <summary>
-            An object that represents an <see cref="!:IExhibit"/>'s audio file.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.ExhibitId">
-            <summary>
-            Gets or sets the the ID of the <see cref="!:IExhibit"/>. DO NOT USE.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.Exhibit">
-            <summary>
-            Gets or sets the <see cref="!:IExhibit"/> that this <see cref="!:IAudioFile"/> is for.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.LanguageId">
-            <summary>
-            Gets or sets the the ID of the <see cref="!:ILanguage"/>. DO NOT USE.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.Language">
-            <summary>
-            Gets or sets the <see cref="!:ILanguage"/> that this <see cref="!:IAudioFile"/> is spoken in.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevelId">
-            <summary>
-            Gets or sets the the ID of the <see cref="!:IKnowledgeLevel"/>. DO NOT USE.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevel">
-            <summary>
-            Gets or sets the <see cref="!:IKnowledgeLevel"/> of this <see cref="!:IAudioFile"/>.
-            </summary>
-        </member>
-        <member name="P:EmbeddedSystems.DomainModel.AudioFile.FilePath">
-            <summary>
-            Gets or sets the location of this <see cref="!:IAudioFile"/>.
-            </summary>
-        </member>
-        <member name="T:EmbeddedSystems.DomainModel.Customer">
-            <summary>
-            An object that represents an <see cref="!:ICustomer"/>.
+            An object that represents an <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>'s audio file.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.UniqueObject`1">
@@ -60,34 +20,84 @@
             Gets or sets the unique identifier of this <see cref="T:EmbeddedSystems.DomainModel.UniqueObject`1"/>.
             </summary>
         </member>
+        <member name="T:EmbeddedSystems.DomainModel.AudioFile">
+            <summary>
+            An object that represents an <see cref="P:EmbeddedSystems.DomainModel.AudioFile.Exhibit"/>'s audio file.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.ExhibitId">
+            <summary>
+            Gets or sets the the ID of the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.Exhibit"/>. DO NOT USE.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.Exhibit">
+            <summary>
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.Exhibit"/> that this <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> is for.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.LanguageId">
+            <summary>
+            Gets or sets the the ID of the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.Language"/>. DO NOT USE.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.Language">
+            <summary>
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.Language"/> that this <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> is spoken in.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevelId">
+            <summary>
+            Gets or sets the the ID of the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevel"/>. DO NOT USE.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevel">
+            <summary>
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.AudioFile.KnowledgeLevel"/> of this <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.FilePath">
+            <summary>
+            Gets or sets the location of this <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.AudioFile.FileName">
+            <summary>
+            Gets or sets the name of the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>
+            </summary>
+        </member>
+        <member name="T:EmbeddedSystems.DomainModel.Customer">
+            <summary>
+            An object that represents an <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
+            </summary>
+        </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.Name">
             <summary>
-            Gets or sets the name of this <see cref="!:ICustomer"/>.
+            Gets or sets the name of this <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.Email">
             <summary>
-            Gets or sets the email of this <see cref="!:ICustomer"/>.
+            Gets or sets the email of this <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.MobileNumber">
             <summary>
-            Gets or sets the mobile telephone number of this <see cref="!:ICustomer"/>.
+            Gets or sets the mobile telephone number of this <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.Address">
             <summary>
-            Gets or sets the address of this <see cref="!:ICustomer"/>.
+            Gets or sets the address of this <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.Language">
             <summary>
-            Gets or sets the <see cref="!:ILanguage"/> that this <see cref="!:ICustomer"/> speaks.
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.Customer.Language"/> that this <see cref="T:EmbeddedSystems.DomainModel.Customer"/> speaks.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Customer.KnowledgeLevel">
             <summary>
-            Gets or sets the <see cref="!:IKnowledgeLevel"/> of this <see cref="!:ICustomer"/>.
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.Customer.KnowledgeLevel"/> of this <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.Exhibit">
@@ -97,68 +107,79 @@
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Exhibit.Name">
             <summary>
-            Gets or sets the name of this <see cref="!:IExhibit"/>.
+            Gets or sets the name of this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Exhibit.HandsetKey">
             <summary>
-            Gets or sets the number of this <see cref="!:IExhibit"/> that is entered by the use
-            upon an <see cref="!:IHandset"/> to get it's audio file.
+            Gets or sets the number of this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> that is entered by the use
+            upon an <see cref="T:EmbeddedSystems.DomainModel.Handset"/> to get it's audio file.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Exhibit.AudioFiles">
             <summary>
-            Gets or sets the <see cref="!:IAudioFile"/>s for this <see cref="!:IExhibit"/>.
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s for this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.Handset">
             <summary>
-            An object that stores information about a <see cref="!:IHandset"/>.
+            An object that stores information about a <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.Handset.HandsetNumber">
             <summary>
-            Gets or sets the number of this <see cref="!:IHandset"/>.
+            Gets or sets the number of this <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.Handset.Rentals">
+            <summary>
+            Gets or sets the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s this <see cref="T:EmbeddedSystems.DomainModel.Handset"/> has had.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.HandsetRental">
             <summary>
-            An object that represents an <see cref="!:ICustomer"/> taking out an <see cref="!:IHandset"/>.
+            An object that represents an <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Customer"/> taking out an <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Handset"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.HandsetRental.Customer">
             <summary>
-            Gets or sets the <see cref="!:ICustomer"/> that has rented an <see cref="!:IHandset"/>.
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Customer"/> that has rented an <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Handset"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.HandsetRental.Handset">
             <summary>
-            Gets or sets the <see cref="!:IHandset"/> that the <see cref="!:ICustomer"/> has rented.
+            Gets or sets the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Handset"/> that the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Customer"/> has rented.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.HandsetRental.WhenRentedOut">
             <summary>
-            Gets or sets the <see cref="T:System.DateTime"/> that this <see cref="!:IHandsetRental"/> was conducted.
+            Gets or sets the <see cref="T:System.DateTime"/> that this <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> was conducted.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.HandsetRental.RentalExpires">
             <summary>
-            Gets or sets the <see cref="T:System.DateTime"/> that this <see cref="!:IHandsetRental"/> expires.
+            Gets or sets the <see cref="T:System.DateTime"/> that this <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> expires.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.HandsetRental.Pin">
             <summary>
-            Gets or sets the identification code the <see cref="!:ICustomer"/> must use to access the <see cref="!:IHandset"/>.
+            Gets or sets the identification code the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Customer"/> must use to access the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Handset"/>.
+            </summary>
+        </member>
+        <member name="P:EmbeddedSystems.DomainModel.HandsetRental.HandsetId">
+            <summary>
+            Gets or sets the unique identifier of the <see cref="P:EmbeddedSystems.DomainModel.HandsetRental.Handset"/> that is
+            <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> represents. DO NOT USE.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.KnowledgeLevel">
             <summary>
-            An object to represent the competency level of an <see cref="!:ICustomer"/>.
+            An object to represent the competency level of an <see cref="T:EmbeddedSystems.DomainModel.Customer"/>.
             </summary>
         </member>
         <member name="P:EmbeddedSystems.DomainModel.KnowledgeLevel.Description">
             <summary>
-            Gets or sets the description of this <see cref="!:IKnowledgeLevel"/>.
+            Gets or sets the description of this <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/>.
             </summary>
         </member>
         <member name="T:EmbeddedSystems.DomainModel.Language">

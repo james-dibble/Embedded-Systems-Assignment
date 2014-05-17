@@ -149,7 +149,7 @@
             Implementing classes define methods to authenticate a <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
             </summary>
         </member>
-        <member name="M:EmbeddedSystems.Security.IAuthorizationService.AuthenticateHandsetRental(System.Int32,System.Int32)">
+        <member name="M:EmbeddedSystems.Security.IAuthorizationService.AuthenticateHandsetRental(System.String,System.Int32)">
             <summary>
             Confirm that a handset can be used using the given <paramref name="pin"/>.
             </summary>
@@ -173,6 +173,26 @@
             <param name="knowledgeLevel">The <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
             <param name="language">The <see cref="T:EmbeddedSystems.DomainModel.Language"/> of the <see cref="T:EmbeddedSystems.DomainModel.Customer"/> so they get the right <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.</param>
             <returns>An <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/> that corresponds to the given information.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IAudioFileService.GetFilesForExhibit(System.Int32)">
+            <summary>
+            Retrieve all the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s for a given <paramref name="exhibitId"/>.
+            </summary>
+            <param name="exhibitId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
+            <returns>All the <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s for a given <paramref name="exhibitId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IAudioFileService.GetAll">
+            <summary>
+            Retrieve all known <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s.
+            </summary>
+            <returns>All known <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>s.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IAudioFileService.CreateAudioFile(EmbeddedSystems.DomainModel.AudioFile)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/>.
+            </summary>
+            <param name="audioFile">A new <see cref="T:EmbeddedSystems.DomainModel.AudioFile"/></param>
+            <returns>The persisted Audio File.</returns>
         </member>
         <member name="T:EmbeddedSystems.ServiceLayer.ICustomerService">
             <summary>
@@ -230,12 +250,25 @@
             <param name="handsetKey">The key number on the handset for this <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</param>
             <returns>The <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/> with the given <paramref name="handsetKey"/>.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IExhibitService.GetAll">
+            <summary>
+            Retrieve all known <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.
+            </summary>
+            <returns>All known <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>s.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IExhibitService.CreateExhibit(EmbeddedSystems.DomainModel.Exhibit)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.
+            </summary>
+            <param name="exhibit">A new <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.Exhibit"/>.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.IHandsetService">
             <summary>
             Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Handset"/>s.
             </summary>
         </member>
-        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetRentalsOfHandset(System.Int32)">
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetRentalsOfHandset(System.String)">
             <summary>
             Get the <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/>s for a given <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
             </summary>
@@ -282,6 +315,26 @@
             <param name="handsetId">The id of the requested handset.</param>
             <returns>The handset.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.GetCurrentRentalForHandset(System.Int32)">
+            <summary>
+            Retrieve the details of the current <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> for a given <paramref name="handsetId"/>.
+            </summary>
+            <param name="handsetId">The unique identifier of the <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</param>
+            <returns>The details of the current <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> for a given <paramref name="handsetId"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.ExpireRental(EmbeddedSystems.DomainModel.HandsetRental)">
+            <summary>
+            Set a <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> to be inactive now.
+            </summary>
+            <param name="rental">The <see cref="T:EmbeddedSystems.DomainModel.HandsetRental"/> to deactivate.</param>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IHandsetService.CreateHandset(System.String)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.
+            </summary>
+            <param name="handsetNumber">A new <see cref="T:EmbeddedSystems.DomainModel.Handset"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.Handset"/>.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService">
             <summary>
             Interface for the KnowledgeLevelService.
@@ -300,6 +353,20 @@
             <param name="knowledgeLevelId">The id of the required knowledge level.</param>
             <returns>The knowledge level requested.</returns>
         </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService.AddKnowledgeLevel(System.String)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/>.
+            </summary>
+            <param name="knowledgeLevelDesc">A new <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.IKnowledgeLevelService.AddKnowledgeLevel(EmbeddedSystems.DomainModel.KnowledgeLevel)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/>.
+            </summary>
+            <param name="knowledgeLevel">A new <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.KnowledgeLevel"/>.</returns>
+        </member>
         <member name="T:EmbeddedSystems.ServiceLayer.ILanguageService">
             <summary>
             Implementing classes define methods for interacting with <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
@@ -317,6 +384,20 @@
             Retrieve all <see cref="T:EmbeddedSystems.DomainModel.Language"/>s.
             </summary>
             <returns>All of the <see cref="T:EmbeddedSystems.DomainModel.Language"/>s in the DB.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ILanguageService.AddLanguage(System.String)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.Language"/>.
+            </summary>
+            <param name="languageName">A new <see cref="T:EmbeddedSystems.DomainModel.Language"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</returns>
+        </member>
+        <member name="M:EmbeddedSystems.ServiceLayer.ILanguageService.AddLanguage(EmbeddedSystems.DomainModel.Language)">
+            <summary>
+            Build and persist a new <see cref="T:EmbeddedSystems.DomainModel.Language"/>.
+            </summary>
+            <param name="language">A new <see cref="T:EmbeddedSystems.DomainModel.Language"/></param>
+            <returns>The persisted <see cref="T:EmbeddedSystems.DomainModel.Language"/>.</returns>
         </member>
     </members>
 </doc>
