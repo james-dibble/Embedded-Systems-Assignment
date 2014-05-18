@@ -37,7 +37,7 @@ private:
     QSerialPort *serial;
     QString portName = "ttyO2";
     bool status = false;
-    void writeToScreen();
+    void writeToScreen(QString data, LCDPosition position, int offset);
     void writeEnterPin();
     void writeLoading();
     void writePlaying();

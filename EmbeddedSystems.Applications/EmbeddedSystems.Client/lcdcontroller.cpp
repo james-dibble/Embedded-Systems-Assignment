@@ -42,7 +42,7 @@ void LcdController::setup()
     }
 
     // Setup brightness
-    setBrightness(15);
+    setBrightness(30);
 }
 
 /*
@@ -56,7 +56,7 @@ void LcdController::setState(stateType state)
 {
     LCDState = state;
 
-    switch()
+    switch(LCDState)
     {
     case Pin: writeEnterPin();
         break;
@@ -109,11 +109,22 @@ void LcdController::updatePlayingTime(QString time)
 void LcdController::writeToScreen(QString data, LCDPosition position, int offset)
 {
     //Check data size
-    QString buff = data;
+    QString buff;
 
+    // If data size is too big for the row - chop to size
+    // This ensures that wrapping does not occur.
+    if ((data.size()-1) > (17 - offset))
+    {
+        buff = data.remove(1,(17-offset));
+    }
+    else
+    {
+        buff = data;
+    }
+
+    // Move cursor to position.
     serial->putChar(LCD_DISPLAY_COMMAND);
-
-    if(position = BOTTOM)
+    if(position == BOTTOM)
     {
         serial->putChar(LCD_BOTTOM_START + offset);
     }
@@ -122,7 +133,11 @@ void LcdController::writeToScreen(QString data, LCDPosition position, int offset
         serial->putChar(LCD_TOP_START + offset);
     }
 
-    serial->Write(buff);
+    // Write out each character in string.
+    for (int i = 0; i <= buff.size(); i++)
+    {
+        serial->putChar(buff[i]);
+    }
 }
 
 /*
@@ -159,4 +174,8 @@ void LcdController::clearScreen()
     // Clear Screen
     serial->putChar(LCD_DISPLAY_COMMAND);
     serial->putChar(0x01);
+
+    // Move cursor to the start
+    serial->putChar(LCD_DISPLAY_COMMAND);
+    serial->putChar(128);
 }
