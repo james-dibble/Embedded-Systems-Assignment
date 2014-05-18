@@ -7,6 +7,7 @@
 #include <termios.h>
 //#include <stdlib.h>
 #include <fcntl.h>
+#include <cerrno>
 
 #include "clientIncludes.h"
 
@@ -47,7 +48,7 @@ protected:
 
 private:
     int fd;
-    QString keypadname = "/dev/ttyACM0";
+    QString keypadname;
     char response[BUFMAX];
 //    KeypadButton lastPressed;
     QVector<KeypadButton> pincodeVector;

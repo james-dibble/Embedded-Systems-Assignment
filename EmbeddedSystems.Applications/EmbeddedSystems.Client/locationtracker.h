@@ -21,7 +21,7 @@ protected:
     int getSignalQuality();
 
 private:
-    const int strengthThreshold = 60;
+    int strengthThreshold;
     int lastExhibit;
     QTimer *timer;
     

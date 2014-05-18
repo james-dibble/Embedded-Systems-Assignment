@@ -23,9 +23,7 @@ void MediaPlayer::playAudioFile(QUrl track)
 
 void MediaPlayer::playPauseHandle()
 {
-    QMediaPlayer::State state = player->state();
-
-    if (state == QMediaPlayer::State::PlayingState)
+    if (player->state() == QMediaPlayer::PlayingState)
     {
         player->pause();
     }
@@ -55,9 +53,7 @@ void MediaPlayer::muteHandle()
 
 void MediaPlayer::fastForward()
 {
-    QMediaPlayer::State state = player->state();
-
-    if (state == QMediaPlayer::State::PlayingState)
+    if (player->state() == QMediaPlayer::PlayingState)
     {
         // player->fastforward();
     }
@@ -69,9 +65,7 @@ void MediaPlayer::fastForward()
 
 void MediaPlayer::rewind()
 {
-    QMediaPlayer::State state = player->state();
-
-    if (state == QMediaPlayer::State::PlayingState)
+    if (player->state() == QMediaPlayer::PlayingState)
     {
         // player->rewind();
     }
@@ -83,9 +77,7 @@ void MediaPlayer::rewind()
 
 void MediaPlayer::normal()
 {
-    QMediaPlayer::State state = player->state();
-
-    if (state == QMediaPlayer::State::PlayingState)
+    if (player->state() == QMediaPlayer::PlayingState)
     {
         player->play();
     }

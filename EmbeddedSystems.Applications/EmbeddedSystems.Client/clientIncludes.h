@@ -16,7 +16,7 @@
 
 #define PROXY 0
 
-enum class Exhibit{EXHIBIT_1, EXHIBIT_2, EXHIBIT_3};
+// enum Exhibit{EXHIBIT_1, EXHIBIT_2, EXHIBIT_3};
 
 // The buttons on the keypad
 enum KeypadButton

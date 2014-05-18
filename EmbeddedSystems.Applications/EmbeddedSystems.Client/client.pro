@@ -35,7 +35,7 @@ HEADERS += \
     mediaplayer.h
 #    lcdcontroller.h
 
-QMAKE_CXXFLAGS += -std=c++11
+#QMAKE_CXXFLAGS += -std=c++11
 
 INCLUDEPATH += /usr/include/QtMultimediaKit
 INCLUDEPATH += /usr/include/QtMobility

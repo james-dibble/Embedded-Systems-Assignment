@@ -292,43 +292,43 @@ void Client::buttonPressed(KeypadButton button)
 
     switch (button)
     {
-    case KeypadButton::KEY_1:
+    case KEY_1:
         exhibit.append("1");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_2:
+    case KEY_2:
         exhibit.append("2");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_3:
+    case KEY_3:
         exhibit.append("3");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_4:
+    case KEY_4:
         exhibit.append("4");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_5:
+    case KEY_5:
         exhibit.append("5");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_6:
+    case KEY_6:
         exhibit.append("6");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_7:
+    case KEY_7:
         exhibit.append("7");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_8:
+    case KEY_8:
         exhibit.append("8");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_9:
+    case KEY_9:
         exhibit.append("9");
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_0:
+    case KEY_0:
         if (!exhibit.isEmpty())
         {
             // only append 0 if its not the start
@@ -336,22 +336,22 @@ void Client::buttonPressed(KeypadButton button)
         }
         exhibitAltered = true;
         break;
-    case KeypadButton::KEY_A: // play/pause button
+    case KEY_A: // play/pause button
         mediaPlayer->playPauseHandle();
         break;
-    case KeypadButton::KEY_B: // fast forward button
+    case KEY_B: // fast forward button
         mediaPlayer->fastForward();
         break;
-    case KeypadButton::KEY_C: // rewind button
+    case KEY_C: // rewind button
         mediaPlayer->rewind();
         break;
-    case KeypadButton::KEY_D: // mute button
+    case KEY_D: // mute button
         mediaPlayer->muteHandle();
         break;
-    case KeypadButton::KEY_E: // volume up button
+    case KEY_E: // volume up button
         mediaPlayer->changeVolume(true);
         break;
-    case KeypadButton::KEY_F: // volume down button
+    case KEY_F: // volume down button
         mediaPlayer->changeVolume(false);
         break;
     default /*NONE*/:

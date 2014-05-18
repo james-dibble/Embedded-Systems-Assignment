@@ -3,6 +3,8 @@
 LocationTracker::LocationTracker(QObject *parent) :
     QObject(parent)
 {
+    strengthThreshold = 60;
+    lastExhibit = EXHIBIT_A;
 }
 
 LocationTracker::~LocationTracker()
@@ -11,7 +13,6 @@ LocationTracker::~LocationTracker()
 
 void LocationTracker::startTracking()
 {
-    lastExhibit = EXHIBIT_A;
     timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()),this,SLOT(scan()));
     timer->start(5000);

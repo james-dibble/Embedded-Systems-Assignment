@@ -3,6 +3,7 @@
 KeypadController::KeypadController(QObject *parent) :
     QObject(parent)
 {
+    keypadname = "/dev/ttyACM0";
 }
 
 KeypadController::~KeypadController()
