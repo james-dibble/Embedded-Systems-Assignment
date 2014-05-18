@@ -23,6 +23,17 @@ void KeypadController::start()
         return;
     }
 
+    // flash 7 segs a few times to show its ready
+    selectCol(0xF);
+    for (int i=0; i < 3; i++)
+    {
+        write7seg(SEG_EIGHT);
+        usleep(10000);
+        write7seg(SEG_BLANK);
+        usleep(10000);
+    }
+
+    // main loop
     for (col = 0; col < 4; col++, col %= 4)
     {
         QCoreApplication::processEvents();
@@ -148,7 +159,6 @@ int KeypadController::selectCol(int col)
 {
     char colChar;
     char message[10];
-    int ret = 0;
 
     switch (col)
     {
@@ -165,9 +175,8 @@ int KeypadController::selectCol(int col)
         colChar = '8';
         break;
     default:
-        qWarning() << "Invalid Column";
-        ret = -1;
-        colChar = 0;
+        // all columns
+        colChar = 'F';
     }
 
     if (colChar)
@@ -178,7 +187,7 @@ int KeypadController::selectCol(int col)
     }
 
     usleep(50);
-    return ret;
+    return 0;
 }
 
 int KeypadController::write7seg(enum segChar character)

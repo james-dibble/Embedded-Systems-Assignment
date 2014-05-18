@@ -52,6 +52,7 @@ private:
     QString pincode;
     QTimer *buttonTimeout;
     QString exhibit;
+    bool error;
 
 signals:
     void request(QUrl, QString = "");
@@ -62,9 +63,11 @@ public slots:
     void buttonPressed(KeypadButton);
     void pincodeReceived(QString);
     void locationChanged(int);
+    void noKeypad();
 
 private slots:
     void exhibitNumberEntered();
+    void forceQuit();
 };
 
 #endif // CLIENT_H

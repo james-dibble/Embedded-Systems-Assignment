@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core network multimediakit
+QT       += core network
 
 QT       -= gui
 

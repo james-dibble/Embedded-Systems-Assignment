@@ -24,6 +24,8 @@ void Client::startClient()
     QThread* keypadThread = new QThread();
     QObject::connect(keypadThread, SIGNAL(started()), keypad, SLOT(start()));
     QObject::connect(keypad, SIGNAL(keypadFinished()), keypadThread, SLOT(quit()));
+    QObject::connect(keypad, SIGNAL(keypadFinished()), keypadThread, SLOT(quit()));
+    QObject::connect(keypadThread, SIGNAL(finished()), this, SLOT(noKeypad()));
 
     keypad->moveToThread(keypadThread);
     keypadThread->start();
@@ -34,13 +36,18 @@ void Client::startClient()
 
     network->moveToThread(netThread);
     netThread->start();
-
-    QMetaObject::invokeMethod(network,"begin");
+    // QMetaObject::invokeMethod(network,"begin");
 
     // we need to authenticate the handset before we can do anything
-    while (!authenticated)
+    while (!authenticated && !error)
     {
         authenticated = authenticateDevice();
+    }
+    if (error)
+    {
+        // put quit onto event queue
+        QMetaObject::invokeMethod(this, "forceQuit", Qt::QueuedConnection);
+        return;
     }
     qDebug() << "Authenticated";
 
@@ -56,6 +63,7 @@ void Client::startClient()
 void Client::setup()
 {
     authenticated = false;
+    error = false;
 
     buttonTimeout = new QTimer(this);
     connect(buttonTimeout,SIGNAL(timeout()),this,SLOT(exhibitNumberEntered()));
@@ -90,11 +98,15 @@ bool Client::authenticateDevice()
 {
     bool success;
     pincode = "";
-   // int newPin = 0;
 
     qWarning() << "Enter 4 digit pin on keypad";
     emit getPin();
     blockOnPincode();
+
+    if (error)
+    {
+        return false;
+    }
 
 #if DEBUG
     // force pincode
@@ -351,4 +363,18 @@ void Client::buttonPressed(KeypadButton button)
         // reset timer as exhibit number was pressed
         buttonTimeout->start(3000);
     }
+}
+
+void Client::noKeypad()
+{
+    qCritical("No keypad, error set");
+    error = true;
+    setPincodeReceived(true);
+}
+
+void Client::forceQuit()
+{
+    qCritical("Exiting");
+    QCoreApplication::quit();
+    // qApp->quit();
 }

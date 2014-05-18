@@ -10,9 +10,12 @@ public:
     explicit Network(QObject *parent = 0);
     ~Network();
 
+protected:
+    QString getDeviceNameFromFile();
+
 private:
     QNetworkAccessManager* networkMan;
-    QString deviceName = "123";
+    QString deviceName;
     QString pin;
     QMutex netMutex;
     QString replyString;

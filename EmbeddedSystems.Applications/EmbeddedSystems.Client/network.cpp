@@ -11,6 +11,7 @@ Network::~Network()
 
 void Network::begin()
 {
+    deviceName = getDeviceNameFromFile();
     pin = "0000";
     networkMan = new QNetworkAccessManager();
 
@@ -24,7 +25,6 @@ void Network::begin()
      QNetworkProxy::setApplicationProxy(proxy);
      networkMan->setProxy(proxy);
 #endif
-
      QObject::connect(networkMan, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyReceived(QNetworkReply*)));
 }
 
@@ -90,4 +90,20 @@ void Network::replyReceived(QNetworkReply* reply)
 
     qDebug() << "forwarding message";
     emit forwardMessage(replyString, httpStatusCode);
+}
+
+QString Network::getDeviceNameFromFile()
+{
+    QString name = "";
+    QFile nameFile("deviceName.dat");
+    if (nameFile.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        // file opened
+        QByteArray line = nameFile.readAll();
+        qDebug() << line;
+        int endOfName = line.indexOf("\n");
+        line.truncate(endOfName);
+        name = line;
+    }
+    return name;
 }
