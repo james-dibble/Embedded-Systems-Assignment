@@ -43,8 +43,13 @@ INCLUDEPATH += jsoncpp-src-0.6.0-rc2/include
 # INCLUDEPATH += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/include
 #               /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/src/lib_json
 
+UNAME = $$system(uname -a)
+#eval($$UNAME = "armv7l")
+contains(UNAME, i686): LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/ -ljson
+contains(UNAME, armv7l): LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.4.5/ -ljson
+
 #LIBS += -L./jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
-LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/ -ljson
+
 # LIBS += /home/netlab/gmasters/Documents/embedded/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7.2/libjson_linux-gcc-4.7.2_libmt.a
 
 message($$LIBS)

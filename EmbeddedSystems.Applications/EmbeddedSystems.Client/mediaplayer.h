@@ -1,6 +1,8 @@
 #ifndef MEDIAPLAYER_H
 #define MEDIAPLAYER_H
 
+#include "clientIncludes.h"
+
 #include <QObject>
 //#include <QMediaPlayer>
 #include <QTime>
