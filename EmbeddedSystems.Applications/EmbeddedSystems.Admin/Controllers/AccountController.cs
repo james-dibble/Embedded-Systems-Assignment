@@ -31,7 +31,7 @@ namespace EmbeddedSystems.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserEmail, model.UserPassword, model.RememberMe))
+            if (ModelState.IsValid && WebSecurity.Login(model.Email, model.Password, model.Persist))
             {
                 return RedirectToLocal(returnUrl);
             }
@@ -53,8 +53,7 @@ namespace EmbeddedSystems.Admin.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult NewUser()
         {
             return View();
         }
@@ -63,9 +62,8 @@ namespace EmbeddedSystems.Admin.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult NewUser(RegisterModel model)
         {
             if (ModelState.IsValid)
             {
@@ -79,15 +77,11 @@ namespace EmbeddedSystems.Admin.Controllers
                         {
                             Forename = model.Forename,
                             Surname = model.Surname,
-                            Email = model.Email,
-                            Password = model.Password
+                            Email = model.Email
                         });
 
                     var admin = this._adminService.GetAdminByEmail(model.Email);
 
-                    this._adminService.CreateAdministrator(admin);
-
-                    WebSecurity.Login(model.Email, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
@@ -158,15 +152,15 @@ namespace EmbeddedSystems.Admin.Controllers
         {
             [Required]
             [Display(Name = "User name")]
-            public string UserEmail { get; set; }
+            public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
-            public string UserPassword { get; set; }
+            public string Password { get; set; }
 
             [Display(Name = "Remember me?")]
-            public bool RememberMe { get; set; }
+            public bool Persist { get; set; }
         }
 
         public class RegisterModel
@@ -191,7 +185,7 @@ namespace EmbeddedSystems.Admin.Controllers
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [System.ComponentModel.DataAnnotations.Compare("UserPassword", ErrorMessage = "The password and confirmation password do not match.")]
+            [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
     }
