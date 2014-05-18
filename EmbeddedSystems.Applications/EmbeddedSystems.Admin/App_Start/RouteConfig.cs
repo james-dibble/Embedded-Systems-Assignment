@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,6 +31,18 @@ namespace EmbeddedSystems.Admin
                 url: "Customer/GetCustomerById/{customerId}",
                 defaults: new { controller = "Customer", action = "GetCustomerById" }
             );
+
+            routes.MapRoute(
+                name: "AddNewRental",
+                url: "NewRental",
+                defaults: new { controller = "Rental", action = "NewRental" }
+            );
+
+            //routes.MapRoute(
+            //    name: "CreateNewUser",
+            //    url: "NewUser",
+            //    defaults: new { controller = "Account", action = "NewUser" }
+            //);
 
             routes.MapRoute(
                 name: "Default",
