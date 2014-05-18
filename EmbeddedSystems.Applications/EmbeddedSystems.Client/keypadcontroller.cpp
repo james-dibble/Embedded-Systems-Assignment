@@ -4,6 +4,9 @@ KeypadController::KeypadController(QObject *parent) :
     QObject(parent)
 {
     keypadname = "/dev/ttyACM0";
+    needPincode = false;
+    col = 0;
+    count = 0;
 }
 
 KeypadController::~KeypadController()
@@ -29,9 +32,9 @@ void KeypadController::start()
     for (int i=0; i < 3; i++)
     {
         write7seg(SEG_EIGHT);
-        usleep(10000);
+        usleep(500000);
         write7seg(SEG_BLANK);
-        usleep(10000);
+        usleep(200000);
     }
 
     // main loop
@@ -104,10 +107,6 @@ void KeypadController::start()
 
 int KeypadController::setup()
 {
-    needPincode = false;
-    col = 0;
-    count = 0;
-
     fd = open(keypadname.toLocal8Bit().data(), O_RDWR); //Sets FD to open said port
 
     if (fd < 0) //If Statement produces error message if selected port cannot be opened
