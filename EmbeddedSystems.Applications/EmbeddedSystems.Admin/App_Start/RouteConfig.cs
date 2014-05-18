@@ -38,11 +38,11 @@ namespace EmbeddedSystems.Admin
                 defaults: new { controller = "Rental", action = "NewRental" }
             );
 
-            //routes.MapRoute(
-            //    name: "CreateNewUser",
-            //    url: "NewUser",
-            //    defaults: new { controller = "Account", action = "NewUser" }
-            //);
+            routes.MapRoute(
+                name: "CreateNewUser",
+                url: "NewUser",
+                defaults: new { controller = "Account", action = "NewUser" }
+            );
 
             routes.MapRoute(
                 name: "Default",
