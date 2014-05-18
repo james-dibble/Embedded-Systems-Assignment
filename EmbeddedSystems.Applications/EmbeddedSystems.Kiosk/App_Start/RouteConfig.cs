@@ -14,6 +14,12 @@ namespace EmbeddedSystems.Kiosk
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "RouteHomepage",
+                url: "",
+                defaults: new { controller = "Home", action = "Language" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

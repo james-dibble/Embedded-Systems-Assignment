@@ -199,9 +199,6 @@
     <Content Include="Views\Home\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\KnowledgeRadio.cshtml" />
   </ItemGroup>
   <ItemGroup>
