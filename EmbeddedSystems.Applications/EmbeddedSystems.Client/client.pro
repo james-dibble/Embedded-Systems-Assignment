@@ -46,7 +46,7 @@ INCLUDEPATH += jsoncpp-src-0.6.0-rc2/include
 UNAME = $$system(uname -a)
 #eval($$UNAME = "armv7l")
 contains(UNAME, i686): LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/ -ljson
-contains(UNAME, armv7l): LIBS += -L/home/greg/Documents/embedded/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.4.5/ -ljson
+contains(UNAME, armv7l): LIBS += -L/root/Embedded-Systems-Assignment/EmbeddedSystems.Applications/EmbeddedSystems.Client/jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.4.5/ -ljson
 
 #LIBS += -L./jsoncpp-src-0.6.0-rc2/libs/linux-gcc-4.7/libjson_linux-gcc-4.7_libmt.a
 
